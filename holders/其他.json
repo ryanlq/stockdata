@@ -1,0 +1,5717 @@
+[
+  {
+    "HOLDER": "国泰多策略绝对收益股票型养老金产品-招商银行股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "02A002"
+  },
+  {
+    "HOLDER": "国泰佳泰价值平衡股票型养老金产品-中国建设银行股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "02A004"
+  },
+  {
+    "HOLDER": "国泰佳泰股票专项型养老金产品-招商银行股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "02Ac01"
+  },
+  {
+    "HOLDER": "武义勤艺投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000001596"
+  },
+  {
+    "HOLDER": "河南省豫资保障房管理运营有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000003153"
+  },
+  {
+    "HOLDER": "杭州锐奇信息技术合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000004530"
+  },
+  {
+    "HOLDER": "淮北盛大建设投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000005970"
+  },
+  {
+    "HOLDER": "广西瑞盈资产管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000009034"
+  },
+  {
+    "HOLDER": "浙江越剑控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000015796"
+  },
+  {
+    "HOLDER": "宁波世茂能源股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000016125"
+  },
+  {
+    "HOLDER": "宁波梅山保税港区红杉智盛股权投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000016291"
+  },
+  {
+    "HOLDER": "唐山锐泽股权投资管理中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000017821"
+  },
+  {
+    "HOLDER": "宁波梅山保税港区久盈二期新能源投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000017822"
+  },
+  {
+    "HOLDER": "青岛威奥股权投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000017823"
+  },
+  {
+    "HOLDER": "东台华航企业管理咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000019243"
+  },
+  {
+    "HOLDER": "广州穗开股权投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000019553"
+  },
+  {
+    "HOLDER": "圣地亚哥科技(深圳)有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000021382"
+  },
+  {
+    "HOLDER": "福建华兴润福投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000022679"
+  },
+  {
+    "HOLDER": "南昌龙厚实业有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000023132"
+  },
+  {
+    "HOLDER": "佛山市建设发展集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000023552"
+  },
+  {
+    "HOLDER": "泉州禾天投资合伙企业(普通合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000024750"
+  },
+  {
+    "HOLDER": "江阴市群英投资企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000025800"
+  },
+  {
+    "HOLDER": "厦门欣贺股权投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000025885"
+  },
+  {
+    "HOLDER": "上海祥禾涌原股权投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000027973"
+  },
+  {
+    "HOLDER": "泉峰精密技術控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000028529"
+  },
+  {
+    "HOLDER": "成都泽洪企业管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000028541"
+  },
+  {
+    "HOLDER": "广西环保产业投资集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000029009"
+  },
+  {
+    "HOLDER": "宁波容银股权投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000029578"
+  },
+  {
+    "HOLDER": "新余环亚诺金企业管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000031432"
+  },
+  {
+    "HOLDER": "成都市铨钧企业管理中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000031434"
+  },
+  {
+    "HOLDER": "杭州众望实业有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000032399"
+  },
+  {
+    "HOLDER": "杭州望高点投资管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000032461"
+  },
+  {
+    "HOLDER": "长江生态环保集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000033855"
+  },
+  {
+    "HOLDER": "台州市瑞康投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000034337"
+  },
+  {
+    "HOLDER": "南京两江管理咨询中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000035679"
+  },
+  {
+    "HOLDER": "南京国环投资管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000035712"
+  },
+  {
+    "HOLDER": "南京丽森企业管理中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000035714"
+  },
+  {
+    "HOLDER": "英奇(杭州)企业总部管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000036463"
+  },
+  {
+    "HOLDER": "王力集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000037755"
+  },
+  {
+    "HOLDER": "上海荐趋投资管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000037875"
+  },
+  {
+    "HOLDER": "武义华爵股权投资管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000037916"
+  },
+  {
+    "HOLDER": "浙江王力电动车业有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000037951"
+  },
+  {
+    "HOLDER": "常州联泓企业管理中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000037977"
+  },
+  {
+    "HOLDER": "常州市能闯企业管理咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000037978"
+  },
+  {
+    "HOLDER": "常州市能拼企业管理咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000037979"
+  },
+  {
+    "HOLDER": "常州市能学企业管理咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000037980"
+  },
+  {
+    "HOLDER": "常州鑫泰企业管理中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000037981"
+  },
+  {
+    "HOLDER": "共青城德赢投资管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000037983"
+  },
+  {
+    "HOLDER": "永康市共久企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000038081"
+  },
+  {
+    "HOLDER": "珠海国汇通管理咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000038088"
+  },
+  {
+    "HOLDER": "深圳市中天智科管理咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000038091"
+  },
+  {
+    "HOLDER": "四川金海马实业有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000038485"
+  },
+  {
+    "HOLDER": "海宁晶美投资管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000038504"
+  },
+  {
+    "HOLDER": "常州市晋陵投资集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000038556"
+  },
+  {
+    "HOLDER": "广州乾元投资咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000038757"
+  },
+  {
+    "HOLDER": "易瑞(海南)创业投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000039217"
+  },
+  {
+    "HOLDER": "杭州慈正股权投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000039367"
+  },
+  {
+    "HOLDER": "深圳易达瑞管理咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000039468"
+  },
+  {
+    "HOLDER": "深圳易凯瑞管理咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000039469"
+  },
+  {
+    "HOLDER": "浙江越盛集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000040358"
+  },
+  {
+    "HOLDER": "广西上善若水发展有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000043017"
+  },
+  {
+    "HOLDER": "宁波市一彬实业投资有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000046029"
+  },
+  {
+    "HOLDER": "南京南高管理咨询中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000053062"
+  },
+  {
+    "HOLDER": "浙江省环保集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000053737"
+  },
+  {
+    "HOLDER": "杭州麦其芃企业咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000056454"
+  },
+  {
+    "HOLDER": "杭州素绚企业咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000056462"
+  },
+  {
+    "HOLDER": "平潭创新股权投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000063231"
+  },
+  {
+    "HOLDER": "青岛德才君和投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000065250"
+  },
+  {
+    "HOLDER": "浙江凯融特种纸有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000066464"
+  },
+  {
+    "HOLDER": "常德市城市发展集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000067710"
+  },
+  {
+    "HOLDER": "青岛恩复开金创业投资基金合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000067886"
+  },
+  {
+    "HOLDER": "深圳鸿庆华融二号投资企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000067887"
+  },
+  {
+    "HOLDER": "嘉兴硅谷天堂鑫海企业管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000069358"
+  },
+  {
+    "HOLDER": "淄博恒宇同德信息咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000071630"
+  },
+  {
+    "HOLDER": "上海霍璞企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000071631"
+  },
+  {
+    "HOLDER": "青岛鑫汇合投资管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000080507"
+  },
+  {
+    "HOLDER": "张家港保税区梵创产业发展有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000088188"
+  },
+  {
+    "HOLDER": "安徽金通新能源汽车二期基金合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000088775"
+  },
+  {
+    "HOLDER": "山东水发控股集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000092216"
+  },
+  {
+    "HOLDER": "上海艾动实业有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000092622"
+  },
+  {
+    "HOLDER": "永安市远兴曹远城镇建设有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000092690"
+  },
+  {
+    "HOLDER": "广州普慧源贸易有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000093248"
+  },
+  {
+    "HOLDER": "启鹭(厦门)股权投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000096255"
+  },
+  {
+    "HOLDER": "宁波通泰信创业投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000100669"
+  },
+  {
+    "HOLDER": "西安合赢企业管理咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000101055"
+  },
+  {
+    "HOLDER": "嘉兴梦家投资管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000101523"
+  },
+  {
+    "HOLDER": "浙江梦天控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000101524"
+  },
+  {
+    "HOLDER": "嘉兴梦悦投资管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000101525"
+  },
+  {
+    "HOLDER": "共青城城之集企业管理咨询有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000102479"
+  },
+  {
+    "HOLDER": "北京天联行健科技有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000103231"
+  },
+  {
+    "HOLDER": "上海宇潍投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000104810"
+  },
+  {
+    "HOLDER": "浙江天珺供应链发展有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000104819"
+  },
+  {
+    "HOLDER": "深圳华菱锐士一号投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000104914"
+  },
+  {
+    "HOLDER": "长春市众志汇远投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000104939"
+  },
+  {
+    "HOLDER": "嵊州盛新投资管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000104981"
+  },
+  {
+    "HOLDER": "嵊州盛泰投资管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000104982"
+  },
+  {
+    "HOLDER": "盛泰集團企業有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000104983"
+  },
+  {
+    "HOLDER": "伊藤忠卓越纖維(亞洲)有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000104992"
+  },
+  {
+    "HOLDER": "舟山金永信润禾创业投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000105018"
+  },
+  {
+    "HOLDER": "台山市奥达投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000105206"
+  },
+  {
+    "HOLDER": "台山市振中投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000105208"
+  },
+  {
+    "HOLDER": "广州赛智管理咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000105212"
+  },
+  {
+    "HOLDER": "广州赛纳管理咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000105217"
+  },
+  {
+    "HOLDER": "广州飞雪集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000105219"
+  },
+  {
+    "HOLDER": "盐城硕卿企业管理中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000105220"
+  },
+  {
+    "HOLDER": "霍尔果斯君联承宇创业投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000105876"
+  },
+  {
+    "HOLDER": "滁州市德宁企业管理中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000105915"
+  },
+  {
+    "HOLDER": "无锡普贤投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000105953"
+  },
+  {
+    "HOLDER": "无锡东明天昱投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000105954"
+  },
+  {
+    "HOLDER": "无锡宝宁投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000105955"
+  },
+  {
+    "HOLDER": "广州思呈睿企业管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000107195"
+  },
+  {
+    "HOLDER": "珠海市思普投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000107196"
+  },
+  {
+    "HOLDER": "珠海市思普睿投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000107199"
+  },
+  {
+    "HOLDER": "浙江米高投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000107379"
+  },
+  {
+    "HOLDER": "湖州迈森投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000107380"
+  },
+  {
+    "HOLDER": "湖州途森投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000107381"
+  },
+  {
+    "HOLDER": "湖州尚得投资管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000107382"
+  },
+  {
+    "HOLDER": "暢城有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000107477"
+  },
+  {
+    "HOLDER": "长沙械字号医疗投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000107655"
+  },
+  {
+    "HOLDER": "桂林产业发展集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000107748"
+  },
+  {
+    "HOLDER": "宁波镇海金模股权投资管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000107876"
+  },
+  {
+    "HOLDER": "宁波镇海金塑股权投资管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000107877"
+  },
+  {
+    "HOLDER": "南昌信邦企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000109360"
+  },
+  {
+    "HOLDER": "共青城信邦投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000109362"
+  },
+  {
+    "HOLDER": "共青城国邦投资管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000109363"
+  },
+  {
+    "HOLDER": "广东金欧健康科技有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000109959"
+  },
+  {
+    "HOLDER": "合和投资控股(广州)合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000110021"
+  },
+  {
+    "HOLDER": "广东侨银房地产开发有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000110022"
+  },
+  {
+    "HOLDER": "北京硕晟科技信息咨询有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000119144"
+  },
+  {
+    "HOLDER": "天津国康信用增进有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000119612"
+  },
+  {
+    "HOLDER": "丽水久有股权投资基金合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000131828"
+  },
+  {
+    "HOLDER": "舟山世创长荣股权投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000134214"
+  },
+  {
+    "HOLDER": "赣州发展美家家居产业基金合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000135019"
+  },
+  {
+    "HOLDER": "昌都市隆威企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000135396"
+  },
+  {
+    "HOLDER": "成都杰威企业管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000135397"
+  },
+  {
+    "HOLDER": "成都瑞进恒企业管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000135398"
+  },
+  {
+    "HOLDER": "昌都市杰威特企业管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000135399"
+  },
+  {
+    "HOLDER": "泰州同泽企业管理咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000138469"
+  },
+  {
+    "HOLDER": "泰州同人企业管理咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000138487"
+  },
+  {
+    "HOLDER": "江苏华英企业管理股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000140666"
+  },
+  {
+    "HOLDER": "Karon Holding Company Limited",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000141321"
+  },
+  {
+    "HOLDER": "杭州展创企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000142168"
+  },
+  {
+    "HOLDER": "河北高速公路集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000145049"
+  },
+  {
+    "HOLDER": "新国融(广州)管理咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000147102"
+  },
+  {
+    "HOLDER": "南通悦享企业管理中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000147763"
+  },
+  {
+    "HOLDER": "中国国有企业混合所有制改革基金有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000149151"
+  },
+  {
+    "HOLDER": "南京腾亚实业集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000150158"
+  },
+  {
+    "HOLDER": "南京运航创业投资中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000150189"
+  },
+  {
+    "HOLDER": "南京倚峰企业管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000150191"
+  },
+  {
+    "HOLDER": "武汉康汇投资管理中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000150559"
+  },
+  {
+    "HOLDER": "合富(香港)控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000151136"
+  },
+  {
+    "HOLDER": "武汉鼎立恒丰企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000151217"
+  },
+  {
+    "HOLDER": "泰州汉仪天下投资中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000151231"
+  },
+  {
+    "HOLDER": "泰州汉之源企业管理咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000151232"
+  },
+  {
+    "HOLDER": "将乐县交通基础设施建设有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000156982"
+  },
+  {
+    "HOLDER": "金华市金投集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000163416"
+  },
+  {
+    "HOLDER": "中林(永安)控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000170136"
+  },
+  {
+    "HOLDER": "广东省供销集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000175096"
+  },
+  {
+    "HOLDER": "百川瑞吉(北京)科技有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000176779"
+  },
+  {
+    "HOLDER": "深圳市博德瑞科技合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000185219"
+  },
+  {
+    "HOLDER": "宁国市国有资本控股集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000191175"
+  },
+  {
+    "HOLDER": "宜宾晨道新能源产业股权投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000191928"
+  },
+  {
+    "HOLDER": "滨州安泰控股集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000194186"
+  },
+  {
+    "HOLDER": "上海美春资产管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000196763"
+  },
+  {
+    "HOLDER": "常熟市鑫盛建筑安装工程有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000198034"
+  },
+  {
+    "HOLDER": "南京大学资本运营有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000201762"
+  },
+  {
+    "HOLDER": "珠海横琴瑞诺投资咨询企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000203198"
+  },
+  {
+    "HOLDER": "德阳市振兴国有资本投资运营有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000207530"
+  },
+  {
+    "HOLDER": "芜湖远澈毕方投资中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000221426"
+  },
+  {
+    "HOLDER": "舟山联翔企业管理咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000224631"
+  },
+  {
+    "HOLDER": "水发燃气集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000224952"
+  },
+  {
+    "HOLDER": "东阳市东科数字科技有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000225639"
+  },
+  {
+    "HOLDER": "青岛海硕健康产业发展有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000227616"
+  },
+  {
+    "HOLDER": "J.LU INVESTMENTS LLC",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000227699"
+  },
+  {
+    "HOLDER": "赣州爱特威投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000227719"
+  },
+  {
+    "HOLDER": "赣州华古投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000227720"
+  },
+  {
+    "HOLDER": "赣州九明科技有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000227721"
+  },
+  {
+    "HOLDER": "赣州驷马投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000227723"
+  },
+  {
+    "HOLDER": "江西八维生物集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000227808"
+  },
+  {
+    "HOLDER": "宁波和创财智投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000227856"
+  },
+  {
+    "HOLDER": "宁波梅山保税港区坤丞投资管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000227868"
+  },
+  {
+    "HOLDER": "青岛坤道赤烽投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000227897"
+  },
+  {
+    "HOLDER": "山东邦基集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000227909"
+  },
+  {
+    "HOLDER": "淄博邦盈企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000228094"
+  },
+  {
+    "HOLDER": "淄博邦贤企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000228106"
+  },
+  {
+    "HOLDER": "东台智展企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000228639"
+  },
+  {
+    "HOLDER": "天津中冀信诚企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000230150"
+  },
+  {
+    "HOLDER": "淄博邦道企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000230160"
+  },
+  {
+    "HOLDER": "淄博邦儒企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000230161"
+  },
+  {
+    "HOLDER": "淄博邦智企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000230162"
+  },
+  {
+    "HOLDER": "新疆宣力环保能源股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000238845"
+  },
+  {
+    "HOLDER": "阿拉丁能源集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000242893"
+  },
+  {
+    "HOLDER": "金华市金东国有资产经营有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000259578"
+  },
+  {
+    "HOLDER": "海南琏升科技有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000262858"
+  },
+  {
+    "HOLDER": "杭州海泰精华创业投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000267085"
+  },
+  {
+    "HOLDER": "乐清盛硕企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000268423"
+  },
+  {
+    "HOLDER": "湖南旅游发展投资集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000269042"
+  },
+  {
+    "HOLDER": "江西中燃天然气投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000271320"
+  },
+  {
+    "HOLDER": "嘉兴硅谷天堂鹰杨投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000272135"
+  },
+  {
+    "HOLDER": "安徽拓灵投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000273315"
+  },
+  {
+    "HOLDER": "上海晋燃能源投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000273887"
+  },
+  {
+    "HOLDER": "FAITH CROWN INTERNATIONAL LIMITED",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000275891"
+  },
+  {
+    "HOLDER": "杭州鋆昊臻芯股权投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000276136"
+  },
+  {
+    "HOLDER": "杭州鋆瑞股权投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000276138"
+  },
+  {
+    "HOLDER": "深圳市宁濛瑞投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000277081"
+  },
+  {
+    "HOLDER": "万洋集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000277420"
+  },
+  {
+    "HOLDER": "山东泉兴科技有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000279702"
+  },
+  {
+    "HOLDER": "SKY REACHER HOLDING,LLC",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000280096"
+  },
+  {
+    "HOLDER": "常州国润九号企业管理咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000280257"
+  },
+  {
+    "HOLDER": "嘉兴聚潮股权投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000280271"
+  },
+  {
+    "HOLDER": "深圳市南山区涌泉私募创业投资基金合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000291097"
+  },
+  {
+    "HOLDER": "珠海长世芯电子科技有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000297489"
+  },
+  {
+    "HOLDER": "阿拉丁传奇科技集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000302486"
+  },
+  {
+    "HOLDER": "物产中大(浙江)产业投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000311595"
+  },
+  {
+    "HOLDER": "新余市天达致远企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000315122"
+  },
+  {
+    "HOLDER": "福州市西博聚鑫肆号创业投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000317175"
+  },
+  {
+    "HOLDER": "嘉远新能源投资(广州)合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000318352"
+  },
+  {
+    "HOLDER": "阿拉丁控股集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000327657"
+  },
+  {
+    "HOLDER": "广西欣阳玻璃科技有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000339459"
+  },
+  {
+    "HOLDER": "宁波长阳实业控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000347755"
+  },
+  {
+    "HOLDER": "新余骏博企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000354954"
+  },
+  {
+    "HOLDER": "宁波丰图汇烝投资中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000362389"
+  },
+  {
+    "HOLDER": "深圳市中新贤投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000362399"
+  },
+  {
+    "HOLDER": "安吉谆莱企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000365585"
+  },
+  {
+    "HOLDER": "桐乡市润桐控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000377850"
+  },
+  {
+    "HOLDER": "无锡炬航投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000396995"
+  },
+  {
+    "HOLDER": "嘉兴嘉洁成祥新能源投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000401798"
+  },
+  {
+    "HOLDER": "沈阳润电热力有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000414294"
+  },
+  {
+    "HOLDER": "湖南医药发展投资集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000421293"
+  },
+  {
+    "HOLDER": "宁波吉德电器有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000435051"
+  },
+  {
+    "HOLDER": "海南骏华新能源科技合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000439642"
+  },
+  {
+    "HOLDER": "河南宏森融源企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000448704"
+  },
+  {
+    "HOLDER": "国晟能源股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000452811"
+  },
+  {
+    "HOLDER": "陕西秦通电力集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000455898"
+  },
+  {
+    "HOLDER": "四川东君泰达实业有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000474181"
+  },
+  {
+    "HOLDER": "济南历控帝森股权投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000480764"
+  },
+  {
+    "HOLDER": "上海金洲智慧企业发展集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000491099"
+  },
+  {
+    "HOLDER": "青岛智算信息产业发展合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000496425"
+  },
+  {
+    "HOLDER": "浙江华侨实业有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000501221"
+  },
+  {
+    "HOLDER": "南县中辉泰食品有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000513437"
+  },
+  {
+    "HOLDER": "南县中香泰食品有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000513453"
+  },
+  {
+    "HOLDER": "万华化学集团电池科技有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000517742"
+  },
+  {
+    "HOLDER": "深圳市核子基因科技有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000518136"
+  },
+  {
+    "HOLDER": "金玺泰有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000518284"
+  },
+  {
+    "HOLDER": "东阳市新岭科技有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000526588"
+  },
+  {
+    "HOLDER": "河南信强企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000530571"
+  },
+  {
+    "HOLDER": "北京元亨利业科技有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000540326"
+  },
+  {
+    "HOLDER": "北京和展中达科技有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000546499"
+  },
+  {
+    "HOLDER": "捷登零碳(江苏)新能源科技有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000547214"
+  },
+  {
+    "HOLDER": "青岛源嘉医疗科技有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000597907"
+  },
+  {
+    "HOLDER": "当阳市城市投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000598540"
+  },
+  {
+    "HOLDER": "天津瑞扬企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000658397"
+  },
+  {
+    "HOLDER": "深圳市汇安弘大股权投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000731678"
+  },
+  {
+    "HOLDER": "广西广林资本投资集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000799718"
+  },
+  {
+    "HOLDER": "浙江鸿程传动机械有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000839715"
+  },
+  {
+    "HOLDER": "成都九观智慧能源科技有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000844586"
+  },
+  {
+    "HOLDER": "东阳复创信息技术有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000870955"
+  },
+  {
+    "HOLDER": "金祥远舵叁号(深圳)投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000890714"
+  },
+  {
+    "HOLDER": "上海曼格睿企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000890715"
+  },
+  {
+    "HOLDER": "四川佳信通商业管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000892408"
+  },
+  {
+    "HOLDER": "成都金辉盛和企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000913933"
+  },
+  {
+    "HOLDER": "珠海九发控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000933379"
+  },
+  {
+    "HOLDER": "成都信通万华企业管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000936040"
+  },
+  {
+    "HOLDER": "无锡锡港启兴科技合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000941910"
+  },
+  {
+    "HOLDER": "新疆塔里木农垦集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000944502"
+  },
+  {
+    "HOLDER": "上海万紫千鸿智能科技有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000967779"
+  },
+  {
+    "HOLDER": "济南贝启信息管理咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000975965"
+  },
+  {
+    "HOLDER": "上饶市产业投资发展集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000982322"
+  },
+  {
+    "HOLDER": "增益冷链(武汉)有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000989464"
+  },
+  {
+    "HOLDER": "厦门富诚融资担保有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10000991456"
+  },
+  {
+    "HOLDER": "潍坊国金产业发展有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10001011921"
+  },
+  {
+    "HOLDER": "许昌市昌逹商贸有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10001022907"
+  },
+  {
+    "HOLDER": "内蒙古北方重工业集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10001082"
+  },
+  {
+    "HOLDER": "青岛红星化工集团有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10001146"
+  },
+  {
+    "HOLDER": "天津泰达建设集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10001230"
+  },
+  {
+    "HOLDER": "维科控股集团股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10001324"
+  },
+  {
+    "HOLDER": "杭州晨启成和管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10001571759"
+  },
+  {
+    "HOLDER": "湖南赛乐仙管理咨询服务合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10001572825"
+  },
+  {
+    "HOLDER": "广州麒正企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10001576975"
+  },
+  {
+    "HOLDER": "广州万江通讯技术有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10001579976"
+  },
+  {
+    "HOLDER": "新余高新区易股鼎源企业咨询中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10001589179"
+  },
+  {
+    "HOLDER": "上海骁光智能技术有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10001592701"
+  },
+  {
+    "HOLDER": "义乌至芯网络科技有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10001600992"
+  },
+  {
+    "HOLDER": "张家港悦升科技合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10001603228"
+  },
+  {
+    "HOLDER": "台州于乐控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10001611032"
+  },
+  {
+    "HOLDER": "台州豪享控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10001611034"
+  },
+  {
+    "HOLDER": "台州至高君合控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10001611035"
+  },
+  {
+    "HOLDER": "嘉兴汇芯企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10001627034"
+  },
+  {
+    "HOLDER": "天津瑞恒企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10001628470"
+  },
+  {
+    "HOLDER": "安徽先睿投资控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10001646535"
+  },
+  {
+    "HOLDER": "青岛元德众允投资企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10001650394"
+  },
+  {
+    "HOLDER": "迈得诺医疗科技集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10001712499"
+  },
+  {
+    "HOLDER": "海纳风禾(青岛)投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10001713224"
+  },
+  {
+    "HOLDER": "大商集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10001725"
+  },
+  {
+    "HOLDER": "北京映客互娱科技有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10001725874"
+  },
+  {
+    "HOLDER": "天津标新丽益企业管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10001727607"
+  },
+  {
+    "HOLDER": "辽宁能源投资(集团)有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10002112"
+  },
+  {
+    "HOLDER": "南京高科股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10002288"
+  },
+  {
+    "HOLDER": "同方股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10002324"
+  },
+  {
+    "HOLDER": "上海汽车集团股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10002328"
+  },
+  {
+    "HOLDER": "广西梧州中恒集团股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10002456"
+  },
+  {
+    "HOLDER": "山东高速股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10002531"
+  },
+  {
+    "HOLDER": "南京栖霞建设股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10002613"
+  },
+  {
+    "HOLDER": "上海市北高新股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10002662"
+  },
+  {
+    "HOLDER": "中国福马机械集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10002689"
+  },
+  {
+    "HOLDER": "中冶纸业集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10002763"
+  },
+  {
+    "HOLDER": "永安市财政局",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10002789"
+  },
+  {
+    "HOLDER": "江苏苏豪亚欧互联科技集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10002828"
+  },
+  {
+    "HOLDER": "中国水产舟山海洋渔业有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10002978"
+  },
+  {
+    "HOLDER": "香港科技创业股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10003035"
+  },
+  {
+    "HOLDER": "北京博升优势科技发展有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10003411"
+  },
+  {
+    "HOLDER": "深圳市赛格集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10003698"
+  },
+  {
+    "HOLDER": "天府清源控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10003849"
+  },
+  {
+    "HOLDER": "上海城投控股股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10003959"
+  },
+  {
+    "HOLDER": "哈药集团股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10003974"
+  },
+  {
+    "HOLDER": "深圳赛格股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10004139"
+  },
+  {
+    "HOLDER": "辽宁时代万恒控股集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10004351"
+  },
+  {
+    "HOLDER": "上海申达(集团)有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10004595"
+  },
+  {
+    "HOLDER": "中建材玻璃新材料研究院集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10004725"
+  },
+  {
+    "HOLDER": "深圳市特发集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10005214"
+  },
+  {
+    "HOLDER": "西王集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10005263"
+  },
+  {
+    "HOLDER": "盛达金属资源股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10005544"
+  },
+  {
+    "HOLDER": "吉林敖东药业集团股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10005562"
+  },
+  {
+    "HOLDER": "北京燕京啤酒股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10005648"
+  },
+  {
+    "HOLDER": "海南高速公路股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10005758"
+  },
+  {
+    "HOLDER": "海澜集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10007948"
+  },
+  {
+    "HOLDER": "北京北大资源科技有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10008425"
+  },
+  {
+    "HOLDER": "汉国三和有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10012178"
+  },
+  {
+    "HOLDER": "长江经济联合发展(集团)股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10012239"
+  },
+  {
+    "HOLDER": "广州珠江实业集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10012394"
+  },
+  {
+    "HOLDER": "中国东方资产管理股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10012573"
+  },
+  {
+    "HOLDER": "中国长城资产管理股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10012574"
+  },
+  {
+    "HOLDER": "新疆维吾尔自治区国有资产投资经营有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10012645"
+  },
+  {
+    "HOLDER": "乌鲁木齐国有资产经营(集团)有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10012646"
+  },
+  {
+    "HOLDER": "中国乐凯集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10013443"
+  },
+  {
+    "HOLDER": "中电科东方通信集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10013505"
+  },
+  {
+    "HOLDER": "江苏交通控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10013763"
+  },
+  {
+    "HOLDER": "深圳市创新投资集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10013923"
+  },
+  {
+    "HOLDER": "云南传奇投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10014031"
+  },
+  {
+    "HOLDER": "昆山市创业投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10014063"
+  },
+  {
+    "HOLDER": "山东省国有资产投资控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10014168"
+  },
+  {
+    "HOLDER": "永鼎集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10014278"
+  },
+  {
+    "HOLDER": "广厦建设集团有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10014474"
+  },
+  {
+    "HOLDER": "春兰(集团)公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10014519"
+  },
+  {
+    "HOLDER": "武汉新能实业发展有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10014547"
+  },
+  {
+    "HOLDER": "桂林旅游投资集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10014610"
+  },
+  {
+    "HOLDER": "桂林三花股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10014613"
+  },
+  {
+    "HOLDER": "泰州市城市建设投资集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10014655"
+  },
+  {
+    "HOLDER": "湖南湘投高科技创业投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10015104"
+  },
+  {
+    "HOLDER": "宁波市工业投资有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10015298"
+  },
+  {
+    "HOLDER": "中国节能环保集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10015319"
+  },
+  {
+    "HOLDER": "红塔创新投资股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10015341"
+  },
+  {
+    "HOLDER": "四川华神集团股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10015575"
+  },
+  {
+    "HOLDER": "浙江金鹰集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10015605"
+  },
+  {
+    "HOLDER": "香港中央结算(代理人)有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10015776"
+  },
+  {
+    "HOLDER": "当阳市国中安投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10016410"
+  },
+  {
+    "HOLDER": "深圳市得融投资发展有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10016604"
+  },
+  {
+    "HOLDER": "上海南上海商业房地产有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10016872"
+  },
+  {
+    "HOLDER": "安徽华茂集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10017093"
+  },
+  {
+    "HOLDER": "上海复星医药产业发展有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10017116"
+  },
+  {
+    "HOLDER": "芜湖瑞建汽车产业创业投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10017274"
+  },
+  {
+    "HOLDER": "蓝色经济区产业投资基金(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10017314"
+  },
+  {
+    "HOLDER": "中新苏州工业园区创业投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10017930"
+  },
+  {
+    "HOLDER": "深圳市联信投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10018032"
+  },
+  {
+    "HOLDER": "国美控股集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10018033"
+  },
+  {
+    "HOLDER": "中国石油大庆石油化工有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10018220"
+  },
+  {
+    "HOLDER": "美克投资集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10018403"
+  },
+  {
+    "HOLDER": "长沙环路建设开发集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10018537"
+  },
+  {
+    "HOLDER": "江苏索普(集团)有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10019442"
+  },
+  {
+    "HOLDER": "云天化集团有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10019539"
+  },
+  {
+    "HOLDER": "上海国际港务(集团)股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10019574"
+  },
+  {
+    "HOLDER": "冀东发展集团有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10019603"
+  },
+  {
+    "HOLDER": "长春市汽车城商业有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10020128"
+  },
+  {
+    "HOLDER": "吉林省卓创众银股权投资基金合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10020154"
+  },
+  {
+    "HOLDER": "长春市兴业百货贸易公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10021272"
+  },
+  {
+    "HOLDER": "中国洛阳浮法玻璃集团有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10021539"
+  },
+  {
+    "HOLDER": "牡丹江恒丰纸业集团有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10021560"
+  },
+  {
+    "HOLDER": "江西长运集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10024771"
+  },
+  {
+    "HOLDER": "南京栖霞建设集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10024824"
+  },
+  {
+    "HOLDER": "天津海泰控股集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10027847"
+  },
+  {
+    "HOLDER": "上海均瑶(集团)有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10028131"
+  },
+  {
+    "HOLDER": "成都高新投资集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10029718"
+  },
+  {
+    "HOLDER": "铁岭财政资产经营有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10029977"
+  },
+  {
+    "HOLDER": "江苏无锡商业大厦集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10031684"
+  },
+  {
+    "HOLDER": "无锡市商业建设发展有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10031687"
+  },
+  {
+    "HOLDER": "中国华电集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10033464"
+  },
+  {
+    "HOLDER": "泰豪集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10035139"
+  },
+  {
+    "HOLDER": "山东银座商城股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10037358"
+  },
+  {
+    "HOLDER": "天津华苑置业有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10037576"
+  },
+  {
+    "HOLDER": "桑德集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10038638"
+  },
+  {
+    "HOLDER": "山东省商业集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10038874"
+  },
+  {
+    "HOLDER": "贵州神奇控股(集团)有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10042162"
+  },
+  {
+    "HOLDER": "广东众和化塑股份公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10042302"
+  },
+  {
+    "HOLDER": "西安高新技术产业开发区房地产开发有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10042692"
+  },
+  {
+    "HOLDER": "高新投资发展有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10044099"
+  },
+  {
+    "HOLDER": "世联地产顾问(中国)有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10045879"
+  },
+  {
+    "HOLDER": "河南瑞贝卡控股有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10046013"
+  },
+  {
+    "HOLDER": "福建金森集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10047650"
+  },
+  {
+    "HOLDER": "合肥通用机械研究院有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10049342"
+  },
+  {
+    "HOLDER": "珠海普天和平电信工业有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10050773"
+  },
+  {
+    "HOLDER": "南京彤天科技实业股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10051164"
+  },
+  {
+    "HOLDER": "中国新元资产管理公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10051517"
+  },
+  {
+    "HOLDER": "苏州市相城区黄埭镇集体资产经营公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10051904"
+  },
+  {
+    "HOLDER": "乌鲁木齐城市建设投资(集团)有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10052029"
+  },
+  {
+    "HOLDER": "中国中材集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10052476"
+  },
+  {
+    "HOLDER": "江苏地华实业集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10054034"
+  },
+  {
+    "HOLDER": "株洲市国有资产投资控股集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10054346"
+  },
+  {
+    "HOLDER": "菲达集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10055140"
+  },
+  {
+    "HOLDER": "百联集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10055670"
+  },
+  {
+    "HOLDER": "山东世界贸易中心",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10056999"
+  },
+  {
+    "HOLDER": "铜陵化学工业集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10058628"
+  },
+  {
+    "HOLDER": "甘肃黄羊河农工商(集团)有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10058890"
+  },
+  {
+    "HOLDER": "甘肃省农垦集团有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10058895"
+  },
+  {
+    "HOLDER": "好当家集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10060298"
+  },
+  {
+    "HOLDER": "湖南永清环境科技产业集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10061007"
+  },
+  {
+    "HOLDER": "矿冶科技集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10062238"
+  },
+  {
+    "HOLDER": "贵州钢绳(集团)有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10062333"
+  },
+  {
+    "HOLDER": "广州农村商业银行股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10063434"
+  },
+  {
+    "HOLDER": "海南筑华科工贸有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10063452"
+  },
+  {
+    "HOLDER": "长春长港燃气有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10064010"
+  },
+  {
+    "HOLDER": "西安经发集团有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10065294"
+  },
+  {
+    "HOLDER": "南平实业集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10065350"
+  },
+  {
+    "HOLDER": "宁波交通投资集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10066687"
+  },
+  {
+    "HOLDER": "武汉金融控股(集团)有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10066958"
+  },
+  {
+    "HOLDER": "中铝宁夏能源集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10069108"
+  },
+  {
+    "HOLDER": "中国青年出版总社有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10069292"
+  },
+  {
+    "HOLDER": "陕西省产业投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10072877"
+  },
+  {
+    "HOLDER": "大庆高新国有资产运营有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10073261"
+  },
+  {
+    "HOLDER": "贵州雄润印务有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10076388"
+  },
+  {
+    "HOLDER": "日月控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10076689"
+  },
+  {
+    "HOLDER": "上海申通地铁集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10078361"
+  },
+  {
+    "HOLDER": "福建山田实业发展有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10079934"
+  },
+  {
+    "HOLDER": "华新燃气集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10080236"
+  },
+  {
+    "HOLDER": "陕西煤业化工集团有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10080370"
+  },
+  {
+    "HOLDER": "北京中证万融投资集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10083011"
+  },
+  {
+    "HOLDER": "昆明钢铁控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10085755"
+  },
+  {
+    "HOLDER": "浙江富春江通信集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10086152"
+  },
+  {
+    "HOLDER": "莆田市荔城区财政局",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10086171"
+  },
+  {
+    "HOLDER": "雅戈尔服装控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10086419"
+  },
+  {
+    "HOLDER": "浪莎控股集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10087444"
+  },
+  {
+    "HOLDER": "罗平县锌电公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10087753"
+  },
+  {
+    "HOLDER": "浙江三维股权投资管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10087759"
+  },
+  {
+    "HOLDER": "江苏凤凰出版传媒集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10087867"
+  },
+  {
+    "HOLDER": "珠海城市建设集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10088350"
+  },
+  {
+    "HOLDER": "苏州市相城区江南化纤集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10090042"
+  },
+  {
+    "HOLDER": "肇庆市泓力房地产发展有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10090187"
+  },
+  {
+    "HOLDER": "厦门象屿集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10090231"
+  },
+  {
+    "HOLDER": "合肥市建设投资控股(集团)有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10094106"
+  },
+  {
+    "HOLDER": "石横特钢集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10094886"
+  },
+  {
+    "HOLDER": "新疆投资发展(集团)有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10096687"
+  },
+  {
+    "HOLDER": "江苏国泰国际集团股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10097152"
+  },
+  {
+    "HOLDER": "常熟市铝箔厂有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10098486"
+  },
+  {
+    "HOLDER": "宁波舜通集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10098992"
+  },
+  {
+    "HOLDER": "源润控股集团股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10101313"
+  },
+  {
+    "HOLDER": "红蜻蜓集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10102730"
+  },
+  {
+    "HOLDER": "上海远洋渔业有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10104098"
+  },
+  {
+    "HOLDER": "辽宁出版集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10104629"
+  },
+  {
+    "HOLDER": "澳洋集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10105423"
+  },
+  {
+    "HOLDER": "浙江帝龙控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10105563"
+  },
+  {
+    "HOLDER": "国美电器有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10106223"
+  },
+  {
+    "HOLDER": "无锡市交通产业集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10108618"
+  },
+  {
+    "HOLDER": "北京碧水源科技股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10109380"
+  },
+  {
+    "HOLDER": "北京金豪制药股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10113500"
+  },
+  {
+    "HOLDER": "上海方大投资管理有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10113729"
+  },
+  {
+    "HOLDER": "中国化学工程股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10116039"
+  },
+  {
+    "HOLDER": "汇达资产托管有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10116061"
+  },
+  {
+    "HOLDER": "广东省广弘资产经营有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10116389"
+  },
+  {
+    "HOLDER": "深圳市东方富海投资管理股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10117222"
+  },
+  {
+    "HOLDER": "上海益民食品一厂(集团)有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10117838"
+  },
+  {
+    "HOLDER": "青岛华通国有资本投资运营集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10119054"
+  },
+  {
+    "HOLDER": "浙江省二轻集团有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10119246"
+  },
+  {
+    "HOLDER": "广西产投资本运营集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10119468"
+  },
+  {
+    "HOLDER": "海南汉森控股(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10120819"
+  },
+  {
+    "HOLDER": "浙江日月首饰集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10121119"
+  },
+  {
+    "HOLDER": "南京高科新创投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10121969"
+  },
+  {
+    "HOLDER": "衡阳弘湘国有投资(控股)集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10121971"
+  },
+  {
+    "HOLDER": "北京国有资本运营管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10122833"
+  },
+  {
+    "HOLDER": "北京粮食集团有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10123375"
+  },
+  {
+    "HOLDER": "欧华实业有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10125095"
+  },
+  {
+    "HOLDER": "新疆兴汇聚股权投资管理有限合伙企业",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10125096"
+  },
+  {
+    "HOLDER": "深圳市宁泰科技投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10125102"
+  },
+  {
+    "HOLDER": "深圳市欧立电子有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10125105"
+  },
+  {
+    "HOLDER": "宏立投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10125106"
+  },
+  {
+    "HOLDER": "深圳市大方正祥贸易有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10125107"
+  },
+  {
+    "HOLDER": "安徽省生态环境产业集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10127269"
+  },
+  {
+    "HOLDER": "凯盛科技集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10127665"
+  },
+  {
+    "HOLDER": "永通控股集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10127712"
+  },
+  {
+    "HOLDER": "新余国通投资管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10130712"
+  },
+  {
+    "HOLDER": "上海达安房产开发有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10130714"
+  },
+  {
+    "HOLDER": "烟台杰瑞石油服务集团股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10132090"
+  },
+  {
+    "HOLDER": "高投名力成长创业投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10132142"
+  },
+  {
+    "HOLDER": "北京德佳得利投资管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10132219"
+  },
+  {
+    "HOLDER": "杭州富邦投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10132469"
+  },
+  {
+    "HOLDER": "通鼎集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10132875"
+  },
+  {
+    "HOLDER": "镇江国有投资控股集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10134607"
+  },
+  {
+    "HOLDER": "庞海控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10137040"
+  },
+  {
+    "HOLDER": "诸城同路人投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10137041"
+  },
+  {
+    "HOLDER": "罗普斯金控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10137187"
+  },
+  {
+    "HOLDER": "天津赛象创业投资有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10138667"
+  },
+  {
+    "HOLDER": "北京久其科技投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10139843"
+  },
+  {
+    "HOLDER": "乌鲁木齐卓群创展股权投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10141515"
+  },
+  {
+    "HOLDER": "山东永华投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10141981"
+  },
+  {
+    "HOLDER": "河南森源集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10142156"
+  },
+  {
+    "HOLDER": "长沙水业集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10142380"
+  },
+  {
+    "HOLDER": "贵州永吉控股有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10143124"
+  },
+  {
+    "HOLDER": "贵州云商印务有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10143125"
+  },
+  {
+    "HOLDER": "杭州新胜达投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10143141"
+  },
+  {
+    "HOLDER": "中南大学粉末冶金工程研究中心有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10144818"
+  },
+  {
+    "HOLDER": "杭州金圆盛汇企业管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10144852"
+  },
+  {
+    "HOLDER": "福州太顺实业有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10145029"
+  },
+  {
+    "HOLDER": "华电辽宁能源有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10146037"
+  },
+  {
+    "HOLDER": "尊威贸易(深圳)有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10146146"
+  },
+  {
+    "HOLDER": "FENGLIN INTERNATIONAL LIMITED",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10146334"
+  },
+  {
+    "HOLDER": "湘江产业投资有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10147167"
+  },
+  {
+    "HOLDER": "北京人济房地产开发集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10147352"
+  },
+  {
+    "HOLDER": "海南佳信企业发展有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10147353"
+  },
+  {
+    "HOLDER": "南宁建宁水务投资集团有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10150007"
+  },
+  {
+    "HOLDER": "宁波盛泰纺织有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10152138"
+  },
+  {
+    "HOLDER": "浙江世宝控股集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10153054"
+  },
+  {
+    "HOLDER": "惠州市京港投资发展有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10154910"
+  },
+  {
+    "HOLDER": "香港中扬电子科技有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10154911"
+  },
+  {
+    "HOLDER": "永盛国际投资集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10156564"
+  },
+  {
+    "HOLDER": "上海联明投资集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10156657"
+  },
+  {
+    "HOLDER": "河南交通投资集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10157818"
+  },
+  {
+    "HOLDER": "珠海铧创投资管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10159107"
+  },
+  {
+    "HOLDER": "安徽联元创投有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10159342"
+  },
+  {
+    "HOLDER": "乌鲁木齐绿保能教育咨询有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10160704"
+  },
+  {
+    "HOLDER": "光正投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10160712"
+  },
+  {
+    "HOLDER": "乌鲁木齐融冰股权投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10161272"
+  },
+  {
+    "HOLDER": "中国检验认证集团测试技术有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10163210"
+  },
+  {
+    "HOLDER": "成都高投创业投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10165166"
+  },
+  {
+    "HOLDER": "南京港(集团)有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10169495"
+  },
+  {
+    "HOLDER": "三亚大兴集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10170105"
+  },
+  {
+    "HOLDER": "湖南兴湘投资控股集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10171578"
+  },
+  {
+    "HOLDER": "广东中小企业股权投资基金有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10173848"
+  },
+  {
+    "HOLDER": "佛山市顺德区德美化工集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10175386"
+  },
+  {
+    "HOLDER": "河北建投水务投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10175489"
+  },
+  {
+    "HOLDER": "克拉玛依市城市建设投资发展有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10176431"
+  },
+  {
+    "HOLDER": "国广环球传媒控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10176694"
+  },
+  {
+    "HOLDER": "潍坊滨城投资开发有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10176923"
+  },
+  {
+    "HOLDER": "航膜科技发展集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10179967"
+  },
+  {
+    "HOLDER": "华益科技国际(英属维尔京群岛)有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10179968"
+  },
+  {
+    "HOLDER": "广州市城市建设投资集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10184058"
+  },
+  {
+    "HOLDER": "江西电化高科有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10184067"
+  },
+  {
+    "HOLDER": "江西大龙实业有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10184068"
+  },
+  {
+    "HOLDER": "乐平市龙强投资中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10184070"
+  },
+  {
+    "HOLDER": "常州亚玛顿科技集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10186074"
+  },
+  {
+    "HOLDER": "北京国建易创投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10186441"
+  },
+  {
+    "HOLDER": "深圳市联泰投资集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10188395"
+  },
+  {
+    "HOLDER": "徐州云意科技发展有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10189838"
+  },
+  {
+    "HOLDER": "南通金轮控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10191685"
+  },
+  {
+    "HOLDER": "汇投控股集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10191687"
+  },
+  {
+    "HOLDER": "浙江赋飞科技有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10193023"
+  },
+  {
+    "HOLDER": "湖南克明食品集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10193125"
+  },
+  {
+    "HOLDER": "福建省万兴股权投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10193127"
+  },
+  {
+    "HOLDER": "荣通国际有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10193128"
+  },
+  {
+    "HOLDER": "福建省春宏股权投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10193129"
+  },
+  {
+    "HOLDER": "华佳发展有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10193130"
+  },
+  {
+    "HOLDER": "四川巨星企业集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10194469"
+  },
+  {
+    "HOLDER": "秦皇岛市国有资产经营控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10194551"
+  },
+  {
+    "HOLDER": "奇盛控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10196667"
+  },
+  {
+    "HOLDER": "腾名有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10196668"
+  },
+  {
+    "HOLDER": "上海爱屋企业管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10197112"
+  },
+  {
+    "HOLDER": "上海德永润域管理咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10197116"
+  },
+  {
+    "HOLDER": "鲁商物产有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10197807"
+  },
+  {
+    "HOLDER": "平潭奥德投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10198002"
+  },
+  {
+    "HOLDER": "新疆生产建设兵团第十二师国有资产投资发展集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10198044"
+  },
+  {
+    "HOLDER": "山东鲁泰控股集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10198218"
+  },
+  {
+    "HOLDER": "宁波银睿创业投资基金有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10198452"
+  },
+  {
+    "HOLDER": "广东汇香源生物科技股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10200985"
+  },
+  {
+    "HOLDER": "温州信德丰益资本运营中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10204600"
+  },
+  {
+    "HOLDER": "无锡红福国际创业投资中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10204601"
+  },
+  {
+    "HOLDER": "广东省联泰集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10204658"
+  },
+  {
+    "HOLDER": "深圳市华融泰资产管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10204720"
+  },
+  {
+    "HOLDER": "将乐县林业科技推广中心",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10206670"
+  },
+  {
+    "HOLDER": "广州市鹿山信息咨询有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10255418"
+  },
+  {
+    "HOLDER": "金圆控股集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10261624"
+  },
+  {
+    "HOLDER": "物产中大元通实业集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10265461"
+  },
+  {
+    "HOLDER": "都市快报社",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10274485"
+  },
+  {
+    "HOLDER": "福州水务集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10274726"
+  },
+  {
+    "HOLDER": "上海德朋实业有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10276130"
+  },
+  {
+    "HOLDER": "深圳市裕同包装科技股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10286795"
+  },
+  {
+    "HOLDER": "德力西新疆投资集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10297214"
+  },
+  {
+    "HOLDER": "贵州迈吉斯投资管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10297783"
+  },
+  {
+    "HOLDER": "峨眉电影集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10298608"
+  },
+  {
+    "HOLDER": "梧州市东泰国有资产经营有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10301028"
+  },
+  {
+    "HOLDER": "双鸽集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10305039"
+  },
+  {
+    "HOLDER": "山东桑莎制衣集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10309443"
+  },
+  {
+    "HOLDER": "华油天然气股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10310076"
+  },
+  {
+    "HOLDER": "中持(北京)环保发展有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10310355"
+  },
+  {
+    "HOLDER": "吉林省国家汽车电子产业创业投资有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10312516"
+  },
+  {
+    "HOLDER": "北京华清投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10319324"
+  },
+  {
+    "HOLDER": "甘肃省农垦资产经营有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10324790"
+  },
+  {
+    "HOLDER": "杭州日报报业集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10325520"
+  },
+  {
+    "HOLDER": "北京韩建集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10326988"
+  },
+  {
+    "HOLDER": "浙江清风原生文化有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10329903"
+  },
+  {
+    "HOLDER": "CROWN CAPITAL HOLDINGS LIMITED",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10330564"
+  },
+  {
+    "HOLDER": "南昌市交通投资集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10332593"
+  },
+  {
+    "HOLDER": "北京兴诚旺实业有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10332599"
+  },
+  {
+    "HOLDER": "重庆财信房地产开发集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10334719"
+  },
+  {
+    "HOLDER": "旭阳控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10336909"
+  },
+  {
+    "HOLDER": "太原市宏展房地产开发有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10363213"
+  },
+  {
+    "HOLDER": "常州产业投资集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10383819"
+  },
+  {
+    "HOLDER": "巨能资本管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10388711"
+  },
+  {
+    "HOLDER": "长江产业投资集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10388957"
+  },
+  {
+    "HOLDER": "广东中科白云新兴产业创业投资基金有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10390161"
+  },
+  {
+    "HOLDER": "深圳众志联高投资管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10391635"
+  },
+  {
+    "HOLDER": "海南海汽投资控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10396558"
+  },
+  {
+    "HOLDER": "高博投资(香港)有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10396642"
+  },
+  {
+    "HOLDER": "广州松维企业管理咨询有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10396643"
+  },
+  {
+    "HOLDER": "嘉盈投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10396644"
+  },
+  {
+    "HOLDER": "广州纬岳贸易咨询有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10396645"
+  },
+  {
+    "HOLDER": "上海平易缙元创业投资中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10396985"
+  },
+  {
+    "HOLDER": "福建富春投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10397004"
+  },
+  {
+    "HOLDER": "发达控股集团股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10397212"
+  },
+  {
+    "HOLDER": "成都展翔投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10398128"
+  },
+  {
+    "HOLDER": "宜兴鹏鹞投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10398167"
+  },
+  {
+    "HOLDER": "中路高科交通科技集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10398554"
+  },
+  {
+    "HOLDER": "大连派思投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10398558"
+  },
+  {
+    "HOLDER": "Energas Ltd.",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10398559"
+  },
+  {
+    "HOLDER": "宁波舜建集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10398762"
+  },
+  {
+    "HOLDER": "嵊州市和丰投资股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10398769"
+  },
+  {
+    "HOLDER": "台州市梓铭贸易有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10399124"
+  },
+  {
+    "HOLDER": "欣贺国际有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10399221"
+  },
+  {
+    "HOLDER": "Purple Forest Limited",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10399223"
+  },
+  {
+    "HOLDER": "厦门欣嘉骏投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10399224"
+  },
+  {
+    "HOLDER": "巨富发展有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10399225"
+  },
+  {
+    "HOLDER": "水发集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10399696"
+  },
+  {
+    "HOLDER": "浙江诸暨三三投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10399752"
+  },
+  {
+    "HOLDER": "上海利捷企业投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10399811"
+  },
+  {
+    "HOLDER": "建水县德运企业管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10400058"
+  },
+  {
+    "HOLDER": "铜陵松宝智能装备股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10400740"
+  },
+  {
+    "HOLDER": "深圳市歌力思投资管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10401319"
+  },
+  {
+    "HOLDER": "长春市汇锋新能源装备(集团)有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10401683"
+  },
+  {
+    "HOLDER": "亿泽控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10401756"
+  },
+  {
+    "HOLDER": "灵康控股集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10401790"
+  },
+  {
+    "HOLDER": "河南省宛西控股股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10408011"
+  },
+  {
+    "HOLDER": "中兵投资管理有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10409445"
+  },
+  {
+    "HOLDER": "瑞安市诺德投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10409529"
+  },
+  {
+    "HOLDER": "北京达安世纪投资管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10409704"
+  },
+  {
+    "HOLDER": "北京悦华众城投资管理中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10409706"
+  },
+  {
+    "HOLDER": "福建亿力集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10409870"
+  },
+  {
+    "HOLDER": "中国水产有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10412549"
+  },
+  {
+    "HOLDER": "湖南大靖双佳投资企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10412720"
+  },
+  {
+    "HOLDER": "浙江双井投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10414354"
+  },
+  {
+    "HOLDER": "孝昌鹰溪谷投资中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10418736"
+  },
+  {
+    "HOLDER": "长城国融投资管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10419865"
+  },
+  {
+    "HOLDER": "高创有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10420445"
+  },
+  {
+    "HOLDER": "深圳市文科控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10421306"
+  },
+  {
+    "HOLDER": "深圳市泽广投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10421308"
+  },
+  {
+    "HOLDER": "湖南华自控股集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10421344"
+  },
+  {
+    "HOLDER": "華威國際發展有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10422008"
+  },
+  {
+    "HOLDER": "张家港市金城创融投资管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10422094"
+  },
+  {
+    "HOLDER": "振发能源集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10422444"
+  },
+  {
+    "HOLDER": "厦门麦迪肯科技有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10422689"
+  },
+  {
+    "HOLDER": "厦门三态科技有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10422693"
+  },
+  {
+    "HOLDER": "新疆生产建设兵团乳业集团有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10422805"
+  },
+  {
+    "HOLDER": "上海新天智药生物技术有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10423338"
+  },
+  {
+    "HOLDER": "贵阳开元生物资源开发有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10423340"
+  },
+  {
+    "HOLDER": "桂林航空旅游集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10423829"
+  },
+  {
+    "HOLDER": "四川天邑集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10424710"
+  },
+  {
+    "HOLDER": "浙江新辉投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10424758"
+  },
+  {
+    "HOLDER": "广州环保投资集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10425782"
+  },
+  {
+    "HOLDER": "湖南洪江恒光投资管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10426009"
+  },
+  {
+    "HOLDER": "长飞光纤光缆股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10427429"
+  },
+  {
+    "HOLDER": "浙江德能产业控股集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10427761"
+  },
+  {
+    "HOLDER": "香港融智集團有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10427762"
+  },
+  {
+    "HOLDER": "绍兴德忻企业管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10427763"
+  },
+  {
+    "HOLDER": "宁波美诺华控股集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10427768"
+  },
+  {
+    "HOLDER": "天津京津文化传媒发展有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10428451"
+  },
+  {
+    "HOLDER": "广东信邦自动化设备集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10429920"
+  },
+  {
+    "HOLDER": "四川新传媒集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10434085"
+  },
+  {
+    "HOLDER": "浙江嘉拓投资管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10434127"
+  },
+  {
+    "HOLDER": "宁波大牧投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10434128"
+  },
+  {
+    "HOLDER": "中国青年杂志社",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10434130"
+  },
+  {
+    "HOLDER": "上海东昌企业集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10434417"
+  },
+  {
+    "HOLDER": "无锡天奇投资控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10435081"
+  },
+  {
+    "HOLDER": "合肥市产业投资控股(集团)有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10441324"
+  },
+  {
+    "HOLDER": "常州星若企业管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10444267"
+  },
+  {
+    "HOLDER": "重庆拓洋投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10447007"
+  },
+  {
+    "HOLDER": "安徽志道投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10449492"
+  },
+  {
+    "HOLDER": "西藏大宏立实业有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10451342"
+  },
+  {
+    "HOLDER": "成都宏源同盛企业管理中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10451344"
+  },
+  {
+    "HOLDER": "厦门中孚普益投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10453638"
+  },
+  {
+    "HOLDER": "昆山高新创业投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10453953"
+  },
+  {
+    "HOLDER": "深圳市前海佳浩投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10454879"
+  },
+  {
+    "HOLDER": "杭州铂澳投资管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10454960"
+  },
+  {
+    "HOLDER": "鹤壁市合生企业管理咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10457340"
+  },
+  {
+    "HOLDER": "东莞市快意股权投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10457341"
+  },
+  {
+    "HOLDER": "庆元高廷企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10457903"
+  },
+  {
+    "HOLDER": "东瑞国际有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10457908"
+  },
+  {
+    "HOLDER": "广州惠翊贸易有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10457911"
+  },
+  {
+    "HOLDER": "山东省金融资产管理股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10462532"
+  },
+  {
+    "HOLDER": "东台和盛投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10462719"
+  },
+  {
+    "HOLDER": "上海霍普投资控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10468085"
+  },
+  {
+    "HOLDER": "GT South(Hong Kong)Limited",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10468343"
+  },
+  {
+    "HOLDER": "杭州正元舜然实业有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10470450"
+  },
+  {
+    "HOLDER": "云南众合之企业管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10470494"
+  },
+  {
+    "HOLDER": "云南炎辰企业管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10470514"
+  },
+  {
+    "HOLDER": "杭州易康投资管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10470568"
+  },
+  {
+    "HOLDER": "十堰众远股权投资中心",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10470750"
+  },
+  {
+    "HOLDER": "中节能资本控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10472638"
+  },
+  {
+    "HOLDER": "南通新海星投资集团股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10474379"
+  },
+  {
+    "HOLDER": "江苏国经控股集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10474923"
+  },
+  {
+    "HOLDER": "安徽安元投资基金有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10476246"
+  },
+  {
+    "HOLDER": "北京中关村发展投资中心有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10476383"
+  },
+  {
+    "HOLDER": "莱芜创业投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10476549"
+  },
+  {
+    "HOLDER": "清控资产管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10477510"
+  },
+  {
+    "HOLDER": "青岛城投城金控股集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10479348"
+  },
+  {
+    "HOLDER": "上海勤学堂投资控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10485971"
+  },
+  {
+    "HOLDER": "长沙同嘉投资管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10488085"
+  },
+  {
+    "HOLDER": "深圳市前关商贸投资管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10489709"
+  },
+  {
+    "HOLDER": "中山市凯悦投资企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10490973"
+  },
+  {
+    "HOLDER": "中山市建达饰品有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10490975"
+  },
+  {
+    "HOLDER": "中山市顶盛企业管理咨询有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10490977"
+  },
+  {
+    "HOLDER": "北京元和盛德投资有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10493734"
+  },
+  {
+    "HOLDER": "广西铁路发展投资基金(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10493794"
+  },
+  {
+    "HOLDER": "苏州蓝盈创业投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10495222"
+  },
+  {
+    "HOLDER": "无锡天亿信投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10495298"
+  },
+  {
+    "HOLDER": "湖南华信恒源股权投资企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10495340"
+  },
+  {
+    "HOLDER": "云南众英集企业管理中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10495395"
+  },
+  {
+    "HOLDER": "贵州渔阳贸易有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10495519"
+  },
+  {
+    "HOLDER": "南京明昭投资管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10495543"
+  },
+  {
+    "HOLDER": "三峡资本控股有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10495840"
+  },
+  {
+    "HOLDER": "宁波长阳永汇投资管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10498001"
+  },
+  {
+    "HOLDER": "武汉励元齐心投资管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10500146"
+  },
+  {
+    "HOLDER": "上海慧堃投资管理中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10500665"
+  },
+  {
+    "HOLDER": "上海兰卫投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10500666"
+  },
+  {
+    "HOLDER": "杭州园融控股集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10500802"
+  },
+  {
+    "HOLDER": "杭州风舞科技发展有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10500808"
+  },
+  {
+    "HOLDER": "青岛德沣投资企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10501034"
+  },
+  {
+    "HOLDER": "青岛昌盛日电新能源控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10502278"
+  },
+  {
+    "HOLDER": "衢州川达创业投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10502823"
+  },
+  {
+    "HOLDER": "杭州泰德瑞克投资管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10503407"
+  },
+  {
+    "HOLDER": "TEDERIC TECHNOLOGY LIMITED",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10503473"
+  },
+  {
+    "HOLDER": "上海置源投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10503782"
+  },
+  {
+    "HOLDER": "宿迁旭天企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10504487"
+  },
+  {
+    "HOLDER": "宿迁中天企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10504488"
+  },
+  {
+    "HOLDER": "东莞市天祺股权投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10504568"
+  },
+  {
+    "HOLDER": "上海丛威咨询管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10505085"
+  },
+  {
+    "HOLDER": "无锡中设创投管理中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10505261"
+  },
+  {
+    "HOLDER": "睿能实业有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10506205"
+  },
+  {
+    "HOLDER": "广州市安泰化学有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10506207"
+  },
+  {
+    "HOLDER": "南京华如志远创业投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10506485"
+  },
+  {
+    "HOLDER": "苏州协立创业投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10506656"
+  },
+  {
+    "HOLDER": "平潭捷润股权投资管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10506713"
+  },
+  {
+    "HOLDER": "广州蕙富骐骥投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10506819"
+  },
+  {
+    "HOLDER": "上海康德莱控股集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10507637"
+  },
+  {
+    "HOLDER": "甘肃兴陇资本管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10508091"
+  },
+  {
+    "HOLDER": "江西中文传媒蓝海国际投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10508544"
+  },
+  {
+    "HOLDER": "瑞昌骏成创业投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10508824"
+  },
+  {
+    "HOLDER": "上海赛派投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10510647"
+  },
+  {
+    "HOLDER": "上海储阳光伏电力有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10516783"
+  },
+  {
+    "HOLDER": "广西农村投资集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10517401"
+  },
+  {
+    "HOLDER": "前海股权投资基金(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10517634"
+  },
+  {
+    "HOLDER": "山西盛农投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10517756"
+  },
+  {
+    "HOLDER": "中亿丰控股集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10518158"
+  },
+  {
+    "HOLDER": "新余博海投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10519063"
+  },
+  {
+    "HOLDER": "南宁产业投资集团有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10521629"
+  },
+  {
+    "HOLDER": "苏州君实协立创业投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10524330"
+  },
+  {
+    "HOLDER": "珠海大横琴集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10526086"
+  },
+  {
+    "HOLDER": "北京利仁投资中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10530405"
+  },
+  {
+    "HOLDER": "朝阳投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10530778"
+  },
+  {
+    "HOLDER": "桑德投资控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10530830"
+  },
+  {
+    "HOLDER": "陕西丰晟企业管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10530965"
+  },
+  {
+    "HOLDER": "宁波尤埃投资中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10531938"
+  },
+  {
+    "HOLDER": "美国万邦有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10531990"
+  },
+  {
+    "HOLDER": "重庆正川投资管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10532731"
+  },
+  {
+    "HOLDER": "上海聚虹投资管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10535468"
+  },
+  {
+    "HOLDER": "海南金岭盛世投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10539933"
+  },
+  {
+    "HOLDER": "安吉长江投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10541430"
+  },
+  {
+    "HOLDER": "徐州华诚资产管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10541567"
+  },
+  {
+    "HOLDER": "上海华智信科技有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10541579"
+  },
+  {
+    "HOLDER": "江阴振江朗维投资企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10541594"
+  },
+  {
+    "HOLDER": "安吉高盛投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10541676"
+  },
+  {
+    "HOLDER": "常州市金坛君泰投资咨询有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10543277"
+  },
+  {
+    "HOLDER": "丽水顺泽投资管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10543540"
+  },
+  {
+    "HOLDER": "广州汇垠日丰投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10545172"
+  },
+  {
+    "HOLDER": "泉州市晟辉投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10550630"
+  },
+  {
+    "HOLDER": "珠海润达泰投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10551179"
+  },
+  {
+    "HOLDER": "南京楷得投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10565346"
+  },
+  {
+    "HOLDER": "上海酷江乐科技有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10565364"
+  },
+  {
+    "HOLDER": "广东新供销天润粮油集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10568279"
+  },
+  {
+    "HOLDER": "华融晋商资产管理股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10570870"
+  },
+  {
+    "HOLDER": "安徽省铁路发展基金股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10576273"
+  },
+  {
+    "HOLDER": "深圳奥信通创新投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10578515"
+  },
+  {
+    "HOLDER": "深圳前海汇鑫投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10578516"
+  },
+  {
+    "HOLDER": "泰安中泰富兴投资服务合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10578518"
+  },
+  {
+    "HOLDER": "湛江中广创业投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10582773"
+  },
+  {
+    "HOLDER": "龙游联龙股权投资基金合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10584422"
+  },
+  {
+    "HOLDER": "上海智数实业合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10586548"
+  },
+  {
+    "HOLDER": "上海锐数实业合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10586549"
+  },
+  {
+    "HOLDER": "上海品数企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10586550"
+  },
+  {
+    "HOLDER": "芜湖富春创业投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10586666"
+  },
+  {
+    "HOLDER": "芜湖勤慧创业投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10586667"
+  },
+  {
+    "HOLDER": "湖北省资产管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10586682"
+  },
+  {
+    "HOLDER": "湖南省财信资产管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10586694"
+  },
+  {
+    "HOLDER": "重庆大正商务信息咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10587055"
+  },
+  {
+    "HOLDER": "深圳润域贸易有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10587550"
+  },
+  {
+    "HOLDER": "三六六移动互联科技有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10600674"
+  },
+  {
+    "HOLDER": "深圳能源集团股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10634778"
+  },
+  {
+    "HOLDER": "西藏巨浪科技有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10636683"
+  },
+  {
+    "HOLDER": "南京小倍二号企业管理咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10641605"
+  },
+  {
+    "HOLDER": "南京小倍一号企业管理咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10641606"
+  },
+  {
+    "HOLDER": "青岛朗进集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10652520"
+  },
+  {
+    "HOLDER": "河南交院投资控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10652997"
+  },
+  {
+    "HOLDER": "青岛汇隆华泽投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10656228"
+  },
+  {
+    "HOLDER": "滁州中安创业投资基金合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10657965"
+  },
+  {
+    "HOLDER": "陕西美能投资有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10658467"
+  },
+  {
+    "HOLDER": "深圳网聚投资有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10659415"
+  },
+  {
+    "HOLDER": "中央企业乡村产业投资基金股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10660481"
+  },
+  {
+    "HOLDER": "建华建材(中国)有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10661239"
+  },
+  {
+    "HOLDER": "广东因赛投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10665790"
+  },
+  {
+    "HOLDER": "广东橙盟投资有限合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10665825"
+  },
+  {
+    "HOLDER": "珠海旭日投资有限合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10665827"
+  },
+  {
+    "HOLDER": "许昌开普电气研究院有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10665838"
+  },
+  {
+    "HOLDER": "无锡市玄同投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10667134"
+  },
+  {
+    "HOLDER": "杭州岳殿润投资管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10667269"
+  },
+  {
+    "HOLDER": "沈阳政利投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10669228"
+  },
+  {
+    "HOLDER": "宁波梅山保税港区东岦投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10669241"
+  },
+  {
+    "HOLDER": "天津住安建筑工程有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10670178"
+  },
+  {
+    "HOLDER": "深圳东科讯精密科技有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10670183"
+  },
+  {
+    "HOLDER": "宁波梅山保税港区淳康股权投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10670602"
+  },
+  {
+    "HOLDER": "宁波梅山保税港区量吉股权投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10670604"
+  },
+  {
+    "HOLDER": "桐乡稼沃云枫股权投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10670606"
+  },
+  {
+    "HOLDER": "四川金舵投资有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10671345"
+  },
+  {
+    "HOLDER": "香港中央结算有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10671586"
+  },
+  {
+    "HOLDER": "北京华如扬帆管理咨询中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10678249"
+  },
+  {
+    "HOLDER": "北京华如筑梦管理咨询中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10678250"
+  },
+  {
+    "HOLDER": "湖南和顺投资发展有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10682894"
+  },
+  {
+    "HOLDER": "当阳市建设投资控股集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10684033"
+  },
+  {
+    "HOLDER": "MAPLE MARBLE CORP.",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10685764"
+  },
+  {
+    "HOLDER": "青岛博亚投资控股有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10686020"
+  },
+  {
+    "HOLDER": "深圳国调招商并购股权投资基金合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10697225"
+  },
+  {
+    "HOLDER": "上海汇得企业集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10697438"
+  },
+  {
+    "HOLDER": "上海涌腾股权投资管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10697464"
+  },
+  {
+    "HOLDER": "上海湛然投资管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10697471"
+  },
+  {
+    "HOLDER": "成都恩威投资(集团)有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10705742"
+  },
+  {
+    "HOLDER": "四川宏义嘉华实业有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10707676"
+  },
+  {
+    "HOLDER": "西藏星瑞企业管理服务有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10714183"
+  },
+  {
+    "HOLDER": "深圳市佳能可投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10719512"
+  },
+  {
+    "HOLDER": "青岛地空产融发展有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10719543"
+  },
+  {
+    "HOLDER": "合肥北城水务投资基金(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10738286"
+  },
+  {
+    "HOLDER": "中国石化集团茂名石油化工有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10742357"
+  },
+  {
+    "HOLDER": "辽宁润中供水有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10766601"
+  },
+  {
+    "HOLDER": "辽宁交通投资有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10766603"
+  },
+  {
+    "HOLDER": "智汇科技投资(深圳)有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10767564"
+  },
+  {
+    "HOLDER": "彩时集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10767761"
+  },
+  {
+    "HOLDER": "深圳前海彩时投资管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10767762"
+  },
+  {
+    "HOLDER": "哈尔滨创业投资集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10768258"
+  },
+  {
+    "HOLDER": "嘉兴恒茂企业管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10769254"
+  },
+  {
+    "HOLDER": "嘉兴恒惠企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10769255"
+  },
+  {
+    "HOLDER": "南通联力投资管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10782502"
+  },
+  {
+    "HOLDER": "泉峰(中国)投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10782830"
+  },
+  {
+    "HOLDER": "特沃(上海)企业管理咨询有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10784793"
+  },
+  {
+    "HOLDER": "宁波通元优博创业投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10786307"
+  },
+  {
+    "HOLDER": "南宁颐然养老产业合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10912883"
+  },
+  {
+    "HOLDER": "广西宏桂资本运营集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10914337"
+  },
+  {
+    "HOLDER": "湖州燕润投资管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10915503"
+  },
+  {
+    "HOLDER": "上海美盛宏安咨询管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10916918"
+  },
+  {
+    "HOLDER": "北京力元正通投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10920346"
+  },
+  {
+    "HOLDER": "曲靖市发展投资集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10924696"
+  },
+  {
+    "HOLDER": "荆州慧和股权投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10927700"
+  },
+  {
+    "HOLDER": "宜兴环保科技创新创业投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10928026"
+  },
+  {
+    "HOLDER": "新苏环保产业集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10928222"
+  },
+  {
+    "HOLDER": "齐鲁财金投资集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10929756"
+  },
+  {
+    "HOLDER": "安樂工程集團有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10931392"
+  },
+  {
+    "HOLDER": "玉环市国有资产投资经营集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10937492"
+  },
+  {
+    "HOLDER": "丰隆实业有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10937713"
+  },
+  {
+    "HOLDER": "冠聯國際投資有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10941682"
+  },
+  {
+    "HOLDER": "TRICOSCO LIMITED",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10942607"
+  },
+  {
+    "HOLDER": "上海高好投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10946471"
+  },
+  {
+    "HOLDER": "杭州龙玺企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10946472"
+  },
+  {
+    "HOLDER": "厦门华睿投资管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10950279"
+  },
+  {
+    "HOLDER": "信裕金久(芜湖)投资中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10961619"
+  },
+  {
+    "HOLDER": "新疆中泰农业发展有限责任公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10961879"
+  },
+  {
+    "HOLDER": "苏州奔牛股权投资中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10962155"
+  },
+  {
+    "HOLDER": "苏州石庄股权投资中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10962340"
+  },
+  {
+    "HOLDER": "上海海永德于管理咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10965761"
+  },
+  {
+    "HOLDER": "北京鼎耘科技发展有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10966807"
+  },
+  {
+    "HOLDER": "广东建华企业管理咨询有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10970623"
+  },
+  {
+    "HOLDER": "安徽国元种子创业投资基金有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10977849"
+  },
+  {
+    "HOLDER": "武汉火炬创业投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10980376"
+  },
+  {
+    "HOLDER": "东台华聚企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10991880"
+  },
+  {
+    "HOLDER": "上海博强投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10991883"
+  },
+  {
+    "HOLDER": "滨州嘉博银商贸经销合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10991884"
+  },
+  {
+    "HOLDER": "唐山工业控股集团有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10991935"
+  },
+  {
+    "HOLDER": "洛阳古都资产管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10993937"
+  },
+  {
+    "HOLDER": "北京星凯投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10994653"
+  },
+  {
+    "HOLDER": "常州瑞源创业投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10995626"
+  },
+  {
+    "HOLDER": "南昌市国金产业投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10999133"
+  },
+  {
+    "HOLDER": "张家港博华企业管理有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10999208"
+  },
+  {
+    "HOLDER": "张家港泽兴企业管理中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10999514"
+  },
+  {
+    "HOLDER": "张家港泽慧企业管理中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10999515"
+  },
+  {
+    "HOLDER": "泗阳互盈企业管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "10999516"
+  },
+  {
+    "HOLDER": "深圳南山创维信息技术产业创业投资基金(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "11000728"
+  },
+  {
+    "HOLDER": "苏州众全信投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "11000737"
+  },
+  {
+    "HOLDER": "合肥鑫智信息咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "11000749"
+  },
+  {
+    "HOLDER": "安徽鑫辉信息技术咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "11000769"
+  },
+  {
+    "HOLDER": "广州金农产业投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "11004099"
+  },
+  {
+    "HOLDER": "中国平安保险(集团)股份有限公司企业年金计划-招商银行股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70022809"
+  },
+  {
+    "HOLDER": "平安聚泽混合型养老金产品-交通银行股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70407176"
+  },
+  {
+    "HOLDER": "基本养老保险基金八零二组合",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70410356"
+  },
+  {
+    "HOLDER": "平安聚胜混合型养老金产品-中国工商银行股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70412658"
+  },
+  {
+    "HOLDER": "国泰金色年华混合型养老金产品-中国工商银行股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70412861"
+  },
+  {
+    "HOLDER": "牡丹江恒丰纸业股份有限公司-第一期员工持股计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70412877"
+  },
+  {
+    "HOLDER": "基本养老保险基金八零五组合",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70412941"
+  },
+  {
+    "HOLDER": "基本养老保险基金一二零二组合",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70412948"
+  },
+  {
+    "HOLDER": "基本养老保险基金一二零七组合",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70412949"
+  },
+  {
+    "HOLDER": "基本养老保险基金一三零二组合",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70413078"
+  },
+  {
+    "HOLDER": "平安沪深300指数增强股票型养老金产品-中国工商银行股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70416165"
+  },
+  {
+    "HOLDER": "中国国际金融香港资产管理有限公司-CICCFT3(R)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70416499"
+  },
+  {
+    "HOLDER": "中国国际金融香港资产管理有限公司-CICCFT8(QFII)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70417451"
+  },
+  {
+    "HOLDER": "中国国际金融香港资产管理有限公司-CICCFT10(Q)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70418703"
+  },
+  {
+    "HOLDER": "康达新材料(集团)股份有限公司-第三期员工持股计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70419815"
+  },
+  {
+    "HOLDER": "保宁资本有限公司-保宁新兴市场中小企基金(美国)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70420702"
+  },
+  {
+    "HOLDER": "无锡洪汇新材料科技股份有限公司-第一期员工持股计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70420707"
+  },
+  {
+    "HOLDER": "中孚信息股份有限公司-2022年员工持股计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70420755"
+  },
+  {
+    "HOLDER": "浙江红蜻蜓鞋业股份有限公司-第一期员工持股计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70421035"
+  },
+  {
+    "HOLDER": "浙江开尔新材料股份有限公司-第二期员工持股计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70421175"
+  },
+  {
+    "HOLDER": "基本养老保险基金一五零二二组合",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70421313"
+  },
+  {
+    "HOLDER": "国泰君安资产管理(亚洲)有限公司-国泰君安国际大中华专户1号",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70421607"
+  },
+  {
+    "HOLDER": "基本养老保险基金一六零三二组合",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70421618"
+  },
+  {
+    "HOLDER": "康达新材料(集团)股份有限公司-第四期员工持股计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70421811"
+  },
+  {
+    "HOLDER": "基本养老保险基金一九零三组合",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70422523"
+  },
+  {
+    "HOLDER": "深圳科安达电子科技股份有限公司-2023年员工持股计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70425046"
+  },
+  {
+    "HOLDER": "浙江三星新材股份有限公司-第一期员工持股计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70425055"
+  },
+  {
+    "HOLDER": "气派科技股份有限公司-2023年员工持股计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70425109"
+  },
+  {
+    "HOLDER": "天津赛象科技股份有限公司-2023年员工持股计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70425156"
+  },
+  {
+    "HOLDER": "天创时尚股份有限公司-2024年第一期员工持股计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70428371"
+  },
+  {
+    "HOLDER": "基本养老保险基金二一零一组合",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70428403"
+  },
+  {
+    "HOLDER": "康达新材料(集团)股份有限公司-第五期员工持股计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70428467"
+  },
+  {
+    "HOLDER": "基本养老保险基金二零零一组合",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70428513"
+  },
+  {
+    "HOLDER": "华泰金融控股(香港)有限公司-中国宏泽基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70428599"
+  },
+  {
+    "HOLDER": "欣贺股份有限公司-2024年员工持股计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70428750"
+  },
+  {
+    "HOLDER": "常州长青科技股份有限公司-2024年员工持股计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70428998"
+  },
+  {
+    "HOLDER": "湖南湘佳牧业股份有限公司-2024年员工持股计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70429000"
+  },
+  {
+    "HOLDER": "深圳市华盛昌科技实业股份有限公司-2024年员工持股计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70429079"
+  },
+  {
+    "HOLDER": "厦门安妮股份有限公司-第二期员工持股计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70429095"
+  },
+  {
+    "HOLDER": "盛泰智造集团股份有限公司-2024年员工持股计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70429120"
+  },
+  {
+    "HOLDER": "江苏云意电气股份有限公司-第二期员工持股计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70429397"
+  },
+  {
+    "HOLDER": "天津赛象科技股份有限公司-2025年员工持股计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70429493"
+  },
+  {
+    "HOLDER": "广州集泰化工股份有限公司-第五期员工持股计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70429506"
+  },
+  {
+    "HOLDER": "广发资产管理(香港)有限公司-绝对收益组合-04-R",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70429555"
+  },
+  {
+    "HOLDER": "广东德生科技股份有限公司-2025年员工持股计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70429831"
+  },
+  {
+    "HOLDER": "安徽舜禹水务股份有限公司-2025年员工持股计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70429861"
+  },
+  {
+    "HOLDER": "德才装饰股份有限公司-2025年员工持股计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70429987"
+  },
+  {
+    "HOLDER": "广东顶固集创家居股份有限公司-第一期员工持股计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70430375"
+  },
+  {
+    "HOLDER": "重庆长江造型材料(集团)股份有限公司-2025年员工持股计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70430790"
+  },
+  {
+    "HOLDER": "上海来伊份股份有限公司-第三期员工持股计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70430807"
+  },
+  {
+    "HOLDER": "惠州中京电子科技股份有限公司-2025年员工持股计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70431492"
+  },
+  {
+    "HOLDER": "安联保险资管-招商银行-安联永泰2号资产管理产品",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70431659"
+  },
+  {
+    "HOLDER": "思达资本(香港)有限公司-智盈一号基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70431696"
+  },
+  {
+    "HOLDER": "承壹投资管理有限公司-和光2号专户(RQFII)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70432139"
+  },
+  {
+    "HOLDER": "承壹投资管理有限公司-柏玉",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70432155"
+  },
+  {
+    "HOLDER": "纽达资本有限公司-Green Harmony Hedge Fund-Q(RQFII)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70432169"
+  },
+  {
+    "HOLDER": "诺德基金-高迪-诺德基金浦江1631号单一资产管理计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70432177"
+  },
+  {
+    "HOLDER": "易米基金-王凯-易米基金易宏35号单一资产管理计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "70432178"
+  },
+  {
+    "HOLDER": "金元证券股份有限公司客户信用交易担保证券账户",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "77012233"
+  },
+  {
+    "HOLDER": "中国银河证券股份有限公司客户信用交易担保证券账户",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "77012433"
+  },
+  {
+    "HOLDER": "巨能资本管理有限公司-山东聚赢产业基金合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "77020027"
+  },
+  {
+    "HOLDER": "深圳丰盈传褀资产管理有限公司-丰盈传褀一期",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78019918"
+  },
+  {
+    "HOLDER": "深圳南山架桥卓越智能装备投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78027150"
+  },
+  {
+    "HOLDER": "北京福睿德投资管理有限公司-北京福睿德7号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78048461"
+  },
+  {
+    "HOLDER": "合肥兴泰光电智能创业投资有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78050136"
+  },
+  {
+    "HOLDER": "深圳丰盈传褀资产管理有限公司-丰盈传褀二期私募基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78050602"
+  },
+  {
+    "HOLDER": "珠海华金领创基金管理有限公司-珠海华金慧源股权投资基金(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78060507"
+  },
+  {
+    "HOLDER": "山东省卫青投资有限公司-卫青贵宾专享2号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78064947"
+  },
+  {
+    "HOLDER": "成都富恩德股权投资有限公司-成都富恩德星羽股权投资基金合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78069601"
+  },
+  {
+    "HOLDER": "深圳市领信基石股权投资基金管理合伙企业(有限合伙)-深圳市领誉基石股权投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78069695"
+  },
+  {
+    "HOLDER": "佛山红土君晟创业投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78074274"
+  },
+  {
+    "HOLDER": "上海银叶投资有限公司-银叶-攻玉主题精选2期私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78077640"
+  },
+  {
+    "HOLDER": "杭州商盈投资管理有限公司-杭州创享创业投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78079735"
+  },
+  {
+    "HOLDER": "深圳市红土智能股权投资管理有限公司-深圳市红土智能股权投资基金合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78083622"
+  },
+  {
+    "HOLDER": "山东高速嵩信(天津)投资管理有限公司-山高嵩成私募股权投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78084331"
+  },
+  {
+    "HOLDER": "上海喜岳投资管理有限公司-星辰之喜岳2号增强私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78086674"
+  },
+  {
+    "HOLDER": "大亚产业基金管理有限公司-江苏疌泉大亚林工产业基金(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78090832"
+  },
+  {
+    "HOLDER": "上海涌平私募基金管理合伙企业(有限合伙)-嘉兴斐昱嘉峪投资管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78094072"
+  },
+  {
+    "HOLDER": "武汉天利恒赢投资管理有限公司-天利君悦一期私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78097701"
+  },
+  {
+    "HOLDER": "上海聚鸣投资管理有限公司-聚鸣全球灵活配置1号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78098950"
+  },
+  {
+    "HOLDER": "武汉天利恒赢投资管理有限公司-天利价值红利私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78099627"
+  },
+  {
+    "HOLDER": "湖北小米长江产业投资基金管理有限公司-湖北小米长江产业基金合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78101058"
+  },
+  {
+    "HOLDER": "上海聚鸣投资管理有限公司-聚鸣全球灵活配置2号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78102148"
+  },
+  {
+    "HOLDER": "深圳昭阳投资管理有限公司-昭阳1号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78103483"
+  },
+  {
+    "HOLDER": "宁波甬潮资产管理有限公司-宁波甬潮白鹭林壹号创业投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78104523"
+  },
+  {
+    "HOLDER": "上海泷新私募投资基金合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78109267"
+  },
+  {
+    "HOLDER": "山东新业股权投资管理有限公司-枣庄财金新旧动能转换基金管理合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78112861"
+  },
+  {
+    "HOLDER": "上海聚鸣投资管理有限公司-聚鸣匠传3号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78113512"
+  },
+  {
+    "HOLDER": "宁波隆华汇股权投资管理有限公司-安徽高新投新材料产业基金合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78113962"
+  },
+  {
+    "HOLDER": "宁波弘晟致和投资管理合伙企业(有限合伙)-广州弘晟创业投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78114700"
+  },
+  {
+    "HOLDER": "常州青枫股权投资管理有限公司-常州灿星产业投资基金合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78119141"
+  },
+  {
+    "HOLDER": "嘉兴厚熙投资管理有限公司-嘉兴永传股权投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78119222"
+  },
+  {
+    "HOLDER": "湖南省国企并购重组基金管理有限公司-长沙新湘先进设备制造投资基金合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78119996"
+  },
+  {
+    "HOLDER": "唐兴天下投资管理(西安)有限责任公司-西安唐兴科创投资基金合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78126297"
+  },
+  {
+    "HOLDER": "深圳市景从资产管理有限公司-景从承影11号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78126568"
+  },
+  {
+    "HOLDER": "上海迎水投资管理有限公司-迎水巡洋10号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78127520"
+  },
+  {
+    "HOLDER": "深圳市华润资本股权投资有限公司-润科(上海)股权投资基金合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78128242"
+  },
+  {
+    "HOLDER": "中原金象投资管理有限公司-中原金象河南民营上市公司发展支持2号私募股权投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78128637"
+  },
+  {
+    "HOLDER": "同德乾元(北京)投资管理有限公司-南宁中恒同德医药产业投资基金合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78129971"
+  },
+  {
+    "HOLDER": "浙江普华天勤股权投资管理有限公司-兰溪普华臻宜股权投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78130334"
+  },
+  {
+    "HOLDER": "上海玉牛资产管理有限公司-玉牛劲道私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78131676"
+  },
+  {
+    "HOLDER": "广西国富创新股权投资基金管理有限公司-广西广投国宏健康产业基金合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78132425"
+  },
+  {
+    "HOLDER": "上海至辉投资有限公司-苏州工业园区国创至辉长三角动能股权投资基金合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78132985"
+  },
+  {
+    "HOLDER": "苏州市相城私募基金管理有限公司-苏州孟溪创业投资中心(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78133171"
+  },
+  {
+    "HOLDER": "四川发展证券投资基金管理有限公司-四川资本市场纾困发展证券投资基金合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78133172"
+  },
+  {
+    "HOLDER": "凯晟南山私募股权投资基金管理(深圳)有限公司-深圳坪山凯晟集成电路创业投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78134850"
+  },
+  {
+    "HOLDER": "玄元私募基金投资管理(广东)有限公司-玄元科新282号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78136537"
+  },
+  {
+    "HOLDER": "深圳市润信新观象股权投资基金管理有限公司-深圳润信新观象战略新兴产业私募股权投资基金合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78138013"
+  },
+  {
+    "HOLDER": "上海甄投资产管理有限公司-甄投稳定8号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78139140"
+  },
+  {
+    "HOLDER": "常州珊瑚私募基金管理合伙企业(有限合伙)-常州国润九号企业管理咨询合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78145837"
+  },
+  {
+    "HOLDER": "上海迎水投资管理有限公司-迎水月异4号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78146255"
+  },
+  {
+    "HOLDER": "上海循理资产管理有限公司-循理盛源5号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78147051"
+  },
+  {
+    "HOLDER": "杭州超道股权投资基金管理有限公司-杭州和盟医智股权投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78147635"
+  },
+  {
+    "HOLDER": "深创投红土私募股权投资基金管理(深圳)有限公司-深创投制造业转型升级新材料基金(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78150245"
+  },
+  {
+    "HOLDER": "上海森锐投资管理有限公司-杭州萧山浩澜股权投资基金合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78151868"
+  },
+  {
+    "HOLDER": "洛阳创业投资有限公司-洛阳制造业高质量发展基金(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78152809"
+  },
+  {
+    "HOLDER": "晋江和铭资产管理有限公司-和铭价值发现2号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78152986"
+  },
+  {
+    "HOLDER": "东源(天津)股权投资基金管理股份有限公司-东源投资财富36号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78156966"
+  },
+  {
+    "HOLDER": "青岛市科技风险投资有限公司-青岛华资盛通股权投资基金合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78158740"
+  },
+  {
+    "HOLDER": "北京汐合精英私募基金管理有限公司-汐合AI策略1号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78159650"
+  },
+  {
+    "HOLDER": "北京汐合精英私募基金管理有限公司-汐合AI策略2号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78159945"
+  },
+  {
+    "HOLDER": "青岛青松创业投资集团有限公司-青岛松凯创业投资企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78160612"
+  },
+  {
+    "HOLDER": "烟台招金私募投资基金管理有限公司-招金套利稳健1号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78160652"
+  },
+  {
+    "HOLDER": "深圳山汇投资管理有限公司-广东怡建股权投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78161191"
+  },
+  {
+    "HOLDER": "玄元私募基金投资管理(广东)有限公司-玄元科新162号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78165384"
+  },
+  {
+    "HOLDER": "北京柏治投资管理有限公司-柏治远迈私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78166295"
+  },
+  {
+    "HOLDER": "深圳镕盛投资管理有限公司-镕盛9号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78169163"
+  },
+  {
+    "HOLDER": "上海歌汝私募基金管理有限公司-歌汝酋长一号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78169843"
+  },
+  {
+    "HOLDER": "东吴创业投资有限公司-苏州市吴企创基股权投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78170937"
+  },
+  {
+    "HOLDER": "上海烜鼎私募基金管理有限公司-烜鼎星辰8号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78172946"
+  },
+  {
+    "HOLDER": "安徽海富投资管理有限公司-海富嵩山精选1号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78173326"
+  },
+  {
+    "HOLDER": "上海冲积资产管理中心(有限合伙)-冲积积极成长1号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78173990"
+  },
+  {
+    "HOLDER": "广东璟诚私募基金管理有限公司-璟诚坦涂1号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78174494"
+  },
+  {
+    "HOLDER": "南京江宁经开私募基金管理有限公司-金宁经开产业强链股权投资(湖北)合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78174572"
+  },
+  {
+    "HOLDER": "上海拓牌私募基金管理有限公司-拓牌兴丰7号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78175326"
+  },
+  {
+    "HOLDER": "深圳市君弘投资管理有限公司-君弘价值成长私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78175488"
+  },
+  {
+    "HOLDER": "上海中珏私募基金管理有限公司-中珏恩视宏达价值1号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78176246"
+  },
+  {
+    "HOLDER": "北京源峰私募基金管理合伙企业(有限合伙)-源峰价值私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78176419"
+  },
+  {
+    "HOLDER": "紫稻(上海)资产管理有限公司-紫稻资产东昱一号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78176831"
+  },
+  {
+    "HOLDER": "上海牧鑫私募基金管理有限公司-牧鑫鼎硕1号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78178982"
+  },
+  {
+    "HOLDER": "西藏中睿合银投资管理有限公司-中睿合银稳健7号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78180642"
+  },
+  {
+    "HOLDER": "北京金泰私募基金管理有限公司-金泰吉祥一号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78181195"
+  },
+  {
+    "HOLDER": "玄元私募基金投资管理(广东)有限公司-玄元科新122号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78182218"
+  },
+  {
+    "HOLDER": "北京柏治投资管理有限公司-柏治固定收益5号私募投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78184221"
+  },
+  {
+    "HOLDER": "深圳镕盛投资管理有限公司-镕盛7号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78185068"
+  },
+  {
+    "HOLDER": "上海乾瀛投资管理有限公司-乾瀛价值成长3号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78194857"
+  },
+  {
+    "HOLDER": "江苏兆信私募基金管理有限公司-兆信瞭望13号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78196297"
+  },
+  {
+    "HOLDER": "广东臻远私募基金管理有限公司-广东臻远基金-臻远一号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78197943"
+  },
+  {
+    "HOLDER": "北京合易盈通资产管理有限公司-盈通丰泽三号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78198834"
+  },
+  {
+    "HOLDER": "北京泰德圣私募基金管理有限公司-泰德圣投资泰来1号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78199025"
+  },
+  {
+    "HOLDER": "珠海阿巴马私募基金投资管理有限公司-阿巴马元享红利68号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78199259"
+  },
+  {
+    "HOLDER": "深圳镕盛投资管理有限公司-镕盛11号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78201767"
+  },
+  {
+    "HOLDER": "深圳前海穗景资产管理有限公司-穗景枭金1号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78203036"
+  },
+  {
+    "HOLDER": "浙江启厚资产管理有限公司-启厚汇理3号证券私募投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78205223"
+  },
+  {
+    "HOLDER": "上海秉昊私募基金管理有限公司-秉昊致逸1号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78205614"
+  },
+  {
+    "HOLDER": "深圳市前海厚帛资本管理有限公司-厚帛领望一号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78206021"
+  },
+  {
+    "HOLDER": "鼎泰四方(深圳)私募证券基金管理有限公司-鼎泰四方金圆1号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78206657"
+  },
+  {
+    "HOLDER": "上海世域投资管理有限公司-世域七期私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78208818"
+  },
+  {
+    "HOLDER": "深圳国源信达资本管理有限公司-国源安心收放私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78209680"
+  },
+  {
+    "HOLDER": "北京富纳投资有限公司-富纳凯赢世家七号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78210129"
+  },
+  {
+    "HOLDER": "山东雅博科技股份有限公司破产企业财产处置专用账户",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78212255"
+  },
+  {
+    "HOLDER": "合肥经开创业投资管理有限公司-合肥海恒产业发展投资基金合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78214080"
+  },
+  {
+    "HOLDER": "飞象(杭州)资产管理有限公司-飞象价值创造私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78215523"
+  },
+  {
+    "HOLDER": "珠海阿巴马私募基金投资管理有限公司-阿巴马万象益新55号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78218578"
+  },
+  {
+    "HOLDER": "北京乾象私募基金管理有限公司-乾象元点复合1号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78225226"
+  },
+  {
+    "HOLDER": "上海乾瀛投资管理有限公司-乾瀛价值成长10号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78225501"
+  },
+  {
+    "HOLDER": "深圳市乾图私募证券基金管理有限公司-乾图汉玄甲私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78225677"
+  },
+  {
+    "HOLDER": "深圳君宜私募证券基金管理有限公司-君宜永卿私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78225941"
+  },
+  {
+    "HOLDER": "厦门中略投资管理有限公司-中略万新4号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78226802"
+  },
+  {
+    "HOLDER": "深圳纽富斯投资管理有限公司-纽富斯花盼私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78227203"
+  },
+  {
+    "HOLDER": "上海安放私募基金管理有限公司-安放悦盈2号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78228297"
+  },
+  {
+    "HOLDER": "上海良元资产管理有限公司-良元新能源柒号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78228594"
+  },
+  {
+    "HOLDER": "台州沃源私募基金管理有限公司-沃源睿泽1号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78231049"
+  },
+  {
+    "HOLDER": "深圳市嘉亿资产管理有限公司-嘉亿兴和2号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78231127"
+  },
+  {
+    "HOLDER": "杭州锐稳投资管理有限公司-锐稳迪硕私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78231212"
+  },
+  {
+    "HOLDER": "江苏启宁汇一私募基金管理有限公司-启宁汇一进取一号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78232206"
+  },
+  {
+    "HOLDER": "深圳世纪致远私募证券基金管理有限公司-致远龙图1号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78233172"
+  },
+  {
+    "HOLDER": "上海阿杏投资管理有限公司-阿杏灵活配置1号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78234574"
+  },
+  {
+    "HOLDER": "北京诚旸投资有限公司-诚旸2号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78236753"
+  },
+  {
+    "HOLDER": "杭州晟维资产管理有限公司-晟维尚远私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78243636"
+  },
+  {
+    "HOLDER": "横琴广金美好基金管理有限公司-广金美好星宇1号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78244342"
+  },
+  {
+    "HOLDER": "北京溪水私募基金管理有限公司-溪水臻启1号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78244429"
+  },
+  {
+    "HOLDER": "六妙星(北京)私募基金管理有限公司-六妙星破阵子私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78246171"
+  },
+  {
+    "HOLDER": "申银万国投资有限公司-湖北省申万瑞为股权投资合伙企业(有限合伙)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78247307"
+  },
+  {
+    "HOLDER": "浙江君弘资产管理有限公司-君弘钱江二十七期私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78248289"
+  },
+  {
+    "HOLDER": "上海磐松私募基金管理有限公司-磐松多空对冲1D私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78249785"
+  },
+  {
+    "HOLDER": "安徽海富投资管理有限公司-海富保丰拾壹號私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78249990"
+  },
+  {
+    "HOLDER": "纵云(武汉)私募基金管理有限公司-纵云黎曼2号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78251012"
+  },
+  {
+    "HOLDER": "浙江自贸区薏宸私募基金管理有限公司-薏宸价值精选15号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78251103"
+  },
+  {
+    "HOLDER": "前海大唐英加(深圳)基金管理有限公司-大唐英加白马十七号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78251684"
+  },
+  {
+    "HOLDER": "天津津融卓创投资管理有限公司-津融卓创7号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78252059"
+  },
+  {
+    "HOLDER": "北京元程序资产管理有限公司-元程序九州合创私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78252889"
+  },
+  {
+    "HOLDER": "锦福源(海南)私募基金管理合伙企业(有限合伙)-锦福源天添二号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78253549"
+  },
+  {
+    "HOLDER": "上海古曲私募基金管理有限公司-古曲多策略六号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78254148"
+  },
+  {
+    "HOLDER": "上海子呈私募基金管理有限公司-子呈嘉晟私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78255096"
+  },
+  {
+    "HOLDER": "深圳市君子乾乾私募证券投资基金管理有限公司-君子乾乾科技成长专精特新1号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78255984"
+  },
+  {
+    "HOLDER": "西咸新区旷特投资管理有限公司-旷特互智1号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78257148"
+  },
+  {
+    "HOLDER": "伽罗华(海南)私募基金管理有限公司-伽罗华500指增优选5号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78258398"
+  },
+  {
+    "HOLDER": "上海龙韵文创科技集团股份有限公司回购专用证券账户",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78259482"
+  },
+  {
+    "HOLDER": "北京真科私募基金管理有限公司-真科核心科技10号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78261263"
+  },
+  {
+    "HOLDER": "臻金私募基金管理(海南)有限公司-臻金启明星3号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78263490"
+  },
+  {
+    "HOLDER": "台州沃源私募基金管理有限公司-沃源林盛1号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78263560"
+  },
+  {
+    "HOLDER": "深圳市中恒通私募证券基金管理有限公司-中恒通启航1号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78266006"
+  },
+  {
+    "HOLDER": "上海偕沣私募基金管理有限公司-偕沣305私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78266550"
+  },
+  {
+    "HOLDER": "上海姚泾河私募基金管理有限公司-姚泾河中市桥私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78266769"
+  },
+  {
+    "HOLDER": "北京乾象私募基金管理有限公司-乾象元点混合16号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78270424"
+  },
+  {
+    "HOLDER": "广东南传私募基金管理有限公司-南传薪火3号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78271585"
+  },
+  {
+    "HOLDER": "上海皋颐私募基金管理有限公司-皋颐辰焱1号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78271636"
+  },
+  {
+    "HOLDER": "海南芙蓉兴私募基金管理合伙企业(有限合伙)-芙蓉兴馨香1号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78275348"
+  },
+  {
+    "HOLDER": "南京盛泉恒元投资有限公司-盛泉恒元量化套利专项74号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78275681"
+  },
+  {
+    "HOLDER": "北京华诺投资管理有限公司-华诺投资泰鼎1号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78277738"
+  },
+  {
+    "HOLDER": "天津衍硕私募基金管理有限公司-衍硕祥睿1号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78277783"
+  },
+  {
+    "HOLDER": "浙江梅轮电梯股份有限公司回购专用证券账户",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78279619"
+  },
+  {
+    "HOLDER": "浙江维康药业股份有限公司回购专用证券账户",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78279745"
+  },
+  {
+    "HOLDER": "科华控股股份有限公司回购专用证券账户",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78279809"
+  },
+  {
+    "HOLDER": "甘肃莫高实业发展股份有限公司回购专用证券账户",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78279815"
+  },
+  {
+    "HOLDER": "深圳市华宝万盈资产管理有限公司-华宝万盈资产鑫享1号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78282049"
+  },
+  {
+    "HOLDER": "湖南万泰华瑞投资管理有限责任公司-万泰华瑞优质价值私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78283272"
+  },
+  {
+    "HOLDER": "宁波家联科技股份有限公司回购专用证券账户",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78283764"
+  },
+  {
+    "HOLDER": "上海昀沣私募基金管理有限公司-昀沣价值五号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78286442"
+  },
+  {
+    "HOLDER": "北京真科私募基金管理有限公司-真科核心科技18号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78287483"
+  },
+  {
+    "HOLDER": "上海聚鸣投资管理有限公司-聚鸣全球科技制造精选私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78287539"
+  },
+  {
+    "HOLDER": "广州永金私募证券投资基金管理有限公司-广州永金乐水三号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78288247"
+  },
+  {
+    "HOLDER": "上海喜世润投资管理有限公司-喜世润润丰10号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78288808"
+  },
+  {
+    "HOLDER": "北京厚毅资本管理有限公司-厚毅-聚宝盆1号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78290265"
+  },
+  {
+    "HOLDER": "芜湖富春染织股份有限公司回购专用证券账户",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78292184"
+  },
+  {
+    "HOLDER": "上海指南行远私募基金管理有限公司-指南上远私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78292579"
+  },
+  {
+    "HOLDER": "江苏江南高纤股份有限公司回购专用证券账户",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78293055"
+  },
+  {
+    "HOLDER": "深圳市前海厚帛资本管理有限公司-厚帛领望二号新机遇私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78295670"
+  },
+  {
+    "HOLDER": "上海鹤禧私募基金管理有限公司-鹤禧全球科技成长一号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78296290"
+  },
+  {
+    "HOLDER": "西藏君汉胜者投资管理有限公司-君汉文景3号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78298358"
+  },
+  {
+    "HOLDER": "湖北均瑶大健康饮品股份有限公司未确认持有人证券专用账户",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78300654"
+  },
+  {
+    "HOLDER": "六妙星(北京)私募基金管理有限公司-六妙星豪鑫6号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78307917"
+  },
+  {
+    "HOLDER": "三亚荣盛业私募证券基金管理有限公司-荣盛业智享未来一号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "78314716"
+  },
+  {
+    "HOLDER": "国寿养老策略4号股票型养老金产品-中国工商银行股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "CLA007"
+  },
+  {
+    "HOLDER": "平安股票优选3号股票型养老金产品-招商银行股份有限公司",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "PAA008"
+  },
+  {
+    "HOLDER": "上海勤辰私募基金管理合伙企业(有限合伙)-勤辰福宝私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "上海勤辰私募基金管理合伙企业(有限合伙)-勤辰福宝私募证券投资基金"
+  },
+  {
+    "HOLDER": "上海岱熹投资管理有限公司-岱熹涵泰一号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "上海岱熹投资管理有限公司-岱熹涵泰一号私募证券投资基金"
+  },
+  {
+    "HOLDER": "广发基金-中国人寿保险股份有限公司-分红险-广发基金国寿股份价值股票型组合单一资产管理计划(分红险)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "广发基金-中国人寿保险股份有限公司-分红险-广发基金国寿股份价值股票型组合单一资产管理计划(分红险)"
+  },
+  {
+    "HOLDER": "易方达基金-中国人寿保险股份有限公司-分红险-易方达基金国寿股份价值股票型组合单一资产管理计划(分红险)",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "易方达基金-中国人寿保险股份有限公司-分红险-易方达基金国寿股份价值股票型组合单一资产管理计划(分红险)"
+  },
+  {
+    "HOLDER": "汇百川基金-中信银行-汇百川龙源1号集合资产管理计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "汇百川基金-中信银行-汇百川龙源1号集合资产管理计划"
+  },
+  {
+    "HOLDER": "深圳抱朴容易私募证券基金管理有限公司-抱朴得宝而安一号私募证券投资基金",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "深圳抱朴容易私募证券基金管理有限公司-抱朴得宝而安一号私募证券投资基金"
+  },
+  {
+    "HOLDER": "银华基金-中国太平洋人寿保险股份有限公司-分红险-银华基金中国太平洋人寿股票相对(保额分红)单一资产管理计划",
+    "HOLDER_TYPE": "其他",
+    "HOLDER_NEW": "银华基金-中国太平洋人寿保险股份有限公司-分红险-银华基金中国太平洋人寿股票相对(保额分红)单一资产管理计划"
+  }
+]

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8" />
+<title>机构持仓下载器</title>
+
+<style>
+body{
+    font-family:sans-serif;
+    padding:20px;
+    background:#f5f5f5;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:12px;
+    margin-bottom:20px;
+}
+
+button{
+    padding:8px 16px;
+    cursor:pointer;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+    margin-top:20px;
+}
+
+th,td{
+    border:1px solid #ddd;
+    padding:8px;
+    font-size:14px;
+}
+
+th{
+    background:#eee;
+}
+
+textarea{
+    width:100%;
+    height:120px;
+}
+
+select,input[type=text]{
+    padding:6px 10px;
+    font-size:14px;
+}
+
+.search-box{
+    margin-top:10px;
+}
+
+#holderSelect{
+    min-width:400px;
+}
+
+.count{
+    color:#888;
+    font-size:13px;
+    margin-left:8px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+
+<h2>自定义机构</h2>
+
+<p>格式：机构名=HOLDER_NEW</p>
+
+<textarea id="holders">
+高盛=10429689
+</textarea>
+
+</div>
+
+<div class="card">
+
+<h2>机构库</h2>
+
+<label>类型：</label>
+<select id="typeSelect">
+<option value="">-- 选择类型 --</option>
+</select>
+
+<span class="count" id="typeCount"></span>
+
+<div class="search-box">
+<input type="text" id="searchInput" placeholder="搜索机构名称..." style="width:400px" />
+</div>
+
+<br/>
+
+<select id="holderSelect" size="10"></select>
+
+<span class="count" id="holderCount"></span>
+
+<br/><br/>
+
+<button onclick="loadDates()">获取季度</button>
+
+<select id="dateSelect"></select>
+
+<button onclick="fetchData()">下载持仓</button>
+
+<button onclick="exportCSV()">导出CSV</button>
+
+</div>
+
+<div class="card">
+
+<h2>结果</h2>
+
+<div id="status"></div>
+
+<table id="table">
+<thead>
+<tr>
+<th>日期</th>
+<th>股票</th>
+<th>代码</th>
+<th>状态</th>
+<th>持仓占比</th>
+<th>变化比例</th>
+<th>市值</th>
+</tr>
+</thead>
+<tbody></tbody>
+</table>
+
+</div>
+
+<script>
+
+const typeSelect = document.getElementById("typeSelect");
+const holderSelect = document.getElementById("holderSelect");
+const dateSelect = document.getElementById("dateSelect");
+const searchInput = document.getElementById("searchInput");
+
+let currentData = [];
+let allHolders = [];
+let holderIndex = {};  // HOLDER_NEW -> holder object
+
+const TYPES = ["基金","QFII","券商","保险","社保","信托","国家队","个人","其他"];
+
+// Populate type dropdown
+TYPES.forEach(t => {
+    const opt = document.createElement("option");
+    opt.value = t;
+    opt.textContent = t;
+    typeSelect.appendChild(opt);
+});
+
+typeSelect.addEventListener("change", async () => {
+    const type = typeSelect.value;
+    if (!type) {
+        holderSelect.innerHTML = "";
+        document.getElementById("typeCount").textContent = "";
+        return;
+    }
+    // Already cached?
+    if (holderIndex[type]) {
+        renderHolders(holderIndex[type]);
+        return;
+    }
+    try {
+        const BASE = "https://raw.githubusercontent.com/ryanlq/stockdata/main/holders";
+        const resp = await fetch(`${BASE}/${encodeURIComponent(type)}.json`);
+        const data = await resp.json();
+        holderIndex[type] = data;
+        renderHolders(data);
+    } catch (e) {
+        alert("加载失败: " + e.message);
+    }
+});
+
+function renderHolders(data) {
+    allHolders = data;
+    filterHolders();
+    document.getElementById("typeCount").textContent = `共 ${data.length} 个机构`;
+}
+
+searchInput.addEventListener("input", filterHolders);
+
+function filterHolders() {
+    const keyword = searchInput.value.trim().toLowerCase();
+    const filtered = keyword
+        ? allHolders.filter(h => h.HOLDER.toLowerCase().includes(keyword))
+        : allHolders;
+
+    holderSelect.innerHTML = "";
+    for (const h of filtered) {
+        const opt = document.createElement("option");
+        opt.value = h.HOLDER_NEW;
+        opt.textContent = `${h.HOLDER} (${h.HOLDER_NEW})`;
+        holderSelect.appendChild(opt);
+    }
+    document.getElementById("holderCount").textContent = keyword
+        ? `${filtered.length} / ${allHolders.length}`
+        : `${allHolders.length}`;
+}
+
+// Also support custom holders textarea
+function loadCustomHolders() {
+    const lines = document.getElementById("holders").value.split("\n").filter(l => l.includes("="));
+    for (const line of lines) {
+        const [name, id] = line.split("=");
+        const opt = document.createElement("option");
+        opt.value = id.trim();
+        opt.textContent = `${name.trim()} (自定义)`;
+        holderSelect.insertBefore(opt, holderSelect.firstChild);
+    }
+}
+
+// Init with custom holders on load
+loadCustomHolders();
+
+async function loadDates() {
+
+    const holderId = holderSelect.value;
+    if (!holderId) { alert("请先选择机构"); return; }
+
+    document.getElementById("status").innerText = "加载季度列表...";
+
+    const url =
+`https://datacenter.eastmoney.com/securities/api/data/v1/get?reportName=RPT_F10_EH_FREEHOLDERS&columns=END_DATE&distinct=END_DATE&filter=(HOLDER_NEW="${holderId}")&sortTypes=-1&sortColumns=END_DATE&pageNumber=1&pageSize=100&source=Datacenter&client=PC&v=${Math.random()}`;
+
+    const resp = await fetch(url);
+    const json = await resp.json();
+    const rows = json.result?.data || [];
+
+    dateSelect.innerHTML = "";
+    for (const row of rows) {
+        const opt = document.createElement("option");
+        opt.value = row.END_DATE;
+        opt.textContent = row.END_DATE;
+        dateSelect.appendChild(opt);
+    }
+
+    document.getElementById("status").innerText = `获取到 ${rows.length} 个季度`;
+}
+
+async function fetchData() {
+
+    const holderId = holderSelect.value;
+    const endDate = dateSelect.value;
+    if (!holderId) { alert("请先选择机构"); return; }
+    if (!endDate) { alert("请先获取季度"); return; }
+
+    let page = 1;
+    let all = [];
+
+    while (true) {
+        document.getElementById("status").innerText = `抓取第 ${page} 页...`;
+
+        const url =
+`https://datacenter.eastmoney.com/securities/api/data/v1/get?reportName=RPT_F10_EH_FREEHOLDERS&columns=HOLDER_NEW,SECUCODE,SECURITY_CODE,SECURITY_NAME_ABBR,END_DATE,HOLDER_NAME,FREE_HOLDNUM_RATIO,HOLDER_MARKET_CAP,HOLDER_RANK,HOLDER_STATE_NEW,CHANGE_RATIO&filter=(HOLDER_NEW="${holderId}")(END_DATE='${endDate}')&pageNumber=${page}&pageSize=500&sortTypes=-1&sortColumns=FREE_HOLDNUM_RATIO&source=Datacenter&client=PC&v=${Math.random()}`;
+
+        const resp = await fetch(url);
+        const json = await resp.json();
+        const rows = json.result?.data || [];
+
+        if (!rows.length) break;
+        all.push(...rows);
+        if (rows.length < 500) break;
+        page++;
+    }
+
+    currentData = all;
+    renderTable(all);
+    document.getElementById("status").innerText = `完成，共 ${all.length} 条`;
+}
+
+function renderTable(rows) {
+    const tbody = document.querySelector("#table tbody");
+    tbody.innerHTML = "";
+    for (const row of rows) {
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+        <td>${row.END_DATE || ""}</td>
+        <td>${row.SECURITY_NAME_ABBR || ""}</td>
+        <td>${row.SECURITY_CODE || ""}</td>
+        <td>${row.HOLDER_STATE_NEW || ""}</td>
+        <td>${row.FREE_HOLDNUM_RATIO ?? ""}</td>
+        <td>${row.CHANGE_RATIO ?? ""}</td>
+        <td>${row.HOLDER_MARKET_CAP ?? ""}</td>`;
+        tbody.appendChild(tr);
+    }
+}
+
+function exportCSV() {
+    if (!currentData.length) { alert("没有数据"); return; }
+    const headers = Object.keys(currentData[0]);
+    const csv = [
+        headers.join(","),
+        ...currentData.map(row =>
+            headers.map(h => `"${row[h] ?? ""}"`).join(",")
+        )
+    ].join("\n");
+
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = "holder_positions.csv";
+    a.click();
+}
+
+</script>
+
+</body>
+</html>
