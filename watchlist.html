@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8" />
+    <title>自选股</title>
+    <link rel="stylesheet" href="common.css" />
+    <style>
+        /* ---- Left list ---- */
+        .watchlist-panel {
+            width: 360px; flex-shrink: 0; display: flex; flex-direction: column;
+            overflow: hidden;
+        }
+        .wl-search {
+            padding: 12px 16px; border-bottom: 1px solid var(--border); flex-shrink: 0;
+        }
+        .wl-search input { width: 100%; }
+        .wl-list {
+            flex: 1; overflow-y: auto; font-size: 13px;
+        }
+        .wl-item {
+            padding: 12px 16px; border-bottom: 1px solid var(--border);
+            display: flex; align-items: center; gap: 10px;
+            cursor: pointer; transition: background .1s;
+        }
+        .wl-item:last-child { border-bottom: none; }
+        .wl-item:hover { background: var(--primary-light); }
+        .wl-item.selected { background: var(--primary); color: #fff; }
+        .wl-item .wl-info { flex: 1; min-width: 0; }
+        .wl-item .wl-name {
+            font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+        }
+        .wl-item .wl-meta {
+            font-size: 11px; color: var(--text2); margin-top: 2px;
+            display: flex; gap: 8px; align-items: center;
+        }
+        .wl-item.selected .wl-meta { color: rgba(255,255,255,.7); }
+        .wl-item .wl-del {
+            font-size: 16px; color: var(--text2); cursor: pointer; flex-shrink: 0;
+            opacity: .4; transition: opacity .15s;
+        }
+        .wl-item .wl-del:hover { opacity: 1; color: var(--up); }
+        .wl-item.selected .wl-del { color: rgba(255,255,255,.6); }
+        .wl-item .star { margin-left: auto; }
+
+        /* ---- Right detail ---- */
+        .detail { flex: 1; min-width: 0; display: flex; flex-direction: column; overflow: hidden; }
+        .chart-section { border-bottom: 1px solid var(--border); flex-shrink: 0; display: none; }
+        .chart-section.open { display: block; }
+        .empty-detail {
+            flex: 1; display: flex; align-items: center; justify-content: center;
+            color: var(--text2); font-size: 14px;
+        }
+
+        /* ---- Holdings table in detail ---- */
+        .detail-section {
+            border-top: 1px solid var(--border); flex-shrink: 0;
+        }
+        .detail-section-header {
+            padding: 10px 16px; font-size: 13px; font-weight: 600;
+            color: var(--text2); background: var(--th-bg);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>自选股</h1>
+    <a href="index.html">← 返回首页</a>
+    <a href="Institutional_Holdings.html" class="type-badge" style="font-size:13px;padding:5px 12px">机构持仓</a>
+    <div style="flex:1"></div>
+    <button class="theme-btn" onclick="toggleTheme()" id="themeBtn" title="切换主题"></button>
+</div>
+
+<div class="main">
+    <!-- left: watchlist -->
+    <div class="watchlist-panel card" style="padding:0;overflow:hidden">
+        <div class="wl-search">
+            <input type="text" id="searchInput" placeholder="搜索股票名称或代码..." oninput="renderWatchlist()" />
+        </div>
+        <div class="wl-list" id="wlList"></div>
+        <div class="empty" id="wlEmpty" style="padding:40px 20px">暂无自选股，可从机构持仓页面添加</div>
+    </div>
+
+    <!-- right: detail -->
+    <div class="detail card" style="padding:0;overflow:hidden">
+        <div class="chart-section" id="chartSection">
+            <div class="chart-bar">
+                <span class="stock-name" id="chartStockName"></span>
+                <div style="display:flex;gap:8px;align-items:center">
+                    <a id="f10Link" href="#" target="_blank" class="f10-link">F10</a>
+                    <button onclick="closeChart()">关闭图表</button>
+                </div>
+            </div>
+            <div class="chart-container" id="tvChartContainer"></div>
+        </div>
+        <div id="detailContent">
+            <div class="empty-detail" id="detailEmpty">选择左侧股票查看详情</div>
+        </div>
+    </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="common.js"></script>
+<script src="https://s3.tradingview.com/tv.js"></script>
+<script>
+const wlList = document.getElementById("wlList");
+const searchInput = document.getElementById("searchInput");
+const API = "https://datacenter.eastmoney.com/securities/api/data/v1/get";
+let selectedCode = "";
+let tvWidget = null, currentChartSecucode = "", currentChartName = "";
+
+// ---- Toast ----
+let toastTimer;
+function showToast(msg) {
+    const el = document.getElementById("toast");
+    el.textContent = msg; el.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => el.classList.remove("show"), 1500);
+}
+
+// ---- Render watchlist ----
+function renderWatchlist() {
+    const kw = searchInput.value.trim().toLowerCase();
+    let list = getWatchlist();
+    if (kw) list = list.filter(s => s.name.toLowerCase().includes(kw) || s.secucode.includes(kw));
+
+    document.getElementById("wlEmpty").style.display = list.length ? "none" : "block";
+    wlList.innerHTML = "";
+
+    for (const s of list) {
+        const [code] = s.secucode.split(".");
+        const board = getBoardLabel(code);
+        const watched = true; // all items in watchlist are watched
+        const div = document.createElement("div");
+        div.className = "wl-item" + (s.secucode === selectedCode ? " selected" : "");
+        div.innerHTML = `
+            <div class="wl-info">
+                <div class="wl-name">${s.name}</div>
+                <div class="wl-meta">
+                    <span>${code}</span>
+                    <span class="type-badge">${board}</span>
+                    <span style="color:var(--text2)">${s.market}</span>
+                </div>
+            </div>
+            <span class="star on" title="移出自选">★</span>`;
+        div.querySelector(".star").addEventListener("click", e => { e.stopPropagation(); removeStock(s); });
+        div.addEventListener("click", e => { if (!e.target.classList.contains("star")) selectStock(s); });
+        wlList.appendChild(div);
+    }
+}
+
+function removeStock(s) {
+    const [code] = s.secucode.split(".");
+    toggleWatchlist(s.secucode, s.name, s.market);
+    showToast(`已将 ${s.name} 移出自选`);
+    if (selectedCode === s.secucode) {
+        selectedCode = "";
+        document.getElementById("chartSection").classList.remove("open");
+        document.getElementById("tvChartContainer").innerHTML = "";
+        document.getElementById("detailContent").innerHTML =
+            '<div class="empty-detail">选择左侧股票查看详情</div>';
+    }
+    renderWatchlist();
+}
+
+function selectStock(s) {
+    selectedCode = s.secucode;
+    renderWatchlist();
+    openChart(s.secucode, s.name);
+    loadTopHolders(s.secucode);
+}
+
+// ---- TradingView Chart ----
+function openChart(secucode, name) {
+    const symbol = secucodeToSymbol(secucode);
+    if (!symbol) return;
+    currentChartSecucode = secucode; currentChartName = name;
+    const [code] = secucode.split(".");
+    document.getElementById("chartStockName").textContent = `${name} (${code})`;
+    document.getElementById("f10Link").href = codeToF10Url(secucode);
+    document.getElementById("chartSection").classList.add("open");
+    const container = document.getElementById("tvChartContainer"); container.innerHTML = "";
+    tvWidget = new TradingView.widget({
+        autosize: true, symbol, interval: "D", timezone: "Asia/Shanghai",
+        theme: getTheme(), style: "1", locale: "zh_CN", enable_publishing: false,
+        allow_symbol_change: true, container_id: "tvChartContainer",
+        hide_side_toolbar: false, studies: ["MASimple@tv-basicstudies"],
+    });
+}
+
+function closeChart() {
+    document.getElementById("chartSection").classList.remove("open");
+    document.getElementById("tvChartContainer").innerHTML = ""; tvWidget = null;
+}
+
+// ---- Top 10 holders ----
+async function loadTopHolders(secucode) {
+    const [code, m] = secucode.split(".");
+    const market = m === "SH" ? 1 : 0;
+    const cacheKey = `top10_${secucode}`;
+    const cached = cacheGet(cacheKey);
+
+    let data;
+    if (cached) { data = cached; }
+    else {
+        const url = `${API}?reportName=RPT_F10_EH_HOLDERSNUM`
+            + `&columns=HOLDER_NAME,HOLDNUM_RATIO,HOLDER_TYPE,IS_HOLDORG,CHANGE_RATIO,END_DATE`
+            + `&filter=(SECURITY_CODE="${code}")(MARKET=${market})`
+            + `&sortTypes=-1&sortColumns=END_DATE&pageNumber=1&pageSize=20`
+            + `&source=Datacenter&client=PC&v=${Math.random()}`;
+        try {
+            const resp = await fetch(url);
+            const json = await resp.json();
+            data = json.result?.data || [];
+            if (data.length) cacheSet(cacheKey, data);
+        } catch { data = []; }
+    }
+
+    const content = document.getElementById("detailContent");
+    if (!data.length) {
+        content.innerHTML = '<div class="detail-section"><div class="detail-section-header">十大流通股东</div></div>'
+            + '<div class="empty" style="padding:20px">暂无股东数据</div>';
+        return;
+    }
+
+    const latestDate = data[0].END_DATE?.substring(0, 10) || "";
+    let html = `<div class="detail-section">
+        <div class="detail-section-header">
+            <span>十大流通股东 (${latestDate})</span>
+            <span class="cache-tag">${cached ? "缓存" : ""}</span>
+        </div>
+    </div>
+    <div class="table-wrap" style="flex:1;overflow:auto">
+        <table><thead><tr><th>股东名称</th><th>类型</th><th>持股占比</th><th>变化</th></tr></thead><tbody>`;
+
+    for (const row of data) {
+        if (row.HOLDER_TYPE === "个人" || row.IS_HOLDORG === "0") continue; // skip for brevity if too many
+        const chg = row.CHANGE_RATIO;
+        html += `<tr>
+            <td>${row.HOLDER_NAME || ""}</td>
+            <td>${row.HOLDER_TYPE || ""}</td>
+            <td>${row.HOLDNUM_RATIO != null ? row.HOLDNUM_RATIO.toFixed(2) + "%" : ""}</td>
+            <td style="color:${chg > 0 ? "var(--up)" : chg < 0 ? "var(--down)" : ""}">${chg != null ? (chg > 0 ? "+" : "") + chg.toFixed(2) : ""}</td>
+        </tr>`;
+    }
+
+    html += "</tbody></table></div>";
+    content.innerHTML = html;
+}
+
+// ---- Init ----
+renderWatchlist();
+</script>
+</body>
+</html>

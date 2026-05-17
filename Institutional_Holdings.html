@@ -1,1184 +1,458 @@
 <!doctype html>
 <html lang="zh">
-    <head>
-        <meta charset="UTF-8" />
-        <title>机构持仓下载器</title>
-        <style>
-            :root {
-                --primary: #4f6ef7;
-                --primary-light: #eef1fe;
-                --bg: #f0f2f5;
-                --card: #fff;
-                --text: #1f2937;
-                --text2: #6b7280;
-                --border: #e5e7eb;
-                --radius: 12px;
-                --shadow:
-                    0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
-                --th-bg: #f8f9fb;
-                --chart-bar-bg: #f8f9fb;
-                --cache-bg: #e0f2fe;
-                --cache-text: #0369a1;
-                --up: #e53e3e;
-                --down: #38a169;
-                --input-bg: #fff;
-            }
-            [data-theme="dark"] {
-                --primary: #6b8af7;
-                --primary-light: rgba(107, 138, 247, 0.12);
-                --bg: #111318;
-                --card: #1a1d26;
-                --text: #e1e4ea;
-                --text2: #8b8fa3;
-                --border: #2a2d38;
-                --shadow:
-                    0 1px 3px rgba(0, 0, 0, 0.3), 0 1px 2px rgba(0, 0, 0, 0.2);
-                --th-bg: #1f222d;
-                --chart-bar-bg: #1f222d;
-                --cache-bg: #1e2d4a;
-                --cache-text: #6bb5f7;
-                --up: #f87171;
-                --down: #4ade80;
-                --input-bg: #14161e;
-            }
-            [data-theme="dark"] button,
-            [data-theme="dark"] select,
-            [data-theme="dark"] input {
-                color: var(--text);
-                background: var(--card);
-            }
-            [data-theme="dark"] select option {
-                background: var(--card);
-                color: var(--text);
-            }
-            * {
-                box-sizing: border-box;
-                margin: 0;
-                padding: 0;
-            }
-            body {
-                font-family:
-                    -apple-system, "Microsoft YaHei", "PingFang SC", sans-serif;
-                background: var(--bg);
-                color: var(--text);
-                min-height: 100vh;
-            }
-            .header {
-                background: var(--card);
-                border-bottom: 1px solid var(--border);
-                padding: 20px 32px;
-                display: flex;
-                align-items: center;
-                gap: 16px;
-            }
-            .header h1 {
-                font-size: 20px;
-                font-weight: 600;
-            }
-            .header a {
-                color: var(--text2);
-                text-decoration: none;
-                font-size: 14px;
-            }
-            .main {
-                max-width: 1200px;
-                margin: 0 auto;
-                padding: 24px 24px 0;
-                display: flex;
-                gap: 20px;
-                height: calc(100vh - 64px);
-                overflow: hidden;
-            }
-            /* ---- left panel ---- */
-            .panel {
-                width: 380px;
-                flex-shrink: 0;
-                display: flex;
-                flex-direction: column;
-                gap: 16px;
-                overflow-y: auto;
-                padding-bottom: 24px;
-            }
-            .card {
-                background: var(--card);
-                border-radius: var(--radius);
-                box-shadow: var(--shadow);
-                padding: 20px;
-            }
-            .card-title {
-                font-size: 14px;
-                font-weight: 600;
-                margin-bottom: 12px;
-            }
-            .type-tabs {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 6px;
-                margin-bottom: 12px;
-            }
-            .type-tab {
-                padding: 5px 12px;
-                border-radius: 20px;
-                border: 1px solid var(--border);
-                background: var(--card);
-                font-size: 13px;
-                cursor: pointer;
-                transition: all 0.15s;
-                color: var(--text2);
-            }
-            .type-tab:hover {
-                border-color: var(--primary);
-                color: var(--primary);
-            }
-            .type-tab.active {
-                background: var(--primary);
-                color: #fff;
-                border-color: var(--primary);
-            }
-            .search-wrap {
-                position: relative;
-                margin-bottom: 10px;
-            }
-            .search-wrap input {
-                width: 100%;
-                padding: 8px 12px 8px 32px;
-                border: 1px solid var(--border);
-                border-radius: 8px;
-                font-size: 13px;
-                outline: none;
-                transition: border 0.15s;
-                background: var(--input-bg);
-            }
-            .search-wrap input:focus {
-                border-color: var(--primary);
-            }
-            .search-wrap::before {
-                content: "🔍";
-                position: absolute;
-                left: 10px;
-                top: 50%;
-                transform: translateY(-50%);
-                font-size: 13px;
-                pointer-events: none;
-            }
-            .holder-list {
-                border: 1px solid var(--border);
-                border-radius: 8px;
-                max-height: 260px;
-                overflow-y: auto;
-                font-size: 13px;
-            }
-            .holder-list .item {
-                padding: 8px 12px;
-                cursor: pointer;
-                border-bottom: 1px solid var(--border);
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                transition: background 0.1s;
-            }
-            .holder-list .item:last-child {
-                border-bottom: none;
-            }
-            .holder-list .item:hover {
-                background: var(--primary-light);
-            }
-            .holder-list .item.selected {
-                background: var(--primary);
-                color: #fff;
-            }
-            .holder-list .item .id {
-                font-size: 12px;
-                color: var(--text2);
-                flex-shrink: 0;
-                margin-left: 8px;
-            }
-            .holder-list .item.selected .id {
-                color: rgba(255, 255, 255, 0.7);
-            }
-            .holder-list .name {
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                flex: 1;
-                min-width: 0;
-            }
-            .holder-list .item .star {
-                font-size: 14px;
-                cursor: pointer;
-                flex-shrink: 0;
-                margin-right: 6px;
-                opacity: 0.3;
-                transition: opacity 0.15s;
-                user-select: none;
-            }
-            .holder-list .item .star:hover {
-                opacity: 0.7;
-            }
-            .holder-list .item .star.on {
-                opacity: 1;
-            }
-            .holder-list .item.selected .star {
-                color: #fff;
-            }
-            .type-badge {
-                font-size: 10px;
-                padding: 1px 5px;
-                border-radius: 3px;
-                background: var(--primary-light);
-                color: var(--primary);
-                flex-shrink: 0;
-                margin-left: 6px;
-                white-space: nowrap;
-            }
-            .holder-list .item.selected .type-badge {
-                background: rgba(255, 255, 255, 0.2);
-                color: rgba(255, 255, 255, 0.85);
-            }
-            .hint {
-                font-size: 12px;
-                color: var(--text2);
-                margin-top: 6px;
-            }
-            .custom-row {
-                display: flex;
-                gap: 8px;
-                align-items: center;
-            }
-            .custom-row input {
-                flex: 1;
-                padding: 7px 10px;
-                border: 1px solid var(--border);
-                border-radius: 8px;
-                font-size: 13px;
-                outline: none;
-                background: var(--input-bg);
-            }
-            .custom-row input:focus {
-                border-color: var(--primary);
-            }
-            .actions {
-                display: flex;
-                gap: 8px;
-                flex-wrap: wrap;
-                align-items: center;
-            }
-            .actions select {
-                padding: 7px 10px;
-                border: 1px solid var(--border);
-                border-radius: 8px;
-                font-size: 13px;
-                background: var(--input-bg);
-                outline: none;
-                min-width: 140px;
-            }
-            button {
-                padding: 7px 16px;
-                border-radius: 8px;
-                border: 1px solid var(--border);
-                background: var(--card);
-                font-size: 13px;
-                cursor: pointer;
-                transition: all 0.15s;
-            }
-            button:hover {
-                border-color: var(--primary);
-                color: var(--primary);
-            }
-            button.primary {
-                background: var(--primary);
-                color: #fff;
-                border-color: var(--primary);
-            }
-            button.primary:hover {
-                opacity: 0.9;
-            }
-            /* ---- chart panel ---- */
-            .chart-section {
-                border-bottom: 1px solid var(--border);
-                flex-shrink: 0;
-                display: none;
-            }
-            .chart-section.open {
-                display: block;
-            }
-            .chart-bar {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 8px 16px;
-                background: var(--chart-bar-bg);
-                font-size: 13px;
-                color: var(--text2);
-            }
-            .chart-bar .stock-name {
-                font-weight: 600;
-                color: var(--text);
-                font-size: 14px;
-            }
-            .chart-bar button {
-                padding: 3px 10px;
-                font-size: 12px;
-            }
-            .chart-container {
-                height: 400px;
-            }
-            /* ---- right panel ---- */
-            .content {
-                flex: 1;
-                min-width: 0;
-                display: flex;
-                flex-direction: column;
-                overflow: hidden;
-            }
-            .result-header {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                padding: 12px 16px;
-                border-bottom: 1px solid var(--border);
-                flex-shrink: 0;
-            }
-            .result-header .info {
-                font-size: 13px;
-                color: var(--text2);
-            }
-            .result-header .info .cache-tag {
-                font-size: 11px;
-                background: var(--cache-bg);
-                color: var(--cache-text);
-                padding: 1px 6px;
-                border-radius: 4px;
-                margin-left: 6px;
-            }
-            .btn-sm {
-                padding: 5px 12px;
-                font-size: 12px;
-            }
-            .table-wrap {
-                overflow-x: auto;
-                overflow-y: auto;
-                flex: 1;
-            }
-            table {
-                width: 100%;
-                border-collapse: collapse;
-                font-size: 13px;
-            }
-            th {
-                background: var(--th-bg);
-                padding: 10px 12px;
-                text-align: left;
-                font-weight: 600;
-                font-size: 12px;
-                color: var(--text2);
-                border-bottom: 2px solid var(--border);
-                position: sticky;
-                top: 0;
-                z-index: 1;
-                white-space: nowrap;
-            }
-            td {
-                padding: 10px 12px;
-                border-bottom: 1px solid var(--border);
-                white-space: nowrap;
-            }
-            tr:hover td {
-                background: var(--primary-light);
-            }
-            .empty {
-                text-align: center;
-                padding: 60px 20px;
-                color: var(--text2);
-                font-size: 14px;
-            }
+<head>
+    <meta charset="UTF-8" />
+    <title>机构持仓下载器</title>
+    <link rel="stylesheet" href="common.css" />
+    <style>
+        /* ---- Type tabs ---- */
+        .type-tabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+        .type-tab {
+            padding: 5px 12px; border-radius: 20px; border: 1px solid var(--border);
+            background: var(--card); font-size: 13px; cursor: pointer;
+            transition: all .15s; color: var(--text2);
+        }
+        .type-tab:hover { border-color: var(--primary); color: var(--primary); }
+        .type-tab.active { background: var(--primary); color: #fff; border-color: var(--primary); }
 
-            /* ---- column filters in thead ---- */
-            th .col-filter {
-                display: inline-flex;
-                align-items: center;
-                gap: 4px;
-                margin-top: 4px;
-            }
-            th .col-filter select,
-            th .col-filter button {
-                padding: 3px 8px;
-                font-size: 11px;
-                border-radius: 4px;
-                border: 1px solid var(--border);
-                background: var(--input-bg);
-                cursor: pointer;
-                color: var(--text2);
-            }
-            th .col-filter select {
-                outline: none;
-                max-width: 80px;
-                background: var(--input-bg);
-            }
-            th .col-filter select:focus {
-                border-color: var(--primary);
-            }
-            th .col-filter button:hover {
-                border-color: var(--primary);
-                color: var(--primary);
-            }
-            th .col-filter button.active {
-                background: var(--primary);
-                color: #fff;
-                border-color: var(--primary);
-            }
-            th .col-filter .arrow {
-                font-size: 10px;
-                margin-left: 2px;
-            }
+        /* ---- Search ---- */
+        .search-wrap { position: relative; margin-bottom: 10px; }
+        .search-wrap input { width: 100%; padding: 8px 12px 8px 32px; }
+        .search-wrap::before {
+            content: "🔍"; position: absolute; left: 10px; top: 50%;
+            transform: translateY(-50%); font-size: 13px; pointer-events: none;
+        }
 
-            @media (max-width: 860px) {
-                .main {
-                    flex-direction: column;
-                }
-                .panel {
-                    width: 100%;
-                }
-            }
-        </style>
-        <link rel="stylesheet" href="./style.css" />
-    </head>
+        /* ---- Holder list ---- */
+        .holder-list {
+            border: 1px solid var(--border); border-radius: 8px;
+            max-height: 260px; overflow-y: auto; font-size: 13px;
+        }
+        .holder-list .item {
+            padding: 8px 12px; cursor: pointer; border-bottom: 1px solid var(--border);
+            display: flex; align-items: center; transition: background .1s;
+        }
+        .holder-list .item:last-child { border-bottom: none; }
+        .holder-list .item:hover { background: var(--primary-light); }
+        .holder-list .item.selected { background: var(--primary); color: #fff; }
+        .holder-list .item .id {
+            font-size: 12px; color: var(--text2); flex-shrink: 0; margin-left: 8px;
+        }
+        .holder-list .item.selected .id { color: rgba(255,255,255,.7); }
+        .holder-list .item.selected .type-badge {
+            background: rgba(255,255,255,.2); color: rgba(255,255,255,.85);
+        }
+        .holder-list .name {
+            overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+            flex: 1; min-width: 0;
+        }
+        .holder-list .item:hover .name {
+            overflow: visible; white-space: normal; word-break: break-word;
+            position: relative; z-index: 1;
+        }
 
-    <body>
-        <div class="header">
-            <h1>机构持仓数据</h1>
-            <a href="index.html">← 返回首页</a>
-            <div style="flex: 1"></div>
-            <button
-                onclick="toggleTheme()"
-                id="themeBtn"
-                style="
-                    font-size: 16px;
-                    padding: 6px 10px;
-                    border-radius: 50%;
-                    width: 36px;
-                    height: 36px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                "
-                title="切换主题"
-            ></button>
+        /* ---- Custom row ---- */
+        .custom-row { display: flex; gap: 8px; align-items: center; }
+        .custom-row input { flex: 1; }
+
+        /* ---- Actions ---- */
+        .actions { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+        .actions select { min-width: 140px; }
+
+        /* ---- Chart section ---- */
+        .chart-section { border-bottom: 1px solid var(--border); flex-shrink: 0; display: none; }
+        .chart-section.open { display: block; }
+
+        /* ---- Table filters ---- */
+        th .col-filter { display: inline-flex; align-items: center; gap: 4px; margin-top: 4px; }
+        th .col-filter select, th .col-filter button {
+            padding: 3px 8px; font-size: 11px; border-radius: 4px;
+            border: 1px solid var(--border); background: var(--input-bg);
+            cursor: pointer; color: var(--text2);
+        }
+        th .col-filter select { outline: none; max-width: 80px; }
+        th .col-filter select:focus { border-color: var(--primary); }
+        th .col-filter button:hover { border-color: var(--primary); color: var(--primary); }
+        th .col-filter button.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+        /* ---- Toast ---- */
+        .toast {
+            position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+            background: var(--primary); color: #fff; padding: 8px 20px;
+            border-radius: 8px; font-size: 13px; z-index: 999;
+            opacity: 0; transition: opacity .3s; pointer-events: none;
+        }
+        .toast.show { opacity: 1; }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <h1>机构持仓数据</h1>
+    <a href="index.html">← 返回首页</a>
+    <div style="flex:1"></div>
+    <a href="watchlist.html" class="type-badge" style="font-size:13px;padding:5px 12px">自选股</a>
+    <button class="theme-btn" onclick="toggleTheme()" id="themeBtn" title="切换主题"></button>
+</div>
+
+<div class="main">
+    <!-- left panel -->
+    <div class="panel">
+        <div class="card">
+            <div class="card-title">选择机构</div>
+            <div class="type-tabs" id="typeTabs">
+                <div class="type-tab" data-type="fav" onclick="showFavorites(this)">★ 关注</div>
+            </div>
+            <div class="search-wrap">
+                <input type="text" id="searchInput" placeholder="搜索机构名称或代码..." />
+            </div>
+            <div class="holder-list" id="holderList"></div>
+            <div class="hint" id="holderHint">从机构库选择，或手动输入 ID</div>
         </div>
 
-        <div class="main">
-            <!-- left panel -->
-            <div class="panel">
-                <div class="card">
-                    <div class="card-title">选择机构</div>
-                    <div class="type-tabs" id="typeTabs">
-                        <div
-                            class="type-tab"
-                            data-type="fav"
-                            onclick="showFavorites(this)"
-                        >
-                            ★ 关注
-                        </div>
-                    </div>
-                    <div class="search-wrap">
-                        <input
-                            type="text"
-                            id="searchInput"
-                            placeholder="搜索机构名称或代码..."
-                        />
-                    </div>
-                    <div class="holder-list" id="holderList"></div>
-                    <div class="hint" id="holderHint">
-                        从机构库选择，或手动输入 ID
-                    </div>
-                </div>
+        <div class="card">
+            <div class="card-title">自定义机构 ID</div>
+            <div class="custom-row">
+                <input type="text" id="customId" placeholder="输入 HOLDER_NEW，如 10429689"
+                    onkeydown="if(event.key==='Enter')useCustom()" />
+                <button onclick="useCustom()">使用</button>
+            </div>
+        </div>
 
-                <div class="card">
-                    <div class="card-title">自定义机构 ID</div>
-                    <div class="custom-row">
-                        <input
-                            type="text"
-                            id="customId"
-                            placeholder="输入 HOLDER_NEW，如 10429689"
-                            onkeydown="if (event.key === 'Enter') useCustom();"
-                        />
-                        <button onclick="useCustom()">使用</button>
-                    </div>
-                </div>
+        <div class="card">
+            <div class="card-title">季度</div>
+            <div class="actions">
+                <select id="dateSelect"><option value="">-- 选择机构后自动加载 --</option></select>
+            </div>
+            <div class="hint">选择机构后自动加载最新季度持仓</div>
+        </div>
+    </div>
 
-                <div class="card">
-                    <div class="card-title">季度</div>
-                    <div class="actions">
-                        <select id="dateSelect">
-                            <option value="">-- 选择机构后自动加载 --</option>
+    <!-- right panel -->
+    <div class="content card" style="padding:0;overflow:hidden">
+        <div class="chart-section" id="chartSection">
+            <div class="chart-bar">
+                <span class="stock-name" id="chartStockName"></span>
+                <div style="display:flex;gap:8px;align-items:center">
+                    <a id="f10Link" href="#" target="_blank" class="f10-link">F10</a>
+                    <button onclick="closeChart()">关闭图表</button>
+                </div>
+            </div>
+            <div class="chart-container" id="tvChartContainer"></div>
+        </div>
+        <div class="result-header">
+            <span class="info" id="resultInfo">选择机构后自动加载持仓数据</span>
+            <button class="btn-sm" onclick="exportCSV()" id="btnExport" style="display:none">导出 CSV</button>
+        </div>
+        <div class="table-wrap">
+            <table id="table">
+                <thead><tr>
+                    <th>日期</th>
+                    <th>股票</th>
+                    <th>代码<div class="col-filter">
+                        <select id="filterBoard" onchange="applyFilters()">
+                            <option value="">全部</option><option value="main">主板</option>
+                            <option value="cyb">创业板</option><option value="kcb">科创板</option>
+                            <option value="bse">北交所</option><option value="b">B股</option>
                         </select>
-                    </div>
-                    <div class="hint">选择机构后自动加载最新季度持仓</div>
-                </div>
-            </div>
-
-            <!-- right panel -->
-            <div class="content card" style="padding: 0; overflow: hidden">
-                <div class="chart-section" id="chartSection">
-                    <div class="chart-bar">
-                        <span class="stock-name" id="chartStockName"></span>
-                        <div
-                            style="display: flex; gap: 8px; align-items: center"
-                        >
-                            <a
-                                id="f10Link"
-                                href="#"
-                                target="_blank"
-                                style="
-                                    font-size: 12px;
-                                    color: var(--primary);
-                                    text-decoration: none;
-                                    padding: 3px 10px;
-                                    border: 1px solid var(--primary);
-                                    border-radius: 4px;
-                                "
-                                >F10</a
-                            >
-                            <button onclick="closeChart()">关闭图表</button>
-                        </div>
-                    </div>
-                    <div class="chart-container" id="tvChartContainer"></div>
-                </div>
-                <div class="result-header">
-                    <span class="info" id="resultInfo"
-                        >选择机构后自动加载持仓数据</span
-                    >
-                    <button
-                        class="btn-sm"
-                        onclick="exportCSV()"
-                        id="btnExport"
-                        style="display: none"
-                    >
-                        导出 CSV
-                    </button>
-                </div>
-                <div class="table-wrap">
-                    <table id="table">
-                        <thead>
-                            <tr>
-                                <th>日期</th>
-                                <th>股票</th>
-                                <th>
-                                    代码
-                                    <div class="col-filter">
-                                        <select
-                                            id="filterBoard"
-                                            onchange="applyFilters()"
-                                        >
-                                            <option value="">全部</option>
-                                            <option value="main">主板</option>
-                                            <option value="cyb">创业板</option>
-                                            <option value="kcb">科创板</option>
-                                            <option value="bse">北交所</option>
-                                            <option value="b">B股</option>
-                                        </select>
-                                    </div>
-                                </th>
-                                <th>
-                                    状态
-                                    <div class="col-filter">
-                                        <select
-                                            id="filterState"
-                                            onchange="applyFilters()"
-                                        >
-                                            <option value="">全部</option>
-                                            <option value="新进">新进</option>
-                                            <option value="不变">不变</option>
-                                            <option value="加仓">加仓</option>
-                                            <option value="减仓">减仓</option>
-                                            <option value="平仓">平仓</option>
-                                        </select>
-                                    </div>
-                                </th>
-                                <th>
-                                    持仓占比
-                                    <div class="col-filter">
-                                        <button
-                                            onclick="toggleSort('ratio')"
-                                            id="sortBtn_ratio"
-                                            title="排序"
-                                        >
-                                            ⇅
-                                        </button>
-                                    </div>
-                                </th>
-                                <th>
-                                    变化比例
-                                    <div class="col-filter">
-                                        <button
-                                            onclick="toggleSort('change')"
-                                            id="sortBtn_change"
-                                            title="排序"
-                                        >
-                                            ⇅
-                                        </button>
-                                    </div>
-                                </th>
-                                <th>
-                                    市值
-                                    <div class="col-filter">
-                                        <button
-                                            onclick="toggleSort('cap')"
-                                            id="sortBtn_cap"
-                                            title="排序"
-                                        >
-                                            ⇅
-                                        </button>
-                                    </div>
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                    <div class="empty" id="empty">
-                        选择机构后自动加载持仓数据
-                    </div>
-                </div>
-            </div>
+                    </div></th>
+                    <th>状态<div class="col-filter">
+                        <select id="filterState" onchange="applyFilters()">
+                            <option value="">全部</option><option value="新进">新进</option>
+                            <option value="不变">不变</option><option value="加仓">加仓</option>
+                            <option value="减仓">减仓</option><option value="平仓">平仓</option>
+                        </select>
+                    </div></th>
+                    <th>持仓占比<div class="col-filter">
+                        <button onclick="toggleSort('ratio')" id="sortBtn_ratio" title="排序">⇅</button>
+                    </div></th>
+                    <th>变化比例<div class="col-filter">
+                        <button onclick="toggleSort('change')" id="sortBtn_change" title="排序">⇅</button>
+                    </div></th>
+                    <th>市值<div class="col-filter">
+                        <button onclick="toggleSort('cap')" id="sortBtn_cap" title="排序">⇅</button>
+                    </div></th>
+                </tr></thead>
+                <tbody></tbody>
+            </table>
+            <div class="empty" id="empty">选择机构后自动加载持仓数据</div>
         </div>
+    </div>
+</div>
 
-        <script
-            type="text/javascript"
-            src="https://s3.tradingview.com/tv.js"
-        ></script>
-        <script>
-            // ---- Theme ----
-            function getTheme() {
-                return localStorage.getItem("stk_theme") || "light";
-            }
+<div class="toast" id="toast"></div>
 
-            function applyTheme(theme) {
-                document.documentElement.setAttribute("data-theme", theme);
-                localStorage.setItem("stk_theme", theme);
-                document.getElementById("themeBtn").textContent =
-                    theme === "dark" ? "☀" : "🌙";
-            }
+<script src="common.js"></script>
+<script src="https://s3.tradingview.com/tv.js"></script>
+<script>
+const searchInput = document.getElementById("searchInput");
+const holderList = document.getElementById("holderList");
+const dateSelect = document.getElementById("dateSelect");
+const resultInfo = document.getElementById("resultInfo");
+const btnExport = document.getElementById("btnExport");
+const emptyEl = document.getElementById("empty");
+const filterBoard = document.getElementById("filterBoard");
+const filterState = document.getElementById("filterState");
 
-            applyTheme(getTheme());
+let currentData = [];
+let allHolders = [];
+let selectedId = "";
+let holderCache = {};
+let sortState = { col: null, dir: 0 };
 
-            function toggleTheme() {
-                const next = getTheme() === "dark" ? "light" : "dark";
-                applyTheme(next);
-                // reopen chart if open, to sync TradingView theme
-                const section = document.getElementById("chartSection");
-                if (
-                    section.classList.contains("open") &&
-                    currentChartSecucode
-                ) {
-                    openChart(currentChartSecucode, currentChartName);
-                }
-            }
+const TYPES = ["基金","QFII","券商","保险","社保","信托","国家队","个人","其他"];
+const HOLDER_BASE = "https://raw.githubusercontent.com/ryanlq/stockdata/main/holders";
+const API = "https://datacenter.eastmoney.com/securities/api/data/v1/get";
 
-            const searchInput = document.getElementById("searchInput");
-            const holderList = document.getElementById("holderList");
-            const dateSelect = document.getElementById("dateSelect");
-            const resultInfo = document.getElementById("resultInfo");
-            const btnExport = document.getElementById("btnExport");
-            const emptyEl = document.getElementById("empty");
-            const filterBoard = document.getElementById("filterBoard");
-            const filterState = document.getElementById("filterState");
+// ---- Toast ----
+let toastTimer;
+function showToast(msg) {
+    const el = document.getElementById("toast");
+    el.textContent = msg; el.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => el.classList.remove("show"), 1500);
+}
 
-            let currentData = [];
-            let allHolders = [];
-            let selectedId = "";
-            let holderCache = {};
-            let sortState = { col: null, dir: 0 }; // dir: 0=none, 1=desc, 2=asc
+// ---- Sort ----
+const SORT_FIELDS = { ratio: "FREE_HOLDNUM_RATIO", change: "CHANGE_RATIO", cap: "HOLDER_MARKET_CAP" };
 
-            const TYPES = [
-                "基金",
-                "QFII",
-                "券商",
-                "保险",
-                "社保",
-                "信托",
-                "国家队",
-                "个人",
-                "其他",
-            ];
-            const HOLDER_BASE =
-                "https://raw.githubusercontent.com/ryanlq/stockdata/main/holders";
-            const API =
-                "https://datacenter.eastmoney.com/securities/api/data/v1/get";
+function toggleSort(col) {
+    if (sortState.col === col) { sortState.dir = (sortState.dir + 1) % 3; if (sortState.dir === 0) sortState.col = null; }
+    else { sortState.col = col; sortState.dir = 1; }
+    for (const k of Object.keys(SORT_FIELDS)) {
+        const b = document.getElementById("sortBtn_" + k);
+        if (k === sortState.col) { b.textContent = sortState.dir === 1 ? "↓" : "↑"; b.classList.add("active"); }
+        else { b.textContent = "⇅"; b.classList.remove("active"); }
+    }
+    applyFilters();
+}
 
-            // ---- Board detection ----
-            function getBoard(code) {
-                if (!code) return "";
-                const c = String(code);
-                if (c.startsWith("688")) return "kcb"; // 科创板
-                if (c.startsWith("300") || c.startsWith("301")) return "cyb"; // 创业板
-                if (c.startsWith("8") || c.startsWith("43")) return "bse";
-                if (c.startsWith("900") || c.startsWith("200")) return "b";
-                return "main";
-            }
+// ---- Filter ----
+function applyFilters() {
+    if (!currentData.length) return;
+    let rows = currentData;
+    if (filterBoard.value) rows = rows.filter(r => getBoard(r.SECURITY_CODE) === filterBoard.value);
+    if (filterState.value) rows = rows.filter(r => (r.HOLDER_STATE_NEW || "") === filterState.value);
+    if (sortState.col) {
+        const field = SORT_FIELDS[sortState.col];
+        const dir = sortState.dir === 1 ? -1 : 1;
+        rows = [...rows].sort((a, b) => ((a[field] || 0) - (b[field] || 0)) * dir);
+    }
+    renderTable(rows);
+    resultInfo.innerHTML = (() => {
+        let base = `${rows.length} / ${currentData.length} 条`;
+        if (rows.length < currentData.length) base += ` <span style="color:var(--primary)">已筛选</span>`;
+        if (cacheGet(`data_${selectedId}_${dateSelect.value.substring(0,10)}`)) base += `<span class="cache-tag">缓存</span>`;
+        return base;
+    })();
+}
 
-            // ---- Sort ----
-            const SORT_FIELDS = {
-                ratio: "FREE_HOLDNUM_RATIO",
-                change: "CHANGE_RATIO",
-                cap: "HOLDER_MARKET_CAP",
-            };
+// ---- Favorites (institutions) ----
+const FAV_KEY = "stk_favorites";
+function getFavs() { try { return JSON.parse(localStorage.getItem(FAV_KEY)) || []; } catch { return []; } }
+function saveFavs(l) { localStorage.setItem(FAV_KEY, JSON.stringify(l)); }
 
-            function toggleSort(col) {
-                const btn = document.getElementById("sortBtn_" + col);
-                if (sortState.col === col) {
-                    sortState.dir = (sortState.dir + 1) % 3;
-                    if (sortState.dir === 0) sortState.col = null;
-                } else {
-                    sortState.col = col;
-                    sortState.dir = 1;
-                }
-                // update all sort buttons
-                for (const k of Object.keys(SORT_FIELDS)) {
-                    const b = document.getElementById("sortBtn_" + k);
-                    if (k === sortState.col) {
-                        b.textContent = sortState.dir === 1 ? "↓" : "↑";
-                        b.classList.add("active");
-                    } else {
-                        b.textContent = "⇅";
-                        b.classList.remove("active");
-                    }
-                }
-                applyFilters();
-            }
+function toggleFav(h, event) {
+    event.stopPropagation();
+    let favs = getFavs();
+    const idx = favs.findIndex(f => f.id === h.HOLDER_NEW);
+    if (idx >= 0) favs.splice(idx, 1);
+    else favs.push({ id: h.HOLDER_NEW, name: h.HOLDER, type: h.HOLDER_TYPE || "" });
+    saveFavs(favs);
+    renderList();
+    showToast(idx >= 0 ? "已取消关注" : "已关注");
+}
 
-            // ---- Filter + Sort pipeline ----
-            function applyFilters() {
-                if (!currentData.length) return;
+function showFavorites(btn) {
+    document.querySelectorAll(".type-tab").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    allHolders = getFavs().map(f => ({ HOLDER: f.name, HOLDER_NEW: f.id, HOLDER_TYPE: f.type || "" }));
+    renderList();
+}
 
-                const board = filterBoard.value;
-                const state = filterState.value;
+// ---- Type tabs ----
+const typeTabs = document.getElementById("typeTabs");
+TYPES.forEach(t => {
+    const btn = document.createElement("div");
+    btn.className = "type-tab"; btn.textContent = t;
+    btn.addEventListener("click", () => selectType(t, btn));
+    typeTabs.appendChild(btn);
+});
 
-                let rows = currentData;
+async function selectType(type, btn) {
+    document.querySelectorAll(".type-tab").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    if (holderCache[type]) { allHolders = holderCache[type]; renderList(); return; }
+    const cached = cacheGet("holder_" + type);
+    if (cached) { holderCache[type] = cached; allHolders = cached; renderList(); return; }
+    try {
+        resultInfo.textContent = `加载${type}列表...`;
+        const resp = await fetch(`${HOLDER_BASE}/${encodeURIComponent(type)}.json`);
+        const data = await resp.json();
+        holderCache[type] = data; cacheSet("holder_" + type, data);
+        allHolders = data; renderList();
+        resultInfo.textContent = "选择机构后自动加载持仓数据";
+    } catch (e) { resultInfo.textContent = "加载失败: " + e.message; }
+}
 
-                if (board)
-                    rows = rows.filter(
-                        (r) => getBoard(r.SECURITY_CODE) === board,
-                    );
-                if (state)
-                    rows = rows.filter(
-                        (r) => (r.HOLDER_STATE_NEW || "") === state,
-                    );
+function renderList() {
+    const kw = searchInput.value.trim().toLowerCase();
+    const list = kw ? allHolders.filter(h => h.HOLDER.toLowerCase().includes(kw) || h.HOLDER_NEW.includes(kw)) : allHolders;
+    const favs = getFavs();
+    holderList.innerHTML = "";
+    for (const h of list) {
+        const starred = favs.some(f => f.id === h.HOLDER_NEW);
+        const typeTag = h.HOLDER_TYPE ? `<span class="type-badge">${h.HOLDER_TYPE}</span>` : "";
+        const div = document.createElement("div");
+        div.className = "item" + (h.HOLDER_NEW === selectedId ? " selected" : "");
+        div.innerHTML = `<span class="star${starred ? " on" : ""}">${starred ? "★" : "☆"}</span>`
+            + `<span class="name">${h.HOLDER}</span>${typeTag}<span class="id">${h.HOLDER_NEW}</span>`;
+        div.querySelector(".star").addEventListener("click", e => toggleFav(h, e));
+        div.addEventListener("click", e => { if (!e.target.classList.contains("star")) selectHolder(h); });
+        holderList.appendChild(div);
+    }
+    document.getElementById("holderHint").textContent =
+        kw ? `${list.length} / ${allHolders.length}` : `共 ${allHolders.length} 个机构`;
+}
 
-                if (sortState.col) {
-                    const field = SORT_FIELDS[sortState.col];
-                    const dir = sortState.dir === 1 ? -1 : 1; // 1=desc so -1 for desc sort
-                    rows = [...rows].sort(
-                        (a, b) => ((a[field] || 0) - (b[field] || 0)) * dir,
-                    );
-                }
+function selectHolder(h) {
+    selectedId = h.HOLDER_NEW;
+    document.querySelectorAll(".holder-list .item").forEach(el =>
+        el.classList.toggle("selected", el.querySelector(".id").textContent === selectedId));
+    document.getElementById("customId").value = selectedId;
+    resetFilters();
+    loadDates().then(() => { if (dateSelect.value) fetchData(); });
+}
 
-                renderTable(rows);
-                resultInfo.innerHTML = (() => {
-                    let base = `${rows.length} / ${currentData.length} 条`;
-                    if (rows.length < currentData.length)
-                        base += ` <span style="color:var(--primary)">已筛选</span>`;
-                    const cached = cacheGet(
-                        `data_${selectedId}_${dateSelect.value.substring(0, 10)}`,
-                    );
-                    if (cached) base += `<span class="cache-tag">缓存</span>`;
-                    return base;
-                })();
-            }
+searchInput.addEventListener("input", renderList);
 
-            // ---- Cache (localStorage) ----
-            const CACHE_PREFIX = "stk_";
-            const CACHE_TTL = 90 * 24 * 3600 * 1000;
+function useCustom() {
+    const id = document.getElementById("customId").value.trim();
+    if (!id) return;
+    selectedId = id;
+    document.querySelectorAll(".type-tab").forEach(b => b.classList.remove("active"));
+    document.querySelectorAll(".holder-list .item").forEach(el => el.classList.remove("selected"));
+    resetFilters();
+    loadDates().then(() => { if (dateSelect.value) fetchData(); });
+}
 
-            function cacheGet(key) {
-                try {
-                    const raw = localStorage.getItem(CACHE_PREFIX + key);
-                    if (!raw) return null;
-                    const { ts, data } = JSON.parse(raw);
-                    if (Date.now() - ts > CACHE_TTL) {
-                        localStorage.removeItem(CACHE_PREFIX + key);
-                        return null;
-                    }
-                    return data;
-                } catch {
-                    return null;
-                }
-            }
+function resetFilters() {
+    filterBoard.value = ""; filterState.value = "";
+    sortState = { col: null, dir: 0 };
+    for (const k of Object.keys(SORT_FIELDS)) {
+        const b = document.getElementById("sortBtn_" + k);
+        b.textContent = "⇅"; b.classList.remove("active");
+    }
+}
 
-            function cacheSet(key, data) {
-                try {
-                    localStorage.setItem(
-                        CACHE_PREFIX + key,
-                        JSON.stringify({ ts: Date.now(), data }),
-                    );
-                } catch {
-                    /* quota exceeded */
-                }
-            }
+// ---- API ----
+async function loadDates() {
+    if (!selectedId) return;
+    const cacheKey = `dates_${selectedId}`;
+    const cached = cacheGet(cacheKey);
+    if (cached) { fillDates(cached); resultInfo.innerHTML = `${cached.length} 个季度<span class="cache-tag">缓存</span>`; return cached; }
+    resultInfo.textContent = "加载季度列表...";
+    const url = `${API}?reportName=RPT_F10_EH_FREEHOLDERS&columns=END_DATE&distinct=END_DATE`
+        + `&filter=(HOLDER_NEW="${selectedId}")&sortTypes=-1&sortColumns=END_DATE&pageNumber=1&pageSize=100&source=Datacenter&client=PC&v=${Math.random()}`;
+    const resp = await fetch(url);
+    const rows = (await resp.json()).result?.data?.map(r => r.END_DATE) || [];
+    if (!rows.length) { resultInfo.textContent = "未找到该机构的持仓季度数据"; return []; }
+    cacheSet(cacheKey, rows); fillDates(rows);
+    resultInfo.textContent = `${rows.length} 个季度`; return rows;
+}
 
-            // ---- Watchlist ----
-            const FAV_KEY = "stk_favorites";
+function fillDates(dates) {
+    dateSelect.innerHTML = "";
+    for (const d of dates) { const o = document.createElement("option"); o.value = d; o.textContent = d.substring(0,10); dateSelect.appendChild(o); }
+}
 
-            function getFavorites() {
-                try {
-                    return JSON.parse(localStorage.getItem(FAV_KEY)) || [];
-                } catch {
-                    return [];
-                }
-            }
+dateSelect.addEventListener("change", () => { if (selectedId && dateSelect.value) fetchData(); });
 
-            function saveFavorites(list) {
-                localStorage.setItem(FAV_KEY, JSON.stringify(list));
-            }
+async function fetchData() {
+    if (!selectedId || !dateSelect.value) return;
+    const endDate = dateSelect.value;
+    const cacheKey = `data_${selectedId}_${endDate.substring(0,10)}`;
+    const cached = cacheGet(cacheKey);
+    if (cached) { currentData = cached; applyFilters(); btnExport.style.display = ""; emptyEl.style.display = "none"; return; }
+    let page = 1, all = [];
+    while (true) {
+        resultInfo.textContent = `抓取第 ${page} 页...`;
+        const url = `${API}?reportName=RPT_F10_EH_FREEHOLDERS`
+            + `&columns=HOLDER_NEW,SECUCODE,SECURITY_CODE,SECURITY_NAME_ABBR,END_DATE,HOLDER_NAME,FREE_HOLDNUM_RATIO,HOLDER_MARKET_CAP,HOLDER_RANK,HOLDER_STATE_NEW,CHANGE_RATIO`
+            + `&filter=(HOLDER_NEW="${selectedId}")(END_DATE='${endDate}')&pageNumber=${page}&pageSize=500&sortTypes=-1&sortColumns=FREE_HOLDNUM_RATIO&source=Datacenter&client=PC&v=${Math.random()}`;
+        const rows = (await (await fetch(url)).json()).result?.data || [];
+        if (!rows.length) break; all.push(...rows); if (rows.length < 500) break; page++;
+    }
+    currentData = all; cacheSet(cacheKey, all); applyFilters();
+    btnExport.style.display = all.length ? "" : "none";
+    emptyEl.style.display = all.length ? "none" : "block";
+    resultInfo.textContent = `完成，共 ${all.length} 条`;
+}
 
-            function isFavorite(id) {
-                return getFavorites().some((f) => f.id === id);
-            }
-
-            function toggleFavorite(h, event) {
-                event.stopPropagation();
-                let favs = getFavorites();
-                const idx = favs.findIndex((f) => f.id === h.HOLDER_NEW);
-                if (idx >= 0) {
-                    favs.splice(idx, 1);
-                } else {
-                    favs.push({
-                        id: h.HOLDER_NEW,
-                        name: h.HOLDER,
-                        type: h.HOLDER_TYPE || "",
-                    });
-                }
-                saveFavorites(favs);
-                renderList();
-            }
-
-            function showFavorites(btn) {
-                document
-                    .querySelectorAll(".type-tab")
-                    .forEach((b) => b.classList.remove("active"));
-                btn.classList.add("active");
-                allHolders = getFavorites().map((f) => ({
-                    HOLDER: f.name,
-                    HOLDER_NEW: f.id,
-                    HOLDER_TYPE: f.type || "",
-                }));
-                renderList();
-            }
-
-            // ---- Type tabs ----
-            const typeTabs = document.getElementById("typeTabs");
-            TYPES.forEach((t) => {
-                const btn = document.createElement("div");
-                btn.className = "type-tab";
-                btn.textContent = t;
-                btn.addEventListener("click", () => selectType(t, btn));
-                typeTabs.appendChild(btn);
-            });
-
-            async function selectType(type, btn) {
-                document
-                    .querySelectorAll(".type-tab")
-                    .forEach((b) => b.classList.remove("active"));
-                btn.classList.add("active");
-                if (holderCache[type]) {
-                    allHolders = holderCache[type];
-                    renderList();
-                    return;
-                }
-                const cached = cacheGet("holder_" + type);
-                if (cached) {
-                    holderCache[type] = cached;
-                    allHolders = cached;
-                    renderList();
-                    return;
-                }
-                try {
-                    resultInfo.textContent = `加载${type}列表...`;
-                    const resp = await fetch(
-                        `${HOLDER_BASE}/${encodeURIComponent(type)}.json`,
-                    );
-                    const data = await resp.json();
-                    holderCache[type] = data;
-                    cacheSet("holder_" + type, data);
-                    allHolders = data;
-                    renderList();
-                    resultInfo.textContent = "选择机构后自动加载持仓数据";
-                } catch (e) {
-                    resultInfo.textContent = "加载失败: " + e.message;
-                }
-            }
-
-            function renderList() {
-                const kw = searchInput.value.trim().toLowerCase();
-                const list = kw
-                    ? allHolders.filter(
-                          (h) =>
-                              h.HOLDER.toLowerCase().includes(kw) ||
-                              h.HOLDER_NEW.includes(kw),
-                      )
-                    : allHolders;
-                const favs = getFavorites();
-                holderList.innerHTML = "";
-                for (const h of list) {
-                    const starred = favs.some((f) => f.id === h.HOLDER_NEW);
-                    const typeTag = h.HOLDER_TYPE
-                        ? `<span class="type-badge">${h.HOLDER_TYPE}</span>`
-                        : "";
-                    const div = document.createElement("div");
-                    div.className =
-                        "item" +
-                        (h.HOLDER_NEW === selectedId ? " selected" : "");
-                    div.innerHTML =
-                        `<span class="star${starred ? " on" : ""}" data-id="${h.HOLDER_NEW}">${starred ? "★" : "☆"}</span>` +
-                        `<span class="name" data-id="${h.HOLDER_NEW}">${h.HOLDER}</span>` +
-                        `${typeTag}<span class="id">${h.HOLDER_NEW}</span>`;
-                    div.querySelector(".star").addEventListener("click", (e) =>
-                        toggleFavorite(h, e),
-                    );
-                    div.addEventListener("click", (e) => {
-                        if (e.target.classList.contains("star")) return;
-                        selectHolder(h);
-                    });
-                    holderList.appendChild(div);
-                }
-                document.getElementById("holderHint").textContent = kw
-                    ? `${list.length} / ${allHolders.length}`
-                    : `共 ${allHolders.length} 个机构`;
-            }
-
-            function selectHolder(h) {
-                selectedId = h.HOLDER_NEW;
-                document
-                    .querySelectorAll(".holder-list .item")
-                    .forEach((el) => {
-                        el.classList.toggle(
-                            "selected",
-                            el.querySelector(".id").textContent === selectedId,
-                        );
-                    });
-                document.getElementById("customId").value = selectedId;
-                resetFilters();
-                loadDates().then(() => {
-                    if (dateSelect.value) fetchData();
-                });
-            }
-
-            searchInput.addEventListener("input", renderList);
-
-            function useCustom() {
-                const id = document.getElementById("customId").value.trim();
-                if (!id) return;
-                selectedId = id;
-                document
-                    .querySelectorAll(".type-tab")
-                    .forEach((b) => b.classList.remove("active"));
-                document
-                    .querySelectorAll(".holder-list .item")
-                    .forEach((el) => el.classList.remove("selected"));
-                resetFilters();
-                loadDates().then(() => {
-                    if (dateSelect.value) fetchData();
-                });
-            }
-
-            function resetFilters() {
-                filterBoard.value = "";
-                filterState.value = "";
-                sortState = { col: null, dir: 0 };
-                for (const k of Object.keys(SORT_FIELDS)) {
-                    const b = document.getElementById("sortBtn_" + k);
-                    b.textContent = "⇅";
-                    b.classList.remove("active");
-                }
-            }
-
-            // ---- API calls with cache ----
-
-            async function loadDates() {
-                if (!selectedId) return;
-                const cacheKey = `dates_${selectedId}`;
-                const cached = cacheGet(cacheKey);
-                if (cached) {
-                    fillDates(cached);
-                    resultInfo.innerHTML = `${cached.length} 个季度<span class="cache-tag">缓存</span>`;
-                    return cached;
-                }
-                resultInfo.textContent = "加载季度列表...";
-                const url =
-                    `${API}?reportName=RPT_F10_EH_FREEHOLDERS&columns=END_DATE&distinct=END_DATE` +
-                    `&filter=(HOLDER_NEW="${selectedId}")` +
-                    `&sortTypes=-1&sortColumns=END_DATE&pageNumber=1&pageSize=100` +
-                    `&source=Datacenter&client=PC&v=${Math.random()}`;
-                const resp = await fetch(url);
-                const json = await resp.json();
-                const rows = (json.result?.data || []).map((r) => r.END_DATE);
-                if (!rows.length) {
-                    resultInfo.textContent = "未找到该机构的持仓季度数据";
-                    return [];
-                }
-                cacheSet(cacheKey, rows);
-                fillDates(rows);
-                resultInfo.textContent = `${rows.length} 个季度`;
-                return rows;
-            }
-
-            function fillDates(dates) {
-                dateSelect.innerHTML = "";
-                for (const d of dates) {
-                    const opt = document.createElement("option");
-                    opt.value = d;
-                    opt.textContent = d.substring(0, 10);
-                    dateSelect.appendChild(opt);
-                }
-            }
-
-            dateSelect.addEventListener("change", () => {
-                if (selectedId && dateSelect.value) fetchData();
-            });
-
-            async function fetchData() {
-                if (!selectedId || !dateSelect.value) return;
-                const endDate = dateSelect.value;
-                const cacheKey = `data_${selectedId}_${endDate.substring(0, 10)}`;
-                const cached = cacheGet(cacheKey);
-                if (cached) {
-                    currentData = cached;
-                    applyFilters();
-                    btnExport.style.display = "";
-                    emptyEl.style.display = "none";
-                    return;
-                }
-                let page = 1,
-                    all = [];
-                while (true) {
-                    resultInfo.textContent = `抓取第 ${page} 页...`;
-                    const url =
-                        `${API}?reportName=RPT_F10_EH_FREEHOLDERS` +
-                        `&columns=HOLDER_NEW,SECUCODE,SECURITY_CODE,SECURITY_NAME_ABBR,END_DATE,HOLDER_NAME,FREE_HOLDNUM_RATIO,HOLDER_MARKET_CAP,HOLDER_RANK,HOLDER_STATE_NEW,CHANGE_RATIO` +
-                        `&filter=(HOLDER_NEW="${selectedId}")(END_DATE='${endDate}')` +
-                        `&pageNumber=${page}&pageSize=500&sortTypes=-1&sortColumns=FREE_HOLDNUM_RATIO` +
-                        `&source=Datacenter&client=PC&v=${Math.random()}`;
-                    const resp = await fetch(url);
-                    const json = await resp.json();
-                    const rows = json.result?.data || [];
-                    if (!rows.length) break;
-                    all.push(...rows);
-                    if (rows.length < 500) break;
-                    page++;
-                }
-                currentData = all;
-                cacheSet(cacheKey, all);
-                applyFilters();
-                btnExport.style.display = all.length ? "" : "none";
-                emptyEl.style.display = all.length ? "none" : "block";
-                resultInfo.textContent = `完成，共 ${all.length} 条`;
-            }
-
-            function renderTable(rows) {
-                const tbody = document.querySelector("#table tbody");
-                tbody.innerHTML = "";
-                for (const row of rows) {
-                    const tr = document.createElement("tr");
-                    const pct = row.FREE_HOLDNUM_RATIO;
-                    const chg = row.CHANGE_RATIO;
-                    tr.innerHTML = `
-        <td>${(row.END_DATE || "").substring(0, 10)}</td>
-        <td>${row.SECURITY_NAME_ABBR || ""}</td>
-        <td><a href="javascript:void(0)" onclick="openChart('${row.SECUCODE || ""}','${row.SECURITY_NAME_ABBR || ""}')" style="color:var(--primary);text-decoration:none">${row.SECURITY_CODE || ""}</a></td>
-        <td>${row.HOLDER_STATE_NEW || ""}</td>
+function renderTable(rows) {
+    const tbody = document.querySelector("#table tbody"); tbody.innerHTML = "";
+    for (const row of rows) {
+        const pct = row.FREE_HOLDNUM_RATIO, chg = row.CHANGE_RATIO;
+        const sc = row.SECUCODE || "", sn = (row.SECURITY_NAME_ABBR || "").replace(/'/g, "\\'");
+        const watched = isInWatchlist(sc);
+        const tr = document.createElement("tr");
+        tr.innerHTML = `
+        <td>${(row.END_DATE||"").substring(0,10)}</td>
+        <td>${row.SECURITY_NAME_ABBR||""}</td>
+        <td>
+            <a class="stock-link" onclick="openChart('${sc}','${sn}')">${row.SECURITY_CODE||""}</a>
+            <span class="star${watched ? " on" : ""}" onclick="toggleWatchlistRow('${sc}','${sn}',this)">${watched ? "★" : "☆"}</span>
+        </td>
+        <td>${row.HOLDER_STATE_NEW||""}</td>
         <td>${pct != null ? pct.toFixed(2) + "%" : ""}</td>
         <td style="color:${chg > 0 ? "var(--up)" : chg < 0 ? "var(--down)" : ""}">${chg != null ? (chg > 0 ? "+" : "") + chg.toFixed(2) : ""}</td>
         <td>${row.HOLDER_MARKET_CAP != null ? (row.HOLDER_MARKET_CAP / 1e8).toFixed(2) + "亿" : ""}</td>`;
-                    tbody.appendChild(tr);
-                }
-            }
+        tbody.appendChild(tr);
+    }
+}
 
-            // ---- TradingView Chart ----
-            let tvWidget = null;
-            let currentChartSecucode = "";
-            let currentChartName = "";
+function toggleWatchlistRow(secucode, name, el) {
+    const m = secucode.includes(".SH") ? "SH" : "SZ";
+    const added = toggleWatchlist(secucode, name, m);
+    el.textContent = added ? "★" : "☆";
+    el.classList.toggle("on", added);
+    showToast(added ? `已将 ${name} 加入自选` : `已将 ${name} 移出自选`);
+    applyFilters(); // re-render to update star states
+}
 
-            function secucodeToSymbol(secucode) {
-                if (!secucode || !secucode.includes(".")) return "";
-                const [code, market] = secucode.split(".");
-                const exchange = market === "SH" ? "SSE" : "SZSE";
-                return `${exchange}:${code}`;
-            }
+// ---- TradingView ----
+let tvWidget = null, currentChartSecucode = "", currentChartName = "";
 
-            function codeToF10Url(secucode) {
-                if (!secucode || !secucode.includes(".")) return "#";
-                const [code, market] = secucode.split(".");
-                let m;
-                if (market === "SH" || code.startsWith("688")) m = "sh";
-                else if (
-                    code.startsWith("8") ||
-                    code.startsWith("4") ||
-                    code.startsWith("92")
-                )
-                    m = "bj";
-                else m = "sz";
-                return `https://f10.9fzt.com/index.html#/f10?code=${code}&market=${m}&softNameAbbr=jfztGW&topnav=zxdt`;
-            }
+function openChart(secucode, name) {
+    const symbol = secucodeToSymbol(secucode);
+    if (!symbol) return;
+    currentChartSecucode = secucode; currentChartName = name;
+    document.getElementById("chartStockName").textContent = `${name} (${symbol.split(":")[1]})`;
+    document.getElementById("f10Link").href = codeToF10Url(secucode);
+    document.getElementById("chartSection").classList.add("open");
+    const container = document.getElementById("tvChartContainer"); container.innerHTML = "";
+    tvWidget = new TradingView.widget({
+        autosize: true, symbol, interval: "D", timezone: "Asia/Shanghai",
+        theme: getTheme(), style: "1", locale: "zh_CN", enable_publishing: false,
+        allow_symbol_change: true, container_id: "tvChartContainer",
+        hide_side_toolbar: false, studies: ["MASimple@tv-basicstudies"],
+    });
+}
 
-            function openChart(secucode, name) {
-                const symbol = secucodeToSymbol(secucode);
-                if (!symbol) return;
+function closeChart() {
+    document.getElementById("chartSection").classList.remove("open");
+    document.getElementById("tvChartContainer").innerHTML = ""; tvWidget = null;
+}
 
-                currentChartSecucode = secucode;
-                currentChartName = name;
-
-                document.getElementById("chartStockName").textContent =
-                    `${name} (${symbol.split(":")[1]})`;
-                document.getElementById("f10Link").href =
-                    codeToF10Url(secucode);
-                const section = document.getElementById("chartSection");
-                section.classList.add("open");
-
-                const container = document.getElementById("tvChartContainer");
-                container.innerHTML = "";
-
-                const theme = getTheme();
-
-                tvWidget = new TradingView.widget({
-                    autosize: true,
-                    symbol: symbol,
-                    interval: "D",
-                    timezone: "Asia/Shanghai",
-                    theme: theme,
-                    style: "1",
-                    locale: "zh_CN",
-                    enable_publishing: false,
-                    allow_symbol_change: true,
-                    container_id: "tvChartContainer",
-                    hide_side_toolbar: false,
-                    studies: ["MASimple@tv-basicstudies"],
-                });
-            }
-
-            function closeChart() {
-                document
-                    .getElementById("chartSection")
-                    .classList.remove("open");
-                document.getElementById("tvChartContainer").innerHTML = "";
-                tvWidget = null;
-            }
-
-            function exportCSV() {
-                if (!currentData.length) return;
-                const headers = Object.keys(currentData[0]);
-                const csv = [
-                    headers.join(","),
-                    ...currentData.map((row) =>
-                        headers.map((h) => `"${row[h] ?? ""}"`).join(","),
-                    ),
-                ].join("\n");
-                const blob = new Blob(["﻿" + csv], {
-                    type: "text/csv;charset=utf-8;",
-                });
-                const a = document.createElement("a");
-                a.href = URL.createObjectURL(blob);
-                a.download = "holder_positions.csv";
-                a.click();
-            }
-        </script>
-    </body>
+// ---- Export ----
+function exportCSV() {
+    if (!currentData.length) return;
+    const headers = Object.keys(currentData[0]);
+    const csv = [headers.join(","), ...currentData.map(r => headers.map(h => `"${r[h] ?? ""}"`).join(","))].join("\n");
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(new Blob(["﻿" + csv], { type: "text/csv;charset=utf-8;" }));
+    a.download = "holder_positions.csv"; a.click();
+}
+</script>
+</body>
 </html>
