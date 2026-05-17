@@ -260,6 +260,9 @@
                 >机构持仓</a
             >
             <div style="flex: 1"></div>
+            <button onclick="importBackup()" style="font-size:12px;padding:5px 12px">导入</button>
+            <button onclick="exportBackup()" style="font-size:12px;padding:5px 12px">备份</button>
+            <input type="file" id="importFile" accept=".json" style="display:none" onchange="handleImport(event)">
             <button
                 class="theme-btn"
                 onclick="toggleTheme()"
@@ -649,6 +652,71 @@
                         statusEl.style.color = "";
                     }, 2000);
                 }
+            }
+
+            // ---- Backup & Import ----
+            function exportBackup() {
+                const data = {
+                    version: 1,
+                    exportedAt: new Date().toISOString(),
+                    watchlist: getWatchlist(),
+                    notes: JSON.parse(localStorage.getItem(NOTES_KEY) || "{}"),
+                };
+                const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+                const a = document.createElement("a");
+                a.href = URL.createObjectURL(blob);
+                const d = new Date();
+                const ts = `${d.getFullYear()}${String(d.getMonth()+1).padStart(2,"0")}${String(d.getDate()).padStart(2,"0")}`;
+                a.download = `自选股备份_${ts}.json`;
+                a.click();
+                URL.revokeObjectURL(a.href);
+                showToast("备份文件已下载");
+            }
+
+            function importBackup() {
+                document.getElementById("importFile").click();
+            }
+
+            function handleImport(event) {
+                const file = event.target.files[0];
+                if (!file) return;
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    try {
+                        const data = JSON.parse(e.target.result);
+                        if (!data.watchlist || !Array.isArray(data.watchlist)) {
+                            throw new Error("无效的备份文件");
+                        }
+                        // Merge watchlist: add missing stocks
+                        const existing = getWatchlist();
+                        const existSet = new Set(existing.map(s => s.secucode));
+                        let added = 0;
+                        for (const s of data.watchlist) {
+                            if (!existSet.has(s.secucode)) {
+                                existing.push(s);
+                                added++;
+                            }
+                        }
+                        saveWatchlist(existing);
+
+                        // Merge notes
+                        const importedNotes = data.notes || {};
+                        let allNotes; try { allNotes = JSON.parse(localStorage.getItem(NOTES_KEY) || "{}"); } catch { allNotes = {}; }
+                        let noteAdded = 0;
+                        for (const [k, v] of Object.entries(importedNotes)) {
+                            if (!allNotes[k]) { allNotes[k] = v; noteAdded++; }
+                        }
+                        localStorage.setItem(NOTES_KEY, JSON.stringify(allNotes));
+
+                        renderWatchlist();
+                        if (selectedCode) renderNotesPanel(selectedCode);
+                        showToast(`已导入 ${added} 只股票, ${noteAdded} 条笔记`);
+                    } catch (err) {
+                        showToast("导入失败: " + (err.message || "文件格式错误"));
+                    }
+                };
+                reader.readAsText(file);
+                event.target.value = ""; // reset for re-import
             }
 
             // ---- Init ----
