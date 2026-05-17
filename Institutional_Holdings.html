@@ -107,8 +107,8 @@
             .header h1 { font-size: 16px; }
             .main {
                 flex-direction: column;
-                height: auto;
-                overflow: visible;
+                height: calc(100vh - 52px);
+                overflow: hidden;
                 padding: 0 !important;
             }
             .panel {
@@ -134,6 +134,7 @@
             .content {
                 border-radius: 0 !important;
                 border-top: 1px solid var(--border);
+                min-height: 0;
             }
             .table-wrap {
                 overflow-x: auto;
