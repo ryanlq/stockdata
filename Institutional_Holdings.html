@@ -3,268 +3,450 @@
 <head>
 <meta charset="UTF-8" />
 <title>机构持仓下载器</title>
-
 <style>
+:root{
+    --primary:#4f6ef7;
+    --primary-light:#eef1fe;
+    --bg:#f0f2f5;
+    --card:#fff;
+    --text:#1f2937;
+    --text2:#6b7280;
+    --border:#e5e7eb;
+    --radius:12px;
+    --shadow:0 1px 3px rgba(0,0,0,.06),0 1px 2px rgba(0,0,0,.04);
+}
+*{box-sizing:border-box;margin:0;padding:0}
 body{
-    font-family:sans-serif;
-    padding:20px;
-    background:#f5f5f5;
+    font-family:-apple-system,"Microsoft YaHei","PingFang SC",sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
 }
-
+.header{
+    background:var(--card);
+    border-bottom:1px solid var(--border);
+    padding:20px 32px;
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+.header h1{
+    font-size:20px;
+    font-weight:600;
+}
+.header a{
+    color:var(--text2);
+    text-decoration:none;
+    font-size:14px;
+}
+.main{
+    max-width:1200px;
+    margin:24px auto;
+    padding:0 24px;
+    display:flex;
+    gap:20px;
+}
+/* ---- left panel ---- */
+.panel{
+    width:380px;
+    flex-shrink:0;
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+}
 .card{
-    background:white;
+    background:var(--card);
+    border-radius:var(--radius);
+    box-shadow:var(--shadow);
     padding:20px;
-    border-radius:12px;
-    margin-bottom:20px;
 }
-
-button{
-    padding:8px 16px;
+.card-title{
+    font-size:14px;
+    font-weight:600;
+    margin-bottom:12px;
+    color:var(--text);
+}
+/* type tabs */
+.type-tabs{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    margin-bottom:12px;
+}
+.type-tab{
+    padding:5px 12px;
+    border-radius:20px;
+    border:1px solid var(--border);
+    background:var(--card);
+    font-size:13px;
     cursor:pointer;
+    transition:all .15s;
+    color:var(--text2);
 }
-
+.type-tab:hover{border-color:var(--primary);color:var(--primary)}
+.type-tab.active{
+    background:var(--primary);
+    color:#fff;
+    border-color:var(--primary);
+}
+/* search */
+.search-wrap{
+    position:relative;
+    margin-bottom:10px;
+}
+.search-wrap input{
+    width:100%;
+    padding:8px 12px 8px 32px;
+    border:1px solid var(--border);
+    border-radius:8px;
+    font-size:13px;
+    outline:none;
+    transition:border .15s;
+}
+.search-wrap input:focus{border-color:var(--primary)}
+.search-wrap::before{
+    content:"🔍";
+    position:absolute;
+    left:10px;top:50%;
+    transform:translateY(-50%);
+    font-size:13px;
+    pointer-events:none;
+}
+/* holder list */
+.holder-list{
+    border:1px solid var(--border);
+    border-radius:8px;
+    max-height:260px;
+    overflow-y:auto;
+    font-size:13px;
+}
+.holder-list .item{
+    padding:8px 12px;
+    cursor:pointer;
+    border-bottom:1px solid var(--border);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    transition:background .1s;
+}
+.holder-list .item:last-child{border-bottom:none}
+.holder-list .item:hover{background:var(--primary-light)}
+.holder-list .item.selected{background:var(--primary);color:#fff}
+.holder-list .item .id{
+    font-size:12px;
+    color:var(--text2);
+    flex-shrink:0;
+    margin-left:8px;
+}
+.holder-list .item.selected .id{color:rgba(255,255,255,.7)}
+.holder-list .name{
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+.hint{font-size:12px;color:var(--text2);margin-top:6px}
+/* custom id input */
+.custom-row{
+    display:flex;
+    gap:8px;
+    align-items:center;
+}
+.custom-row input{
+    flex:1;
+    padding:7px 10px;
+    border:1px solid var(--border);
+    border-radius:8px;
+    font-size:13px;
+    outline:none;
+}
+.custom-row input:focus{border-color:var(--primary)}
+/* actions */
+.actions{
+    display:flex;
+    gap:8px;
+    flex-wrap:wrap;
+    align-items:center;
+}
+.actions select{
+    padding:7px 10px;
+    border:1px solid var(--border);
+    border-radius:8px;
+    font-size:13px;
+    background:var(--card);
+    outline:none;
+    min-width:140px;
+}
+button{
+    padding:7px 16px;
+    border-radius:8px;
+    border:1px solid var(--border);
+    background:var(--card);
+    font-size:13px;
+    cursor:pointer;
+    transition:all .15s;
+}
+button:hover{border-color:var(--primary);color:var(--primary)}
+button.primary{
+    background:var(--primary);
+    color:#fff;
+    border-color:var(--primary);
+}
+button.primary:hover{opacity:.9}
+/* ---- right panel ---- */
+.content{
+    flex:1;
+    min-width:0;
+}
+.status-bar{
+    padding:10px 16px;
+    font-size:13px;
+    color:var(--text2);
+    border-bottom:1px solid var(--border);
+    display:none;
+}
+.status-bar.show{display:block}
+.status-bar.loading{color:var(--primary)}
+/* table */
+.table-wrap{
+    overflow-x:auto;
+}
 table{
     width:100%;
     border-collapse:collapse;
-    margin-top:20px;
-}
-
-th,td{
-    border:1px solid #ddd;
-    padding:8px;
-    font-size:14px;
-}
-
-th{
-    background:#eee;
-}
-
-textarea{
-    width:100%;
-    height:120px;
-}
-
-select,input[type=text]{
-    padding:6px 10px;
-    font-size:14px;
-}
-
-.search-box{
-    margin-top:10px;
-}
-
-#holderSelect{
-    min-width:400px;
-}
-
-.count{
-    color:#888;
     font-size:13px;
-    margin-left:8px;
+}
+th{
+    background:#f8f9fb;
+    padding:10px 12px;
+    text-align:left;
+    font-weight:600;
+    font-size:12px;
+    color:var(--text2);
+    border-bottom:2px solid var(--border);
+    position:sticky;
+    top:0;
+}
+td{
+    padding:10px 12px;
+    border-bottom:1px solid var(--border);
+    white-space:nowrap;
+}
+tr:hover td{background:var(--primary-light)}
+.empty{
+    text-align:center;
+    padding:60px 20px;
+    color:var(--text2);
+    font-size:14px;
+}
+/* responsive */
+@media(max-width:860px){
+    .main{flex-direction:column}
+    .panel{width:100%}
 }
 </style>
 </head>
 
 <body>
 
+<div class="header">
+    <h1>机构持仓下载器</h1>
+    <a href="index.html">← 返回首页</a>
+</div>
+
+<div class="main">
+
+<!-- left panel -->
+<div class="panel">
+
 <div class="card">
-
-<h2>自定义机构</h2>
-
-<p>格式：机构名=HOLDER_NEW</p>
-
-<textarea id="holders">
-高盛=10429689
-</textarea>
-
+    <div class="card-title">选择机构</div>
+    <div class="type-tabs" id="typeTabs"></div>
+    <div class="search-wrap">
+        <input type="text" id="searchInput" placeholder="搜索机构名称或代码..." />
+    </div>
+    <div class="holder-list" id="holderList"></div>
+    <div class="hint" id="holderHint">从机构库选择，或手动输入 ID</div>
 </div>
 
 <div class="card">
-
-<h2>机构库</h2>
-
-<label>类型：</label>
-<select id="typeSelect">
-<option value="">-- 选择类型 --</option>
-</select>
-
-<span class="count" id="typeCount"></span>
-
-<div class="search-box">
-<input type="text" id="searchInput" placeholder="搜索机构名称..." style="width:400px" />
-</div>
-
-<br/>
-
-<select id="holderSelect" size="10"></select>
-
-<span class="count" id="holderCount"></span>
-
-<br/><br/>
-
-<button onclick="loadDates()">获取季度</button>
-
-<select id="dateSelect"></select>
-
-<button onclick="fetchData()">下载持仓</button>
-
-<button onclick="exportCSV()">导出CSV</button>
-
+    <div class="card-title">自定义机构 ID</div>
+    <div class="custom-row">
+        <input type="text" id="customId" placeholder="输入 HOLDER_NEW，如 10429689" />
+        <button onclick="useCustom()">使用</button>
+    </div>
 </div>
 
 <div class="card">
+    <div class="card-title">查询操作</div>
+    <div class="actions">
+        <button class="primary" onclick="loadDates()">获取季度</button>
+        <select id="dateSelect"><option value="">-- 先获取季度 --</option></select>
+        <button class="primary" onclick="fetchData()">下载持仓</button>
+        <button onclick="exportCSV()">导出 CSV</button>
+    </div>
+</div>
 
-<h2>结果</h2>
+</div>
 
-<div id="status"></div>
-
-<table id="table">
-<thead>
-<tr>
-<th>日期</th>
-<th>股票</th>
-<th>代码</th>
-<th>状态</th>
-<th>持仓占比</th>
-<th>变化比例</th>
-<th>市值</th>
-</tr>
-</thead>
-<tbody></tbody>
-</table>
+<!-- right panel -->
+<div class="content card" style="padding:0;overflow:hidden">
+    <div class="status-bar" id="status"></div>
+    <div class="table-wrap">
+        <table id="table">
+            <thead>
+            <tr>
+                <th>日期</th>
+                <th>股票</th>
+                <th>代码</th>
+                <th>状态</th>
+                <th>持仓占比</th>
+                <th>变化比例</th>
+                <th>市值</th>
+            </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <div class="empty" id="empty">选择机构后，点击「获取季度」开始查询</div>
+    </div>
+</div>
 
 </div>
 
 <script>
 
-const typeSelect = document.getElementById("typeSelect");
-const holderSelect = document.getElementById("holderSelect");
-const dateSelect = document.getElementById("dateSelect");
 const searchInput = document.getElementById("searchInput");
+const holderList = document.getElementById("holderList");
+const dateSelect = document.getElementById("dateSelect");
 
 let currentData = [];
 let allHolders = [];
-let holderIndex = {};  // HOLDER_NEW -> holder object
+let selectedId = "";
+let cache = {};
 
 const TYPES = ["基金","QFII","券商","保险","社保","信托","国家队","个人","其他"];
 
-// Populate type dropdown
+const typeTabs = document.getElementById("typeTabs");
 TYPES.forEach(t => {
-    const opt = document.createElement("option");
-    opt.value = t;
-    opt.textContent = t;
-    typeSelect.appendChild(opt);
+    const btn = document.createElement("div");
+    btn.className = "type-tab";
+    btn.textContent = t;
+    btn.addEventListener("click", () => selectType(t, btn));
+    typeTabs.appendChild(btn);
 });
 
-typeSelect.addEventListener("change", async () => {
-    const type = typeSelect.value;
-    if (!type) {
-        holderSelect.innerHTML = "";
-        document.getElementById("typeCount").textContent = "";
+async function selectType(type, btn) {
+    document.querySelectorAll(".type-tab").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+
+    if (cache[type]) {
+        allHolders = cache[type];
+        renderList();
         return;
     }
-    // Already cached?
-    if (holderIndex[type]) {
-        renderHolders(holderIndex[type]);
-        return;
-    }
+
     try {
         const BASE = "https://raw.githubusercontent.com/ryanlq/stockdata/main/holders";
+        showStatus(`加载${type}列表...`, true);
         const resp = await fetch(`${BASE}/${encodeURIComponent(type)}.json`);
-        const data = await resp.json();
-        holderIndex[type] = data;
-        renderHolders(data);
+        cache[type] = await resp.json();
+        allHolders = cache[type];
+        renderList();
+        hideStatus();
     } catch (e) {
-        alert("加载失败: " + e.message);
+        showStatus("加载失败: " + e.message);
     }
-});
-
-function renderHolders(data) {
-    allHolders = data;
-    filterHolders();
-    document.getElementById("typeCount").textContent = `共 ${data.length} 个机构`;
 }
 
-searchInput.addEventListener("input", filterHolders);
-
-function filterHolders() {
-    const keyword = searchInput.value.trim().toLowerCase();
-    const filtered = keyword
-        ? allHolders.filter(h => h.HOLDER.toLowerCase().includes(keyword))
+function renderList() {
+    const kw = searchInput.value.trim().toLowerCase();
+    const list = kw
+        ? allHolders.filter(h =>
+            h.HOLDER.toLowerCase().includes(kw) ||
+            h.HOLDER_NEW.includes(kw))
         : allHolders;
 
-    holderSelect.innerHTML = "";
-    for (const h of filtered) {
-        const opt = document.createElement("option");
-        opt.value = h.HOLDER_NEW;
-        opt.textContent = `${h.HOLDER} (${h.HOLDER_NEW})`;
-        holderSelect.appendChild(opt);
+    holderList.innerHTML = "";
+    for (const h of list) {
+        const div = document.createElement("div");
+        div.className = "item" + (h.HOLDER_NEW === selectedId ? " selected" : "");
+        div.innerHTML = `<span class="name">${h.HOLDER}</span><span class="id">${h.HOLDER_NEW}</span>`;
+        div.addEventListener("click", () => selectHolder(h));
+        holderList.appendChild(div);
     }
-    document.getElementById("holderCount").textContent = keyword
-        ? `${filtered.length} / ${allHolders.length}`
-        : `${allHolders.length}`;
+    document.getElementById("holderHint").textContent =
+        kw ? `${list.length} / ${allHolders.length}` : `共 ${allHolders.length} 个机构`;
 }
 
-// Also support custom holders textarea
-function loadCustomHolders() {
-    const lines = document.getElementById("holders").value.split("\n").filter(l => l.includes("="));
-    for (const line of lines) {
-        const [name, id] = line.split("=");
-        const opt = document.createElement("option");
-        opt.value = id.trim();
-        opt.textContent = `${name.trim()} (自定义)`;
-        holderSelect.insertBefore(opt, holderSelect.firstChild);
-    }
+function selectHolder(h) {
+    selectedId = h.HOLDER_NEW;
+    document.querySelectorAll(".holder-list .item").forEach(el => {
+        el.classList.toggle("selected", el.querySelector(".id").textContent === selectedId);
+    });
+    document.getElementById("customId").value = selectedId;
 }
 
-// Init with custom holders on load
-loadCustomHolders();
+searchInput.addEventListener("input", renderList);
+
+function useCustom() {
+    const id = document.getElementById("customId").value.trim();
+    if (!id) return;
+    selectedId = id;
+    document.querySelectorAll(".type-tab").forEach(b => b.classList.remove("active"));
+    document.querySelectorAll(".holder-list .item").forEach(el => el.classList.remove("selected"));
+    showStatus(`已选择自定义机构 ID: ${id}`);
+}
+
+// status bar
+function showStatus(msg, loading) {
+    const el = document.getElementById("status");
+    el.textContent = msg;
+    el.className = "status-bar show" + (loading ? " loading" : "");
+}
+function hideStatus() {
+    document.getElementById("status").className = "status-bar";
+}
 
 async function loadDates() {
-
-    const holderId = holderSelect.value;
-    if (!holderId) { alert("请先选择机构"); return; }
-
-    document.getElementById("status").innerText = "加载季度列表...";
+    if (!selectedId) { alert("请先选择机构"); return; }
+    showStatus("加载季度列表...", true);
 
     const url =
-`https://datacenter.eastmoney.com/securities/api/data/v1/get?reportName=RPT_F10_EH_FREEHOLDERS&columns=END_DATE&distinct=END_DATE&filter=(HOLDER_NEW="${holderId}")&sortTypes=-1&sortColumns=END_DATE&pageNumber=1&pageSize=100&source=Datacenter&client=PC&v=${Math.random()}`;
+`https://datacenter.eastmoney.com/securities/api/data/v1/get?reportName=RPT_F10_EH_FREEHOLDERS&columns=END_DATE&distinct=END_DATE&filter=(HOLDER_NEW="${selectedId}")&sortTypes=-1&sortColumns=END_DATE&pageNumber=1&pageSize=100&source=Datacenter&client=PC&v=${Math.random()}`;
 
     const resp = await fetch(url);
     const json = await resp.json();
     const rows = json.result?.data || [];
 
     dateSelect.innerHTML = "";
+    if (!rows.length) {
+        showStatus("未找到该机构的持仓季度数据");
+        return;
+    }
     for (const row of rows) {
         const opt = document.createElement("option");
         opt.value = row.END_DATE;
-        opt.textContent = row.END_DATE;
+        opt.textContent = row.END_DATE.substring(0, 10);
         dateSelect.appendChild(opt);
     }
-
-    document.getElementById("status").innerText = `获取到 ${rows.length} 个季度`;
+    showStatus(`获取到 ${rows.length} 个季度`);
 }
 
 async function fetchData() {
-
-    const holderId = holderSelect.value;
+    if (!selectedId) { alert("请先选择机构"); return; }
     const endDate = dateSelect.value;
-    if (!holderId) { alert("请先选择机构"); return; }
-    if (!endDate) { alert("请先获取季度"); return; }
+    if (!endDate) { alert("请先获取并选择季度"); return; }
 
-    let page = 1;
-    let all = [];
+    let page = 1, all = [];
 
     while (true) {
-        document.getElementById("status").innerText = `抓取第 ${page} 页...`;
+        showStatus(`抓取第 ${page} 页...`, true);
 
         const url =
-`https://datacenter.eastmoney.com/securities/api/data/v1/get?reportName=RPT_F10_EH_FREEHOLDERS&columns=HOLDER_NEW,SECUCODE,SECURITY_CODE,SECURITY_NAME_ABBR,END_DATE,HOLDER_NAME,FREE_HOLDNUM_RATIO,HOLDER_MARKET_CAP,HOLDER_RANK,HOLDER_STATE_NEW,CHANGE_RATIO&filter=(HOLDER_NEW="${holderId}")(END_DATE='${endDate}')&pageNumber=${page}&pageSize=500&sortTypes=-1&sortColumns=FREE_HOLDNUM_RATIO&source=Datacenter&client=PC&v=${Math.random()}`;
+`https://datacenter.eastmoney.com/securities/api/data/v1/get?reportName=RPT_F10_EH_FREEHOLDERS&columns=HOLDER_NEW,SECUCODE,SECURITY_CODE,SECURITY_NAME_ABBR,END_DATE,HOLDER_NAME,FREE_HOLDNUM_RATIO,HOLDER_MARKET_CAP,HOLDER_RANK,HOLDER_STATE_NEW,CHANGE_RATIO&filter=(HOLDER_NEW="${selectedId}")(END_DATE='${endDate}')&pageNumber=${page}&pageSize=500&sortTypes=-1&sortColumns=FREE_HOLDNUM_RATIO&source=Datacenter&client=PC&v=${Math.random()}`;
 
         const resp = await fetch(url);
         const json = await resp.json();
         const rows = json.result?.data || [];
-
         if (!rows.length) break;
         all.push(...rows);
         if (rows.length < 500) break;
@@ -273,7 +455,8 @@ async function fetchData() {
 
     currentData = all;
     renderTable(all);
-    document.getElementById("status").innerText = `完成，共 ${all.length} 条`;
+    document.getElementById("empty").style.display = all.length ? "none" : "block";
+    showStatus(`完成，共 ${all.length} 条`);
 }
 
 function renderTable(rows) {
@@ -281,14 +464,16 @@ function renderTable(rows) {
     tbody.innerHTML = "";
     for (const row of rows) {
         const tr = document.createElement("tr");
+        const pct = row.FREE_HOLDNUM_RATIO;
+        const chg = row.CHANGE_RATIO;
         tr.innerHTML = `
-        <td>${row.END_DATE || ""}</td>
-        <td>${row.SECURITY_NAME_ABBR || ""}</td>
-        <td>${row.SECURITY_CODE || ""}</td>
-        <td>${row.HOLDER_STATE_NEW || ""}</td>
-        <td>${row.FREE_HOLDNUM_RATIO ?? ""}</td>
-        <td>${row.CHANGE_RATIO ?? ""}</td>
-        <td>${row.HOLDER_MARKET_CAP ?? ""}</td>`;
+        <td>${(row.END_DATE||"").substring(0,10)}</td>
+        <td>${row.SECURITY_NAME_ABBR||""}</td>
+        <td>${row.SECURITY_CODE||""}</td>
+        <td>${row.HOLDER_STATE_NEW||""}</td>
+        <td>${pct != null ? pct.toFixed(2) + "%" : ""}</td>
+        <td style="color:${chg > 0 ? "#e53e3e" : chg < 0 ? "#38a169" : ""}">${chg != null ? (chg > 0 ? "+" : "") + chg.toFixed(2) : ""}</td>
+        <td>${row.HOLDER_MARKET_CAP != null ? (row.HOLDER_MARKET_CAP / 1e8).toFixed(2) + "亿" : ""}</td>`;
         tbody.appendChild(tr);
     }
 }
@@ -303,7 +488,7 @@ function exportCSV() {
         )
     ].join("\n");
 
-    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+    const blob = new Blob(["﻿" + csv], { type: "text/csv;charset=utf-8;" });
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
     a.download = "holder_positions.csv";
