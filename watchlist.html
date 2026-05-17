@@ -89,9 +89,29 @@
             .wl-item.selected .wl-meta {
                 color: rgba(255, 255, 255, 0.7);
             }
-            .wl-item .star {
+            .wl-item .wl-del {
                 margin-left: auto;
                 flex-shrink: 0;
+                font-size: 12px;
+                color: var(--text2);
+                cursor: pointer;
+                opacity: 0;
+                transition: opacity 0.15s, color 0.15s;
+                padding: 2px 4px;
+                border-radius: 4px;
+            }
+            .wl-item:hover .wl-del {
+                opacity: 1;
+            }
+            .wl-item .wl-del:hover {
+                color: var(--up);
+            }
+            .wl-item.selected .wl-del {
+                color: rgba(255, 255, 255, 0.6);
+                opacity: 1;
+            }
+            .wl-item.selected .wl-del:hover {
+                color: #fff;
             }
             .wl-empty {
                 padding: 40px 20px;
@@ -388,18 +408,15 @@
                                 <span class="type-badge">${board}</span>
                             </div>
                         </div>
-                        <span class="star on" title="移出自选">★</span>`;
-                    div.querySelector(".star").addEventListener(
+                        <span class="wl-del" title="删除">✕</span>`;
+                    div.querySelector(".wl-del").addEventListener(
                         "click",
                         (e) => {
                             e.stopPropagation();
                             removeStock(s);
                         },
                     );
-                    div.addEventListener("click", (e) => {
-                        if (!e.target.classList.contains("star"))
-                            selectStock(s);
-                    });
+                    div.addEventListener("click", () => selectStock(s));
                     wlList.appendChild(div);
                 }
             }
