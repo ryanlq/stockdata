@@ -96,7 +96,22 @@ body{
 .holder-list .item.selected{background:var(--primary);color:#fff}
 .holder-list .item .id{font-size:12px;color:var(--text2);flex-shrink:0;margin-left:8px}
 .holder-list .item.selected .id{color:rgba(255,255,255,.7)}
-.holder-list .name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.holder-list .name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;flex:1;min-width:0}
+.holder-list .item .star{
+    font-size:14px;cursor:pointer;flex-shrink:0;margin-right:6px;
+    opacity:.3;transition:opacity .15s;user-select:none;
+}
+.holder-list .item .star:hover{opacity:.7}
+.holder-list .item .star.on{opacity:1}
+.holder-list .item.selected .star{color:#fff}
+.type-badge{
+    font-size:10px;padding:1px 5px;border-radius:3px;
+    background:var(--primary-light);color:var(--primary);
+    flex-shrink:0;margin-left:6px;white-space:nowrap;
+}
+.holder-list .item.selected .type-badge{
+    background:rgba(255,255,255,.2);color:rgba(255,255,255,.85);
+}
 .hint{font-size:12px;color:var(--text2);margin-top:6px}
 .custom-row{display:flex;gap:8px;align-items:center}
 .custom-row input{
@@ -195,7 +210,9 @@ th .col-filter .arrow{font-size:10px;margin-left:2px}
 
 <div class="card">
     <div class="card-title">选择机构</div>
-    <div class="type-tabs" id="typeTabs"></div>
+    <div class="type-tabs" id="typeTabs">
+        <div class="type-tab" data-type="fav" onclick="showFavorites(this)">★ 关注</div>
+    </div>
     <div class="search-wrap">
         <input type="text" id="searchInput" placeholder="搜索机构名称或代码..." />
     </div>
@@ -432,6 +449,42 @@ function cacheSet(key, data) {
     catch { /* quota exceeded */ }
 }
 
+// ---- Watchlist ----
+const FAV_KEY = "stk_favorites";
+
+function getFavorites() {
+    try { return JSON.parse(localStorage.getItem(FAV_KEY)) || []; }
+    catch { return []; }
+}
+
+function saveFavorites(list) {
+    localStorage.setItem(FAV_KEY, JSON.stringify(list));
+}
+
+function isFavorite(id) {
+    return getFavorites().some(f => f.id === id);
+}
+
+function toggleFavorite(h, event) {
+    event.stopPropagation();
+    let favs = getFavorites();
+    const idx = favs.findIndex(f => f.id === h.HOLDER_NEW);
+    if (idx >= 0) {
+        favs.splice(idx, 1);
+    } else {
+        favs.push({ id: h.HOLDER_NEW, name: h.HOLDER, type: h.HOLDER_TYPE || "" });
+    }
+    saveFavorites(favs);
+    renderList();
+}
+
+function showFavorites(btn) {
+    document.querySelectorAll(".type-tab").forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    allHolders = getFavorites().map(f => ({ HOLDER: f.name, HOLDER_NEW: f.id, HOLDER_TYPE: f.type || "" }));
+    renderList();
+}
+
 // ---- Type tabs ----
 const typeTabs = document.getElementById("typeTabs");
 TYPES.forEach(t => {
@@ -463,12 +516,21 @@ function renderList() {
     const list = kw
         ? allHolders.filter(h => h.HOLDER.toLowerCase().includes(kw) || h.HOLDER_NEW.includes(kw))
         : allHolders;
+    const favs = getFavorites();
     holderList.innerHTML = "";
     for (const h of list) {
+        const starred = favs.some(f => f.id === h.HOLDER_NEW);
+        const typeTag = h.HOLDER_TYPE ? `<span class="type-badge">${h.HOLDER_TYPE}</span>` : "";
         const div = document.createElement("div");
         div.className = "item" + (h.HOLDER_NEW === selectedId ? " selected" : "");
-        div.innerHTML = `<span class="name">${h.HOLDER}</span><span class="id">${h.HOLDER_NEW}</span>`;
-        div.addEventListener("click", () => selectHolder(h));
+        div.innerHTML = `<span class="star${starred ? " on" : ""}" data-id="${h.HOLDER_NEW}">${starred ? "★" : "☆"}</span>`
+            + `<span class="name" data-id="${h.HOLDER_NEW}">${h.HOLDER}</span>`
+            + `${typeTag}<span class="id">${h.HOLDER_NEW}</span>`;
+        div.querySelector(".star").addEventListener("click", (e) => toggleFavorite(h, e));
+        div.addEventListener("click", (e) => {
+            if (e.target.classList.contains("star")) return;
+            selectHolder(h);
+        });
         holderList.appendChild(div);
     }
     document.getElementById("holderHint").textContent =
