@@ -477,12 +477,51 @@
                 renderWatchlist();
             }
 
-            // ---- Add stock by code ----
+            // ---- Stock info (Tencent API) ----
+            function codeToTencentKey(code) {
+                const c = String(code);
+                if (c.startsWith("6") || c.startsWith("900")) return "s_sh" + c;
+                if (c.startsWith("8") || c.startsWith("43")) return "s_bj" + c;
+                return "s_sz" + c;
+            }
+
             function codeToMarket(code) {
-                if (code.startsWith("6") || code.startsWith("688") || code.startsWith("900")) return "SH";
+                const c = String(code);
+                if (c.startsWith("6") || c.startsWith("688") || c.startsWith("900")) return "SH";
+                if (c.startsWith("8") || c.startsWith("43")) return "BJ";
                 return "SZ";
             }
 
+            async function fetchStockInfo(code) {
+                const cacheKey = "info_" + code;
+                const cached = cacheGet(cacheKey);
+                if (cached) return cached;
+
+                const key = codeToTencentKey(code);
+                const resp = await fetch(`https://qt.gtimg.cn/q=${key}`);
+                const text = await resp.text();
+                // Parse: v_s_sh600519="1~贵州茅台~600519~1332.95~..."
+                const match = text.match(/"(.+)"/);
+                if (!match) return null;
+
+                const parts = match[1].split("~");
+                if (parts.length < 7) return null;
+
+                const info = {
+                    code: parts[2],
+                    name: parts[1],
+                    price: parseFloat(parts[3]),
+                    change: parseFloat(parts[4]),
+                    changePct: parseFloat(parts[5]),
+                    volume: parseInt(parts[6]),
+                    amount: parseFloat(parts[7]),
+                    marketCap: parts[9] ? parseFloat(parts[9]) : null,
+                };
+                cacheSet(cacheKey, info);
+                return info;
+            }
+
+            // ---- Add stock by code ----
             async function addStock() {
                 const input = document.getElementById("searchInput");
                 let code = input.value.trim();
@@ -494,7 +533,6 @@
                 statusEl.classList.add("show");
 
                 try {
-                    // Normalize: strip non-digits
                     code = code.replace(/\D/g, "");
                     if (!/^\d{6}$/.test(code)) throw new Error("请输入6位股票代码");
 
@@ -503,21 +541,13 @@
 
                     if (isInWatchlist(secucode)) throw new Error("该股票已在自选中");
 
-                    // Resolve stock name via East Money search API
-                    const resp = await fetch(
-                        `https://searchapi.eastmoney.com/api/suggest/get?input=${code}&type=14&token=D43BF722C8E33BDC906FB84D85E326E8&count=3`
-                    );
-                    const data = await resp.json();
-                    const item = (data.QuotationCodeTable?.Data || []).find(
-                        (d) => d.Code === code
-                    );
-                    if (!item) throw new Error("未找到该股票");
+                    const info = await fetchStockInfo(code);
+                    if (!info || !info.name) throw new Error("未找到该股票");
 
-                    const name = item.Name;
-                    toggleWatchlist(secucode, name, market);
+                    toggleWatchlist(secucode, info.name, market);
                     renderWatchlist();
-                    showToast(`已添加 ${name}`);
-                    statusEl.textContent = `✓ ${name} 已添加`;
+                    showToast(`已添加 ${info.name}`);
+                    statusEl.textContent = `✓ ${info.name} 已添加`;
                     statusEl.style.color = "var(--down)";
                     setTimeout(() => {
                         statusEl.classList.remove("show");
