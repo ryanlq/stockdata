@@ -97,6 +97,11 @@
             text-align: center;
         }
 
+        /* ---- Mobile quarter selector (hidden on desktop) ---- */
+        .mobile-quarter {
+            display: none;
+        }
+
         /* ---- Mobile responsive ---- */
         @media (max-width: 768px) {
             .header {
@@ -130,6 +135,13 @@
             }
             .panel-toggle {
                 display: block;
+            }
+            .mobile-quarter {
+                display: block;
+            }
+            .mobile-quarter select {
+                font-size: 12px;
+                padding: 3px 8px;
             }
             .content {
                 border-radius: 0 !important;
@@ -208,6 +220,9 @@
         </div>
         <div class="result-header">
             <span class="info" id="resultInfo">选择机构后自动加载持仓数据</span>
+            <div class="mobile-quarter">
+                <select id="dateSelectMobile"><option value="">-- 季度 --</option></select>
+            </div>
             <button class="btn-sm" onclick="exportCSV()" id="btnExport" style="display:none">导出 CSV</button>
         </div>
         <div class="table-wrap">
@@ -269,6 +284,16 @@ if (window.innerWidth <= 768) {
 const searchInput = document.getElementById("searchInput");
 const holderList = document.getElementById("holderList");
 const dateSelect = document.getElementById("dateSelect");
+const dateSelectMobile = document.getElementById("dateSelectMobile");
+
+// Sync the two date selects
+dateSelectMobile.addEventListener("change", () => {
+    dateSelect.value = dateSelectMobile.value;
+    if (dateSelect.value) fetchData();
+});
+dateSelect.addEventListener("change", () => {
+    dateSelectMobile.value = dateSelect.value;
+});
 const resultInfo = document.getElementById("resultInfo");
 const btnExport = document.getElementById("btnExport");
 const emptyEl = document.getElementById("empty");
@@ -449,7 +474,13 @@ async function loadDates() {
 
 function fillDates(dates) {
     dateSelect.innerHTML = "";
-    for (const d of dates) { const o = document.createElement("option"); o.value = d; o.textContent = d.substring(0,10); dateSelect.appendChild(o); }
+    dateSelectMobile.innerHTML = "";
+    for (const d of dates) {
+        const label = d.substring(0, 10);
+        const o1 = document.createElement("option"); o1.value = d; o1.textContent = label; dateSelect.appendChild(o1);
+        const o2 = document.createElement("option"); o2.value = d; o2.textContent = label; dateSelectMobile.appendChild(o2);
+    }
+    dateSelectMobile.value = dateSelect.value;
 }
 
 dateSelect.addEventListener("change", () => { if (selectedId && dateSelect.value) fetchData(); });
