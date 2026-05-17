@@ -187,9 +187,12 @@ th .col-filter .arrow{font-size:10px;margin-left:2px}
                     <div class="col-filter">
                         <select id="filterBoard" onchange="applyFilters()">
                             <option value="">全部</option>
-                            <option value="main">主板</option>
+                            <option value="sh_main">沪主板</option>
+                            <option value="sz_main">深主板</option>
                             <option value="cyb">创业板</option>
                             <option value="kcb">科创板</option>
+                            <option value="bse">北交所</option>
+                            <option value="b">B股</option>
                         </select>
                     </div>
                 </th>
@@ -206,14 +209,22 @@ th .col-filter .arrow{font-size:10px;margin-left:2px}
                         </select>
                     </div>
                 </th>
-                <th>持仓占比</th>
-                <th>变化比例</th>
+                <th>
+                    持仓占比
+                    <div class="col-filter">
+                        <button onclick="toggleSort('ratio')" id="sortBtn_ratio" title="排序">⇅</button>
+                    </div>
+                </th>
+                <th>
+                    变化比例
+                    <div class="col-filter">
+                        <button onclick="toggleSort('change')" id="sortBtn_change" title="排序">⇅</button>
+                    </div>
+                </th>
                 <th>
                     市值
                     <div class="col-filter">
-                        <button onclick="toggleSort()" id="sortBtn" title="排序">
-                            排序 <span class="arrow" id="sortArrow">⇅</span>
-                        </button>
+                        <button onclick="toggleSort('cap')" id="sortBtn_cap" title="排序">⇅</button>
                     </div>
                 </th>
             </tr>
@@ -236,14 +247,12 @@ const btnExport = document.getElementById("btnExport");
 const emptyEl = document.getElementById("empty");
 const filterBoard = document.getElementById("filterBoard");
 const filterState = document.getElementById("filterState");
-const sortBtn = document.getElementById("sortBtn");
-const sortArrow = document.getElementById("sortArrow");
 
 let currentData = [];
 let allHolders = [];
 let selectedId = "";
 let holderCache = {};
-let sortDir = 0; // 0=none, 1=desc, 2=asc
+let sortState = { col: null, dir: 0 }; // dir: 0=none, 1=desc, 2=asc
 
 const TYPES = ["基金","QFII","券商","保险","社保","信托","国家队","个人","其他"];
 const HOLDER_BASE = "https://raw.githubusercontent.com/ryanlq/stockdata/main/holders";
@@ -253,16 +262,41 @@ const API = "https://datacenter.eastmoney.com/securities/api/data/v1/get";
 function getBoard(code) {
     if (!code) return "";
     const c = String(code);
-    if (c.startsWith("688")) return "kcb";
-    if (c.startsWith("300") || c.startsWith("301")) return "cyb";
-    return "main";
+    if (c.startsWith("688")) return "kcb";           // 科创板
+    if (c.startsWith("300") || c.startsWith("301")) return "cyb"; // 创业板
+    if (c.startsWith("8") || c.startsWith("43")) return "bse";    // 北交所
+    if (c.startsWith("900") || c.startsWith("200")) return "b";   // B股
+    if (c.startsWith("6")) return "sh_main";          // 沪主板 600/601/603/605
+    return "sz_main";                                  // 深主板 000/001/002/003
 }
 
 // ---- Sort ----
-function toggleSort() {
-    sortDir = (sortDir + 1) % 3;
-    sortArrow.textContent = ["⇅","↓","↑"][sortDir];
-    sortBtn.classList.toggle("active", sortDir !== 0);
+const SORT_FIELDS = {
+    ratio:  "FREE_HOLDNUM_RATIO",
+    change: "CHANGE_RATIO",
+    cap:    "HOLDER_MARKET_CAP",
+};
+
+function toggleSort(col) {
+    const btn = document.getElementById("sortBtn_" + col);
+    if (sortState.col === col) {
+        sortState.dir = (sortState.dir + 1) % 3;
+        if (sortState.dir === 0) sortState.col = null;
+    } else {
+        sortState.col = col;
+        sortState.dir = 1;
+    }
+    // update all sort buttons
+    for (const k of Object.keys(SORT_FIELDS)) {
+        const b = document.getElementById("sortBtn_" + k);
+        if (k === sortState.col) {
+            b.textContent = sortState.dir === 1 ? "↓" : "↑";
+            b.classList.add("active");
+        } else {
+            b.textContent = "⇅";
+            b.classList.remove("active");
+        }
+    }
     applyFilters();
 }
 
@@ -278,12 +312,10 @@ function applyFilters() {
     if (board) rows = rows.filter(r => getBoard(r.SECURITY_CODE) === board);
     if (state) rows = rows.filter(r => (r.HOLDER_STATE_NEW || "") === state);
 
-    if (sortDir) {
-        rows = [...rows].sort((a, b) => {
-            const va = a.HOLDER_MARKET_CAP || 0;
-            const vb = b.HOLDER_MARKET_CAP || 0;
-            return sortDir === 1 ? vb - va : va - vb;
-        });
+    if (sortState.col) {
+        const field = SORT_FIELDS[sortState.col];
+        const dir = sortState.dir === 1 ? -1 : 1; // 1=desc so -1 for desc sort
+        rows = [...rows].sort((a, b) => ((a[field] || 0) - (b[field] || 0)) * dir);
     }
 
     renderTable(rows);
@@ -383,9 +415,12 @@ function useCustom() {
 function resetFilters() {
     filterBoard.value = "";
     filterState.value = "";
-    sortDir = 0;
-    sortArrow.textContent = "⇅";
-    sortBtn.classList.remove("active");
+    sortState = { col: null, dir: 0 };
+    for (const k of Object.keys(SORT_FIELDS)) {
+        const b = document.getElementById("sortBtn_" + k);
+        b.textContent = "⇅";
+        b.classList.remove("active");
+    }
 }
 
 // ---- API calls with cache ----
