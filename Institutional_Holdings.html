@@ -18,55 +18,30 @@
 *{box-sizing:border-box;margin:0;padding:0}
 body{
     font-family:-apple-system,"Microsoft YaHei","PingFang SC",sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    min-height:100vh;
+    background:var(--bg);color:var(--text);min-height:100vh;
 }
 .header{
-    background:var(--card);
-    border-bottom:1px solid var(--border);
-    padding:20px 32px;
-    display:flex;
-    align-items:center;
-    gap:16px;
+    background:var(--card);border-bottom:1px solid var(--border);
+    padding:20px 32px;display:flex;align-items:center;gap:16px;
 }
 .header h1{font-size:20px;font-weight:600}
 .header a{color:var(--text2);text-decoration:none;font-size:14px}
-.main{
-    max-width:1200px;
-    margin:24px auto;
-    padding:0 24px;
-    display:flex;
-    gap:20px;
-}
+.main{max-width:1200px;margin:24px auto;padding:0 24px;display:flex;gap:20px}
 /* ---- left panel ---- */
-.panel{
-    width:380px;
-    flex-shrink:0;
-    display:flex;
-    flex-direction:column;
-    gap:16px;
-}
-.card{
-    background:var(--card);
-    border-radius:var(--radius);
-    box-shadow:var(--shadow);
-    padding:20px;
-}
+.panel{width:380px;flex-shrink:0;display:flex;flex-direction:column;gap:16px}
+.card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:20px}
 .card-title{font-size:14px;font-weight:600;margin-bottom:12px}
 .type-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
 .type-tab{
     padding:5px 12px;border-radius:20px;border:1px solid var(--border);
-    background:var(--card);font-size:13px;cursor:pointer;
-    transition:all .15s;color:var(--text2);
+    background:var(--card);font-size:13px;cursor:pointer;transition:all .15s;color:var(--text2);
 }
 .type-tab:hover{border-color:var(--primary);color:var(--primary)}
 .type-tab.active{background:var(--primary);color:#fff;border-color:var(--primary)}
 .search-wrap{position:relative;margin-bottom:10px}
 .search-wrap input{
-    width:100%;padding:8px 12px 8px 32px;
-    border:1px solid var(--border);border-radius:8px;font-size:13px;outline:none;
-    transition:border .15s;
+    width:100%;padding:8px 12px 8px 32px;border:1px solid var(--border);
+    border-radius:8px;font-size:13px;outline:none;transition:border .15s;
 }
 .search-wrap input:focus{border-color:var(--primary)}
 .search-wrap::before{
@@ -79,8 +54,7 @@ body{
 }
 .holder-list .item{
     padding:8px 12px;cursor:pointer;border-bottom:1px solid var(--border);
-    display:flex;justify-content:space-between;align-items:center;
-    transition:background .1s;
+    display:flex;justify-content:space-between;align-items:center;transition:background .1s;
 }
 .holder-list .item:last-child{border-bottom:none}
 .holder-list .item:hover{background:var(--primary-light)}
@@ -111,8 +85,7 @@ button.primary:hover{opacity:.9}
 .content{flex:1;min-width:0;display:flex;flex-direction:column}
 .result-header{
     display:flex;justify-content:space-between;align-items:center;
-    padding:12px 16px;border-bottom:1px solid var(--border);
-    flex-shrink:0;
+    padding:12px 16px;border-bottom:1px solid var(--border);flex-shrink:0;
 }
 .result-header .info{font-size:13px;color:var(--text2)}
 .result-header .info .cache-tag{
@@ -125,11 +98,31 @@ table{width:100%;border-collapse:collapse;font-size:13px}
 th{
     background:#f8f9fb;padding:10px 12px;text-align:left;
     font-weight:600;font-size:12px;color:var(--text2);
-    border-bottom:2px solid var(--border);position:sticky;top:0;
+    border-bottom:2px solid var(--border);position:sticky;top:0;z-index:1;
+    white-space:nowrap;
 }
 td{padding:10px 12px;border-bottom:1px solid var(--border);white-space:nowrap}
 tr:hover td{background:var(--primary-light)}
 .empty{text-align:center;padding:60px 20px;color:var(--text2);font-size:14px}
+
+/* ---- column filters in thead ---- */
+th .col-filter{
+    display:inline-flex;align-items:center;gap:4px;margin-top:4px;
+}
+th .col-filter select,
+th .col-filter button{
+    padding:3px 8px;font-size:11px;border-radius:4px;
+    border:1px solid var(--border);background:var(--card);cursor:pointer;
+    color:var(--text2);
+}
+th .col-filter select{outline:none;max-width:80px}
+th .col-filter select:focus{border-color:var(--primary)}
+th .col-filter button:hover{border-color:var(--primary);color:var(--primary)}
+th .col-filter button.active{
+    background:var(--primary);color:#fff;border-color:var(--primary);
+}
+th .col-filter .arrow{font-size:10px;margin-left:2px}
+
 @media(max-width:860px){
     .main{flex-direction:column}
     .panel{width:100%}
@@ -189,11 +182,40 @@ tr:hover td{background:var(--primary-light)}
             <tr>
                 <th>日期</th>
                 <th>股票</th>
-                <th>代码</th>
-                <th>状态</th>
+                <th>
+                    代码
+                    <div class="col-filter">
+                        <select id="filterBoard" onchange="applyFilters()">
+                            <option value="">全部</option>
+                            <option value="main">主板</option>
+                            <option value="cyb">创业板</option>
+                            <option value="kcb">科创板</option>
+                        </select>
+                    </div>
+                </th>
+                <th>
+                    状态
+                    <div class="col-filter">
+                        <select id="filterState" onchange="applyFilters()">
+                            <option value="">全部</option>
+                            <option value="新进">新进</option>
+                            <option value="不变">不变</option>
+                            <option value="加仓">加仓</option>
+                            <option value="减仓">减仓</option>
+                            <option value="平仓">平仓</option>
+                        </select>
+                    </div>
+                </th>
                 <th>持仓占比</th>
                 <th>变化比例</th>
-                <th>市值</th>
+                <th>
+                    市值
+                    <div class="col-filter">
+                        <button onclick="toggleSort()" id="sortBtn" title="排序">
+                            排序 <span class="arrow" id="sortArrow">⇅</span>
+                        </button>
+                    </div>
+                </th>
             </tr>
             </thead>
             <tbody></tbody>
@@ -212,37 +234,85 @@ const dateSelect = document.getElementById("dateSelect");
 const resultInfo = document.getElementById("resultInfo");
 const btnExport = document.getElementById("btnExport");
 const emptyEl = document.getElementById("empty");
+const filterBoard = document.getElementById("filterBoard");
+const filterState = document.getElementById("filterState");
+const sortBtn = document.getElementById("sortBtn");
+const sortArrow = document.getElementById("sortArrow");
 
 let currentData = [];
 let allHolders = [];
 let selectedId = "";
 let holderCache = {};
+let sortDir = 0; // 0=none, 1=desc, 2=asc
 
 const TYPES = ["基金","QFII","券商","保险","社保","信托","国家队","个人","其他"];
 const HOLDER_BASE = "https://raw.githubusercontent.com/ryanlq/stockdata/main/holders";
 const API = "https://datacenter.eastmoney.com/securities/api/data/v1/get";
 
+// ---- Board detection ----
+function getBoard(code) {
+    if (!code) return "";
+    const c = String(code);
+    if (c.startsWith("688")) return "kcb";
+    if (c.startsWith("300") || c.startsWith("301")) return "cyb";
+    return "main";
+}
+
+// ---- Sort ----
+function toggleSort() {
+    sortDir = (sortDir + 1) % 3;
+    sortArrow.textContent = ["⇅","↓","↑"][sortDir];
+    sortBtn.classList.toggle("active", sortDir !== 0);
+    applyFilters();
+}
+
+// ---- Filter + Sort pipeline ----
+function applyFilters() {
+    if (!currentData.length) return;
+
+    const board = filterBoard.value;
+    const state = filterState.value;
+
+    let rows = currentData;
+
+    if (board) rows = rows.filter(r => getBoard(r.SECURITY_CODE) === board);
+    if (state) rows = rows.filter(r => (r.HOLDER_STATE_NEW || "") === state);
+
+    if (sortDir) {
+        rows = [...rows].sort((a, b) => {
+            const va = a.HOLDER_MARKET_CAP || 0;
+            const vb = b.HOLDER_MARKET_CAP || 0;
+            return sortDir === 1 ? vb - va : va - vb;
+        });
+    }
+
+    renderTable(rows);
+    resultInfo.innerHTML = (() => {
+        let base = `${rows.length} / ${currentData.length} 条`;
+        if (rows.length < currentData.length) base += ` <span style="color:var(--primary)">已筛选</span>`;
+        const cached = cacheGet(`data_${selectedId}_${dateSelect.value.substring(0, 10)}`);
+        if (cached) base += `<span class="cache-tag">缓存</span>`;
+        return base;
+    })();
+}
+
 // ---- Cache (localStorage) ----
 const CACHE_PREFIX = "stk_";
-const CACHE_TTL = 90 * 24 * 3600 * 1000; // 90 days — quarterly data never changes for past periods
+const CACHE_TTL = 90 * 24 * 3600 * 1000;
 
 function cacheGet(key) {
     try {
         const raw = localStorage.getItem(CACHE_PREFIX + key);
         if (!raw) return null;
         const { ts, data } = JSON.parse(raw);
-        if (Date.now() - ts > CACHE_TTL) {
-            localStorage.removeItem(CACHE_PREFIX + key);
-            return null;
-        }
+        if (Date.now() - ts > CACHE_TTL) { localStorage.removeItem(CACHE_PREFIX + key); return null; }
         return data;
     } catch { return null; }
 }
 
 function cacheSet(key, data) {
-    try {
-        localStorage.setItem(CACHE_PREFIX + key, JSON.stringify({ ts: Date.now(), data }));
-    } catch { /* quota exceeded — silently ignore */ }
+    try { localStorage.setItem(CACHE_PREFIX + key, JSON.stringify({ ts: Date.now(), data })); }
+    catch { /* quota exceeded */ }
 }
 
 // ---- Type tabs ----
@@ -258,29 +328,17 @@ TYPES.forEach(t => {
 async function selectType(type, btn) {
     document.querySelectorAll(".type-tab").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
-
     if (holderCache[type]) { allHolders = holderCache[type]; renderList(); return; }
-
     const cached = cacheGet("holder_" + type);
-    if (cached) {
-        holderCache[type] = cached;
-        allHolders = cached;
-        renderList();
-        return;
-    }
-
+    if (cached) { holderCache[type] = cached; allHolders = cached; renderList(); return; }
     try {
         resultInfo.textContent = `加载${type}列表...`;
         const resp = await fetch(`${HOLDER_BASE}/${encodeURIComponent(type)}.json`);
         const data = await resp.json();
-        holderCache[type] = data;
-        cacheSet("holder_" + type, data);
-        allHolders = data;
-        renderList();
-        resultInfo.textContent = "选择机构后，点击「获取季度」开始查询";
-    } catch (e) {
-        resultInfo.textContent = "加载失败: " + e.message;
-    }
+        holderCache[type] = data; cacheSet("holder_" + type, data);
+        allHolders = data; renderList();
+        resultInfo.textContent = "选择机构后自动加载持仓数据";
+    } catch (e) { resultInfo.textContent = "加载失败: " + e.message; }
 }
 
 function renderList() {
@@ -288,7 +346,6 @@ function renderList() {
     const list = kw
         ? allHolders.filter(h => h.HOLDER.toLowerCase().includes(kw) || h.HOLDER_NEW.includes(kw))
         : allHolders;
-
     holderList.innerHTML = "";
     for (const h of list) {
         const div = document.createElement("div");
@@ -307,9 +364,8 @@ function selectHolder(h) {
         el.classList.toggle("selected", el.querySelector(".id").textContent === selectedId);
     });
     document.getElementById("customId").value = selectedId;
-    loadDates().then(() => {
-        if (dateSelect.value) fetchData();
-    });
+    resetFilters();
+    loadDates().then(() => { if (dateSelect.value) fetchData(); });
 }
 
 searchInput.addEventListener("input", renderList);
@@ -320,39 +376,35 @@ function useCustom() {
     selectedId = id;
     document.querySelectorAll(".type-tab").forEach(b => b.classList.remove("active"));
     document.querySelectorAll(".holder-list .item").forEach(el => el.classList.remove("selected"));
-    loadDates().then(() => {
-        if (dateSelect.value) fetchData();
-    });
+    resetFilters();
+    loadDates().then(() => { if (dateSelect.value) fetchData(); });
+}
+
+function resetFilters() {
+    filterBoard.value = "";
+    filterState.value = "";
+    sortDir = 0;
+    sortArrow.textContent = "⇅";
+    sortBtn.classList.remove("active");
 }
 
 // ---- API calls with cache ----
 
 async function loadDates() {
     if (!selectedId) return;
-
     const cacheKey = `dates_${selectedId}`;
     const cached = cacheGet(cacheKey);
-    if (cached) {
-        fillDates(cached);
-        resultInfo.innerHTML = `${cached.length} 个季度<span class="cache-tag">缓存</span>`;
-        return cached;
-    }
-
+    if (cached) { fillDates(cached); resultInfo.innerHTML = `${cached.length} 个季度<span class="cache-tag">缓存</span>`; return cached; }
     resultInfo.textContent = "加载季度列表...";
-
     const url = `${API}?reportName=RPT_F10_EH_FREEHOLDERS&columns=END_DATE&distinct=END_DATE`
         + `&filter=(HOLDER_NEW="${selectedId}")`
         + `&sortTypes=-1&sortColumns=END_DATE&pageNumber=1&pageSize=100`
         + `&source=Datacenter&client=PC&v=${Math.random()}`;
-
     const resp = await fetch(url);
     const json = await resp.json();
     const rows = (json.result?.data || []).map(r => r.END_DATE);
-
     if (!rows.length) { resultInfo.textContent = "未找到该机构的持仓季度数据"; return []; }
-
-    cacheSet(cacheKey, rows);
-    fillDates(rows);
+    cacheSet(cacheKey, rows); fillDates(rows);
     resultInfo.textContent = `${rows.length} 个季度`;
     return rows;
 }
@@ -373,31 +425,24 @@ dateSelect.addEventListener("change", () => {
 
 async function fetchData() {
     if (!selectedId || !dateSelect.value) return;
-
     const endDate = dateSelect.value;
-
     const cacheKey = `data_${selectedId}_${endDate.substring(0, 10)}`;
     const cached = cacheGet(cacheKey);
     if (cached) {
         currentData = cached;
-        renderTable(cached);
+        applyFilters();
         btnExport.style.display = "";
         emptyEl.style.display = "none";
-        resultInfo.innerHTML = `共 ${cached.length} 条<span class="cache-tag">缓存</span>`;
         return;
     }
-
     let page = 1, all = [];
-
     while (true) {
         resultInfo.textContent = `抓取第 ${page} 页...`;
-
         const url = `${API}?reportName=RPT_F10_EH_FREEHOLDERS`
             + `&columns=HOLDER_NEW,SECUCODE,SECURITY_CODE,SECURITY_NAME_ABBR,END_DATE,HOLDER_NAME,FREE_HOLDNUM_RATIO,HOLDER_MARKET_CAP,HOLDER_RANK,HOLDER_STATE_NEW,CHANGE_RATIO`
             + `&filter=(HOLDER_NEW="${selectedId}")(END_DATE='${endDate}')`
             + `&pageNumber=${page}&pageSize=500&sortTypes=-1&sortColumns=FREE_HOLDNUM_RATIO`
             + `&source=Datacenter&client=PC&v=${Math.random()}`;
-
         const resp = await fetch(url);
         const json = await resp.json();
         const rows = json.result?.data || [];
@@ -406,10 +451,9 @@ async function fetchData() {
         if (rows.length < 500) break;
         page++;
     }
-
     currentData = all;
     cacheSet(cacheKey, all);
-    renderTable(all);
+    applyFilters();
     btnExport.style.display = all.length ? "" : "none";
     emptyEl.style.display = all.length ? "none" : "block";
     resultInfo.textContent = `完成，共 ${all.length} 条`;
@@ -437,13 +481,9 @@ function renderTable(rows) {
 function exportCSV() {
     if (!currentData.length) return;
     const headers = Object.keys(currentData[0]);
-    const csv = [
-        headers.join(","),
-        ...currentData.map(row =>
-            headers.map(h => `"${row[h] ?? ""}"`).join(",")
-        )
+    const csv = [headers.join(","),
+        ...currentData.map(row => headers.map(h => `"${row[h] ?? ""}"`).join(","))
     ].join("\n");
-
     const blob = new Blob(["﻿" + csv], { type: "text/csv;charset=utf-8;" });
     const a = document.createElement("a");
     a.href = URL.createObjectURL(blob);
