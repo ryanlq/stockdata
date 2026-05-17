@@ -187,8 +187,7 @@ th .col-filter .arrow{font-size:10px;margin-left:2px}
                     <div class="col-filter">
                         <select id="filterBoard" onchange="applyFilters()">
                             <option value="">全部</option>
-                            <option value="sh_main">沪主板</option>
-                            <option value="sz_main">深主板</option>
+                            <option value="main">主板</option>
                             <option value="cyb">创业板</option>
                             <option value="kcb">科创板</option>
                             <option value="bse">北交所</option>
@@ -264,10 +263,9 @@ function getBoard(code) {
     const c = String(code);
     if (c.startsWith("688")) return "kcb";           // 科创板
     if (c.startsWith("300") || c.startsWith("301")) return "cyb"; // 创业板
-    if (c.startsWith("8") || c.startsWith("43")) return "bse";    // 北交所
-    if (c.startsWith("900") || c.startsWith("200")) return "b";   // B股
-    if (c.startsWith("6")) return "sh_main";          // 沪主板 600/601/603/605
-    return "sz_main";                                  // 深主板 000/001/002/003
+    if (c.startsWith("8") || c.startsWith("43")) return "bse";
+    if (c.startsWith("900") || c.startsWith("200")) return "b";
+    return "main";
 }
 
 // ---- Sort ----
