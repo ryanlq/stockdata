@@ -210,23 +210,7 @@
             let tvWidget = null;
             let saveTimer = null;
 
-            // ---- Notes storage ----
-            const NOTES_KEY = "stk_notes";
-
-            function getNote(secucode) {
-                try {
-                    const all = JSON.parse(localStorage.getItem(NOTES_KEY)) || {};
-                    return all[secucode] || "";
-                } catch { return ""; }
-            }
-
-            function saveNote(secucode, text) {
-                let all;
-                try { all = JSON.parse(localStorage.getItem(NOTES_KEY)) || {}; } catch { all = {}; }
-                if (text.trim()) { all[secucode] = text; }
-                else { delete all[secucode]; }
-                localStorage.setItem(NOTES_KEY, JSON.stringify(all));
-            }
+            // ---- Notes (getNote/saveNote from common.js) ----
 
             function renderNotesPanel(secucode) {
                 const content = document.getElementById("notesContent");
