@@ -162,18 +162,17 @@ tr:hover td{background:var(--primary-light)}
 <div class="card">
     <div class="card-title">自定义机构 ID</div>
     <div class="custom-row">
-        <input type="text" id="customId" placeholder="输入 HOLDER_NEW，如 10429689" />
+        <input type="text" id="customId" placeholder="输入 HOLDER_NEW，如 10429689" onkeydown="if(event.key==='Enter')useCustom()" />
         <button onclick="useCustom()">使用</button>
     </div>
 </div>
 
 <div class="card">
-    <div class="card-title">查询操作</div>
+    <div class="card-title">季度</div>
     <div class="actions">
-        <button class="primary" onclick="loadDates()">获取季度</button>
-        <select id="dateSelect"><option value="">-- 先获取季度 --</option></select>
-        <button class="primary" onclick="fetchData()">下载持仓</button>
+        <select id="dateSelect"><option value="">-- 选择机构后自动加载 --</option></select>
     </div>
+    <div class="hint">选择机构后自动加载最新季度持仓</div>
 </div>
 
 </div>
@@ -181,7 +180,7 @@ tr:hover td{background:var(--primary-light)}
 <!-- right panel -->
 <div class="content card" style="padding:0;overflow:hidden">
     <div class="result-header">
-        <span class="info" id="resultInfo">选择机构后，点击「获取季度」开始查询</span>
+        <span class="info" id="resultInfo">选择机构后自动加载持仓数据</span>
         <button class="btn-sm" onclick="exportCSV()" id="btnExport" style="display:none">导出 CSV</button>
     </div>
     <div class="table-wrap">
@@ -199,7 +198,7 @@ tr:hover td{background:var(--primary-light)}
             </thead>
             <tbody></tbody>
         </table>
-        <div class="empty" id="empty">选择机构后，点击「获取季度」开始查询</div>
+        <div class="empty" id="empty">选择机构后自动加载持仓数据</div>
     </div>
 </div>
 
@@ -308,6 +307,9 @@ function selectHolder(h) {
         el.classList.toggle("selected", el.querySelector(".id").textContent === selectedId);
     });
     document.getElementById("customId").value = selectedId;
+    loadDates().then(() => {
+        if (dateSelect.value) fetchData();
+    });
 }
 
 searchInput.addEventListener("input", renderList);
@@ -318,20 +320,22 @@ function useCustom() {
     selectedId = id;
     document.querySelectorAll(".type-tab").forEach(b => b.classList.remove("active"));
     document.querySelectorAll(".holder-list .item").forEach(el => el.classList.remove("selected"));
-    resultInfo.textContent = `已选择自定义机构 ID: ${id}`;
+    loadDates().then(() => {
+        if (dateSelect.value) fetchData();
+    });
 }
 
 // ---- API calls with cache ----
 
 async function loadDates() {
-    if (!selectedId) { alert("请先选择机构"); return; }
+    if (!selectedId) return;
 
     const cacheKey = `dates_${selectedId}`;
     const cached = cacheGet(cacheKey);
     if (cached) {
         fillDates(cached);
-        resultInfo.innerHTML = `获取到 ${cached.length} 个季度<span class="cache-tag">缓存</span>`;
-        return;
+        resultInfo.innerHTML = `${cached.length} 个季度<span class="cache-tag">缓存</span>`;
+        return cached;
     }
 
     resultInfo.textContent = "加载季度列表...";
@@ -345,11 +349,12 @@ async function loadDates() {
     const json = await resp.json();
     const rows = (json.result?.data || []).map(r => r.END_DATE);
 
-    if (!rows.length) { resultInfo.textContent = "未找到该机构的持仓季度数据"; return; }
+    if (!rows.length) { resultInfo.textContent = "未找到该机构的持仓季度数据"; return []; }
 
     cacheSet(cacheKey, rows);
     fillDates(rows);
-    resultInfo.textContent = `获取到 ${rows.length} 个季度`;
+    resultInfo.textContent = `${rows.length} 个季度`;
+    return rows;
 }
 
 function fillDates(dates) {
@@ -362,10 +367,14 @@ function fillDates(dates) {
     }
 }
 
+dateSelect.addEventListener("change", () => {
+    if (selectedId && dateSelect.value) fetchData();
+});
+
 async function fetchData() {
-    if (!selectedId) { alert("请先选择机构"); return; }
+    if (!selectedId || !dateSelect.value) return;
+
     const endDate = dateSelect.value;
-    if (!endDate) { alert("请先获取并选择季度"); return; }
 
     const cacheKey = `data_${selectedId}_${endDate.substring(0, 10)}`;
     const cached = cacheGet(cacheKey);
