@@ -1,186 +1,353 @@
 <!doctype html>
 <html lang="zh">
-<head>
-    <meta charset="UTF-8" />
-    <title>自选股</title>
-    <link rel="stylesheet" href="common.css" />
-    <style>
-        /* ---- Left list ---- */
-        .watchlist-panel {
-            width: 320px; flex-shrink: 0; display: flex; flex-direction: column;
-            overflow: hidden;
-        }
-        .wl-search {
-            padding: 12px 16px; border-bottom: 1px solid var(--border); flex-shrink: 0;
-        }
-        .wl-search input { width: 100%; }
-        .wl-list { flex: 1; overflow-y: auto; font-size: 13px; }
-        .wl-item {
-            padding: 10px 16px; border-bottom: 1px solid var(--border);
-            display: flex; align-items: center; gap: 10px;
-            cursor: pointer; transition: background .1s;
-        }
-        .wl-item:last-child { border-bottom: none; }
-        .wl-item:hover { background: var(--primary-light); }
-        .wl-item.selected { background: var(--primary); color: #fff; }
-        .wl-item .wl-info { flex: 1; min-width: 0; }
-        .wl-item .wl-name {
-            font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
-        }
-        .wl-item .wl-meta {
-            font-size: 11px; color: var(--text2); margin-top: 2px;
-            display: flex; gap: 6px; align-items: center;
-        }
-        .wl-item.selected .wl-meta { color: rgba(255,255,255,.7); }
-        .wl-item .star { margin-left: auto; flex-shrink: 0; }
-        .wl-empty {
-            padding: 40px 20px; text-align: center; color: var(--text2); font-size: 14px;
-        }
+    <head>
+        <meta charset="UTF-8" />
+        <title>自选股</title>
+        <link rel="stylesheet" href="common.css" />
+        <style>
+            /* ---- Full-width override ---- */
+            body { width: 100%; }
+            .main {
+                padding: unset !important;
+                gap: unset !important;
+                max-width: unset !important;
+                width: 100% !important;
+            }
 
-        /* ---- Right: chart fills everything ---- */
-        .detail { flex: 1; min-width: 0; display: flex; flex-direction: column; overflow: hidden; }
-        .chart-bar {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 8px 16px; background: var(--chart-bar-bg); font-size: 13px; color: var(--text2);
-            border-bottom: 1px solid var(--border); flex-shrink: 0;
-        }
-        .chart-bar .stock-name { font-weight: 600; color: var(--text); font-size: 14px; }
-        .chart-bar button { padding: 3px 10px; font-size: 12px; }
-        .chart-container { flex: 1; min-height: 0; }
-        .empty-detail {
-            flex: 1; display: flex; align-items: center; justify-content: center;
-            color: var(--text2); font-size: 14px;
-        }
-    </style>
-</head>
-<body>
+            /* ---- Watchlist panel ---- */
+            .watchlist-panel {
+                width: 320px;
+                flex-shrink: 0;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+            }
+            .wl-search {
+                padding: 12px 16px;
+                border-bottom: 1px solid var(--border);
+                flex-shrink: 0;
+            }
+            .wl-search input { width: 100%; }
+            .wl-list { flex: 1; overflow-y: auto; font-size: 13px; }
+            .wl-item {
+                padding: 10px 16px;
+                border-bottom: 1px solid var(--border);
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                cursor: pointer;
+                transition: background 0.1s;
+            }
+            .wl-item:last-child { border-bottom: none; }
+            .wl-item:hover { background: var(--primary-light); }
+            .wl-item.selected { background: var(--primary); color: #fff; }
+            .wl-item .wl-info { flex: 1; min-width: 0; }
+            .wl-item .wl-name {
+                font-weight: 600;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .wl-item .wl-meta {
+                font-size: 11px;
+                color: var(--text2);
+                margin-top: 2px;
+                display: flex;
+                gap: 6px;
+                align-items: center;
+            }
+            .wl-item.selected .wl-meta { color: rgba(255,255,255,.7); }
+            .wl-item .star { margin-left: auto; flex-shrink: 0; }
+            .wl-empty {
+                padding: 40px 20px;
+                text-align: center;
+                color: var(--text2);
+                font-size: 14px;
+            }
 
-<div class="header">
-    <h1>自选股</h1>
-    <a href="index.html">← 返回首页</a>
-    <a href="Institutional_Holdings.html" class="type-badge" style="font-size:13px;padding:5px 12px">机构持仓</a>
-    <div style="flex:1"></div>
-    <button class="theme-btn" onclick="toggleTheme()" id="themeBtn" title="切换主题"></button>
-</div>
+            /* ---- Chart (center, fills remaining) ---- */
+            .detail {
+                flex: 1;
+                min-width: 0;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+                border-radius: 0;
+                border-left: 1px solid var(--border);
+                border-right: 1px solid var(--border);
+            }
+            .chart-bar {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 8px 16px;
+                background: var(--chart-bar-bg);
+                font-size: 13px;
+                color: var(--text2);
+                border-bottom: 1px solid var(--border);
+                flex-shrink: 0;
+            }
+            .chart-bar .stock-name {
+                font-weight: 600;
+                color: var(--text);
+                font-size: 14px;
+            }
+            .chart-bar button { padding: 3px 10px; font-size: 12px; }
+            .chart-container { flex: 1; min-height: 0; }
+            .empty-detail {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--text2);
+                font-size: 14px;
+            }
 
-<div class="main">
-    <!-- left: watchlist -->
-    <div class="watchlist-panel card" style="padding:0;overflow:hidden">
-        <div class="wl-search">
-            <input type="text" id="searchInput" placeholder="搜索股票名称或代码..." oninput="renderWatchlist()" />
+            /* ---- Notes panel ---- */
+            .notes-panel {
+                width: 320px;
+                flex-shrink: 0;
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+            }
+            .notes-header {
+                padding: 10px 16px;
+                background: var(--chart-bar-bg);
+                border-bottom: 1px solid var(--border);
+                font-size: 13px;
+                font-weight: 600;
+                color: var(--text2);
+                flex-shrink: 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            .notes-header .stock-label {
+                color: var(--text);
+                font-weight: 700;
+            }
+            .notes-editor {
+                flex: 1;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+            }
+            .notes-editor textarea {
+                flex: 1;
+                width: 100%;
+                padding: 12px 16px;
+                border: none;
+                outline: none;
+                resize: none;
+                font-size: 13px;
+                line-height: 1.6;
+                font-family: inherit;
+                color: var(--text);
+                background: var(--card);
+            }
+            .notes-empty {
+                flex: 1;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: var(--text2);
+                font-size: 13px;
+                padding: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <h1>自选股</h1>
+            <a href="index.html">← 返回首页</a>
+            <a href="Institutional_Holdings.html" class="type-badge" style="font-size:13px;padding:5px 12px">机构持仓</a>
+            <div style="flex:1"></div>
+            <button class="theme-btn" onclick="toggleTheme()" id="themeBtn" title="切换主题"></button>
         </div>
-        <div class="wl-list" id="wlList"></div>
-        <div class="wl-empty" id="wlEmpty">暂无自选股，可从机构持仓页面添加</div>
-    </div>
 
-    <!-- right: chart -->
-    <div class="detail card" style="padding:0;overflow:hidden">
-        <div id="chartArea" style="display:none;flex:1;flex-direction:column;min-height:0">
-            <div class="chart-bar">
-                <span class="stock-name" id="chartStockName"></span>
-                <div style="display:flex;gap:8px;align-items:center">
-                    <a id="f10Link" href="#" target="_blank" class="f10-link">F10</a>
-                    <button onclick="deselectStock()">收起</button>
+        <div class="main">
+            <!-- col 1: watchlist -->
+            <div class="watchlist-panel card" style="padding:0;overflow:hidden;border-radius:0">
+                <div class="wl-search">
+                    <input type="text" id="searchInput" placeholder="搜索股票名称或代码..." oninput="renderWatchlist()" />
+                </div>
+                <div class="wl-list" id="wlList"></div>
+                <div class="wl-empty" id="wlEmpty">暂无自选股，可从机构持仓页面添加</div>
+            </div>
+
+            <!-- col 2: chart -->
+            <div class="detail card" style="padding:0;overflow:hidden;border-radius:0">
+                <div id="chartArea" style="display:none;flex:1;flex-direction:column;min-height:0">
+                    <div class="chart-bar">
+                        <span class="stock-name" id="chartStockName"></span>
+                        <div style="display:flex;gap:8px;align-items:center">
+                            <a id="f10Link" href="#" target="_blank" class="f10-link">F10</a>
+                            <button onclick="deselectStock()">收起</button>
+                        </div>
+                    </div>
+                    <div class="chart-container" id="tvChartContainer"></div>
+                </div>
+                <div class="empty-detail" id="emptyDetail">选择左侧股票查看行情图表</div>
+            </div>
+
+            <!-- col 3: notes -->
+            <div class="notes-panel card" style="padding:0;overflow:hidden;border-radius:0">
+                <div id="notesContent">
+                    <div class="notes-empty" id="notesEmpty">选择股票后记录笔记</div>
                 </div>
             </div>
-            <div class="chart-container" id="tvChartContainer"></div>
         </div>
-        <div class="empty-detail" id="emptyDetail">选择左侧股票查看行情图表</div>
-    </div>
-</div>
 
-<div class="toast" id="toast"></div>
+        <div class="toast" id="toast"></div>
 
-<script src="common.js"></script>
-<script src="https://s3.tradingview.com/tv.js"></script>
-<script>
-const wlList = document.getElementById("wlList");
-const searchInput = document.getElementById("searchInput");
-let selectedCode = "";
-let tvWidget = null;
+        <script src="common.js"></script>
+        <script src="https://s3.tradingview.com/tv.js"></script>
+        <script>
+            const wlList = document.getElementById("wlList");
+            const searchInput = document.getElementById("searchInput");
+            let selectedCode = "";
+            let tvWidget = null;
+            let saveTimer = null;
 
-// ---- Toast ----
-let toastTimer;
-function showToast(msg) {
-    const el = document.getElementById("toast");
-    el.textContent = msg; el.classList.add("show");
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => el.classList.remove("show"), 1500);
-}
+            // ---- Notes storage ----
+            const NOTES_KEY = "stk_notes";
 
-// ---- Render watchlist ----
-function renderWatchlist() {
-    const kw = searchInput.value.trim().toLowerCase();
-    let list = getWatchlist();
-    if (kw) list = list.filter(s => s.name.toLowerCase().includes(kw) || s.secucode.includes(kw));
+            function getNote(secucode) {
+                try {
+                    const all = JSON.parse(localStorage.getItem(NOTES_KEY)) || {};
+                    return all[secucode] || "";
+                } catch { return ""; }
+            }
 
-    document.getElementById("wlEmpty").style.display = list.length ? "none" : "block";
-    wlList.innerHTML = "";
+            function saveNote(secucode, text) {
+                let all;
+                try { all = JSON.parse(localStorage.getItem(NOTES_KEY)) || {}; } catch { all = {}; }
+                if (text.trim()) { all[secucode] = text; }
+                else { delete all[secucode]; }
+                localStorage.setItem(NOTES_KEY, JSON.stringify(all));
+            }
 
-    for (const s of list) {
-        const [code] = s.secucode.split(".");
-        const board = getBoardLabel(code);
-        const div = document.createElement("div");
-        div.className = "wl-item" + (s.secucode === selectedCode ? " selected" : "");
-        div.innerHTML = `
-            <div class="wl-info">
-                <div class="wl-name">${s.name}</div>
-                <div class="wl-meta">
-                    <span>${code}</span>
-                    <span class="type-badge">${board}</span>
-                </div>
-            </div>
-            <span class="star on" title="移出自选">★</span>`;
-        div.querySelector(".star").addEventListener("click", e => { e.stopPropagation(); removeStock(s); });
-        div.addEventListener("click", e => { if (!e.target.classList.contains("star")) selectStock(s); });
-        wlList.appendChild(div);
-    }
-}
+            function renderNotesPanel(secucode) {
+                const content = document.getElementById("notesContent");
+                if (!secucode) {
+                    content.innerHTML = '<div class="notes-empty">选择股票后记录笔记</div>';
+                    return;
+                }
+                const [code] = secucode.split(".");
+                const note = getNote(secucode);
+                content.innerHTML = `
+                    <div class="notes-header">
+                        <span>笔记 <span class="stock-label">${code}</span></span>
+                        <span style="font-weight:400;font-size:11px" id="noteStatus"></span>
+                    </div>
+                    <div class="notes-editor">
+                        <textarea id="noteTextarea" placeholder="在此记录分析笔记...&#10;&#10;支持多行文本，自动保存"
+                            oninput="onNoteInput()">${note}</textarea>
+                    </div>`;
+            }
 
-function removeStock(s) {
-    toggleWatchlist(s.secucode, s.name, s.market);
-    showToast(`已将 ${s.name} 移出自选`);
-    if (selectedCode === s.secucode) deselectStock();
-    renderWatchlist();
-}
+            function onNoteInput() {
+                clearTimeout(saveTimer);
+                const status = document.getElementById("noteStatus");
+                if (status) status.textContent = "编辑中...";
+                saveTimer = setTimeout(() => {
+                    const textarea = document.getElementById("noteTextarea");
+                    if (textarea && selectedCode) {
+                        saveNote(selectedCode, textarea.value);
+                        const s = document.getElementById("noteStatus");
+                        if (s) s.textContent = "已保存";
+                        setTimeout(() => { if (s) s.textContent = ""; }, 1500);
+                    }
+                }, 500);
+            }
 
-function selectStock(s) {
-    selectedCode = s.secucode;
-    renderWatchlist();
+            // ---- Toast ----
+            let toastTimer;
+            function showToast(msg) {
+                const el = document.getElementById("toast");
+                el.textContent = msg; el.classList.add("show");
+                clearTimeout(toastTimer);
+                toastTimer = setTimeout(() => el.classList.remove("show"), 1500);
+            }
 
-    const symbol = secucodeToSymbol(s.secucode);
-    if (!symbol) return;
+            // ---- Watchlist ----
+            function renderWatchlist() {
+                const kw = searchInput.value.trim().toLowerCase();
+                let list = getWatchlist();
+                if (kw) list = list.filter(s => s.name.toLowerCase().includes(kw) || s.secucode.includes(kw));
 
-    const [code] = s.secucode.split(".");
-    document.getElementById("chartStockName").textContent = `${s.name} (${code})`;
-    document.getElementById("f10Link").href = codeToF10Url(s.secucode);
-    document.getElementById("emptyDetail").style.display = "none";
+                document.getElementById("wlEmpty").style.display = list.length ? "none" : "block";
+                wlList.innerHTML = "";
 
-    const chartArea = document.getElementById("chartArea");
-    chartArea.style.display = "flex";
+                for (const s of list) {
+                    const [code] = s.secucode.split(".");
+                    const board = getBoardLabel(code);
+                    const div = document.createElement("div");
+                    div.className = "wl-item" + (s.secucode === selectedCode ? " selected" : "");
+                    div.innerHTML = `
+                        <div class="wl-info">
+                            <div class="wl-name">${s.name}</div>
+                            <div class="wl-meta">
+                                <span>${code}</span>
+                                <span class="type-badge">${board}</span>
+                            </div>
+                        </div>
+                        <span class="star on" title="移出自选">★</span>`;
+                    div.querySelector(".star").addEventListener("click", e => { e.stopPropagation(); removeStock(s); });
+                    div.addEventListener("click", e => { if (!e.target.classList.contains("star")) selectStock(s); });
+                    wlList.appendChild(div);
+                }
+            }
 
-    const container = document.getElementById("tvChartContainer");
-    container.innerHTML = "";
+            function removeStock(s) {
+                toggleWatchlist(s.secucode, s.name, s.market);
+                showToast(`已将 ${s.name} 移出自选`);
+                if (selectedCode === s.secucode) deselectStock();
+                renderWatchlist();
+            }
 
-    tvWidget = new TradingView.widget({
-        autosize: true, symbol, interval: "D", timezone: "Asia/Shanghai",
-        theme: getTheme(), style: "1", locale: "zh_CN", enable_publishing: false,
-        allow_symbol_change: true, container_id: "tvChartContainer",
-        hide_side_toolbar: false, studies: ["MASimple@tv-basicstudies"],
-    });
-}
+            function selectStock(s) {
+                selectedCode = s.secucode;
+                renderWatchlist();
 
-function deselectStock() {
-    selectedCode = "";
-    document.getElementById("chartArea").style.display = "none";
-    document.getElementById("tvChartContainer").innerHTML = "";
-    document.getElementById("emptyDetail").style.display = "flex";
-    tvWidget = null;
-    renderWatchlist();
-}
+                const symbol = secucodeToSymbol(s.secucode);
+                if (!symbol) return;
 
-// ---- Init ----
-renderWatchlist();
-</script>
-</body>
+                const [code] = s.secucode.split(".");
+                document.getElementById("chartStockName").textContent = `${s.name} (${code})`;
+                document.getElementById("f10Link").href = codeToF10Url(s.secucode);
+                document.getElementById("emptyDetail").style.display = "none";
+
+                const chartArea = document.getElementById("chartArea");
+                chartArea.style.display = "flex";
+
+                const container = document.getElementById("tvChartContainer");
+                container.innerHTML = "";
+
+                tvWidget = new TradingView.widget({
+                    autosize: true, symbol, interval: "D",
+                    timezone: "Asia/Shanghai", theme: getTheme(),
+                    style: "1", locale: "zh_CN", enable_publishing: false,
+                    allow_symbol_change: true, container_id: "tvChartContainer",
+                    hide_side_toolbar: false, studies: ["MASimple@tv-basicstudies"],
+                });
+
+                renderNotesPanel(s.secucode);
+            }
+
+            function deselectStock() {
+                selectedCode = "";
+                document.getElementById("chartArea").style.display = "none";
+                document.getElementById("tvChartContainer").innerHTML = "";
+                document.getElementById("emptyDetail").style.display = "flex";
+                tvWidget = null;
+                renderNotesPanel(null);
+                renderWatchlist();
+            }
+
+            // ---- Init ----
+            renderWatchlist();
+        </script>
+    </body>
 </html>

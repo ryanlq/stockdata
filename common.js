@@ -95,5 +95,17 @@ function codeToF10Url(secucode) {
     return `https://f10.9fzt.com/index.html#/f10?code=${code}&market=${market}&softNameAbbr=jfztGW&topnav=zxdt`;
 }
 
+// ---- Notes ----
+const NOTES_KEY = "stk_notes";
+function getNote(secucode) {
+    try { return (JSON.parse(localStorage.getItem(NOTES_KEY)) || {})[secucode] || ""; }
+    catch { return ""; }
+}
+function saveNote(secucode, text) {
+    let all; try { all = JSON.parse(localStorage.getItem(NOTES_KEY)) || {}; } catch { all = {}; }
+    if (text.trim()) all[secucode] = text; else delete all[secucode];
+    localStorage.setItem(NOTES_KEY, JSON.stringify(all));
+}
+
 // ---- Init theme on load ----
 applyTheme(getTheme());
