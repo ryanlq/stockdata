@@ -6,7 +6,9 @@
         <link rel="stylesheet" href="common.css" />
         <style>
             /* ---- Full-width override ---- */
-            body { width: 100%; }
+            body {
+                width: 100%;
+            }
             .main {
                 padding: unset !important;
                 gap: unset !important;
@@ -26,9 +28,27 @@
                 padding: 12px 16px;
                 border-bottom: 1px solid var(--border);
                 flex-shrink: 0;
+                display: flex;
+                gap: 8px;
             }
-            .wl-search input { width: 100%; }
-            .wl-list { flex: 1; overflow-y: auto; font-size: 13px; }
+            .wl-search input {
+                flex: 1;
+            }
+            .wl-add-status {
+                padding: 6px 16px;
+                border-bottom: 1px solid var(--border);
+                font-size: 12px;
+                color: var(--text2);
+                background: var(--primary-light);
+                flex-shrink: 0;
+                display: none;
+            }
+            .wl-add-status.show { display: block; }
+            .wl-list {
+                flex: 1;
+                overflow-y: auto;
+                font-size: 13px;
+            }
             .wl-item {
                 padding: 10px 16px;
                 border-bottom: 1px solid var(--border);
@@ -38,10 +58,20 @@
                 cursor: pointer;
                 transition: background 0.1s;
             }
-            .wl-item:last-child { border-bottom: none; }
-            .wl-item:hover { background: var(--primary-light); }
-            .wl-item.selected { background: var(--primary); color: #fff; }
-            .wl-item .wl-info { flex: 1; min-width: 0; }
+            .wl-item:last-child {
+                border-bottom: none;
+            }
+            .wl-item:hover {
+                background: var(--primary-light);
+            }
+            .wl-item.selected {
+                background: var(--primary);
+                color: #fff;
+            }
+            .wl-item .wl-info {
+                flex: 1;
+                min-width: 0;
+            }
             .wl-item .wl-name {
                 font-weight: 600;
                 overflow: hidden;
@@ -56,8 +86,13 @@
                 gap: 6px;
                 align-items: center;
             }
-            .wl-item.selected .wl-meta { color: rgba(255,255,255,.7); }
-            .wl-item .star { margin-left: auto; flex-shrink: 0; }
+            .wl-item.selected .wl-meta {
+                color: rgba(255, 255, 255, 0.7);
+            }
+            .wl-item .star {
+                margin-left: auto;
+                flex-shrink: 0;
+            }
             .wl-empty {
                 padding: 40px 20px;
                 text-align: center;
@@ -92,8 +127,14 @@
                 color: var(--text);
                 font-size: 14px;
             }
-            .chart-bar button { padding: 3px 10px; font-size: 12px; }
-            .chart-container { flex: 1; min-height: 0; }
+            .chart-bar button {
+                padding: 3px 10px;
+                font-size: 12px;
+            }
+            .chart-container {
+                flex: 1;
+                min-height: 0;
+            }
             .empty-detail {
                 flex: 1;
                 display: flex;
@@ -105,6 +146,7 @@
 
             /* ---- Notes panel ---- */
             .notes-panel {
+                height: 100%;
                 width: 320px;
                 flex-shrink: 0;
                 display: flex;
@@ -127,10 +169,14 @@
                 color: var(--text);
                 font-weight: 700;
             }
+            #notesContent {
+                height: 100%;
+            }
             .notes-editor {
                 flex: 1;
                 padding: 0;
                 display: flex;
+                height: 100%;
                 flex-direction: column;
             }
             .notes-editor textarea {
@@ -161,40 +207,89 @@
         <div class="header">
             <h1>自选股</h1>
             <a href="index.html">← 返回首页</a>
-            <a href="Institutional_Holdings.html" class="type-badge" style="font-size:13px;padding:5px 12px">机构持仓</a>
-            <div style="flex:1"></div>
-            <button class="theme-btn" onclick="toggleTheme()" id="themeBtn" title="切换主题"></button>
+            <a
+                href="Institutional_Holdings.html"
+                class="type-badge"
+                style="font-size: 13px; padding: 5px 12px"
+                >机构持仓</a
+            >
+            <div style="flex: 1"></div>
+            <button
+                class="theme-btn"
+                onclick="toggleTheme()"
+                id="themeBtn"
+                title="切换主题"
+            ></button>
         </div>
 
         <div class="main">
             <!-- col 1: watchlist -->
-            <div class="watchlist-panel card" style="padding:0;overflow:hidden;border-radius:0">
+            <div
+                class="watchlist-panel card"
+                style="padding: 0; overflow: hidden; border-radius: 0"
+            >
                 <div class="wl-search">
-                    <input type="text" id="searchInput" placeholder="搜索股票名称或代码..." oninput="renderWatchlist()" />
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="搜索或输入代码添加..."
+                        oninput="renderWatchlist()"
+                        onkeydown="if(event.key==='Enter')addStock()"
+                    />
+                    <button onclick="addStock()" style="padding:6px 12px;font-size:12px">添加</button>
                 </div>
+                <div class="wl-add-status" id="addStatus"></div>
                 <div class="wl-list" id="wlList"></div>
-                <div class="wl-empty" id="wlEmpty">暂无自选股，可从机构持仓页面添加</div>
+                <div class="wl-empty" id="wlEmpty">
+                    暂无自选股，可从机构持仓页面添加
+                </div>
             </div>
 
             <!-- col 2: chart -->
-            <div class="detail card" style="padding:0;overflow:hidden;border-radius:0">
-                <div id="chartArea" style="display:none;flex:1;flex-direction:column;min-height:0">
+            <div
+                class="detail card"
+                style="padding: 0; overflow: hidden; border-radius: 0"
+            >
+                <div
+                    id="chartArea"
+                    style="
+                        display: none;
+                        flex: 1;
+                        flex-direction: column;
+                        min-height: 0;
+                    "
+                >
                     <div class="chart-bar">
                         <span class="stock-name" id="chartStockName"></span>
-                        <div style="display:flex;gap:8px;align-items:center">
-                            <a id="f10Link" href="#" target="_blank" class="f10-link">F10</a>
+                        <div
+                            style="display: flex; gap: 8px; align-items: center"
+                        >
+                            <a
+                                id="f10Link"
+                                href="#"
+                                target="_blank"
+                                class="f10-link"
+                                >F10</a
+                            >
                             <button onclick="deselectStock()">收起</button>
                         </div>
                     </div>
                     <div class="chart-container" id="tvChartContainer"></div>
                 </div>
-                <div class="empty-detail" id="emptyDetail">选择左侧股票查看行情图表</div>
+                <div class="empty-detail" id="emptyDetail">
+                    选择左侧股票查看行情图表
+                </div>
             </div>
 
             <!-- col 3: notes -->
-            <div class="notes-panel card" style="padding:0;overflow:hidden;border-radius:0">
+            <div
+                class="notes-panel card"
+                style="padding: 0; overflow: hidden; border-radius: 0"
+            >
                 <div id="notesContent">
-                    <div class="notes-empty" id="notesEmpty">选择股票后记录笔记</div>
+                    <div class="notes-empty" id="notesEmpty">
+                        选择股票后记录笔记
+                    </div>
                 </div>
             </div>
         </div>
@@ -215,7 +310,8 @@
             function renderNotesPanel(secucode) {
                 const content = document.getElementById("notesContent");
                 if (!secucode) {
-                    content.innerHTML = '<div class="notes-empty">选择股票后记录笔记</div>';
+                    content.innerHTML =
+                        '<div class="notes-empty">选择股票后记录笔记</div>';
                     return;
                 }
                 const [code] = secucode.split(".");
@@ -241,7 +337,9 @@
                         saveNote(selectedCode, textarea.value);
                         const s = document.getElementById("noteStatus");
                         if (s) s.textContent = "已保存";
-                        setTimeout(() => { if (s) s.textContent = ""; }, 1500);
+                        setTimeout(() => {
+                            if (s) s.textContent = "";
+                        }, 1500);
                     }
                 }, 500);
             }
@@ -250,25 +348,38 @@
             let toastTimer;
             function showToast(msg) {
                 const el = document.getElementById("toast");
-                el.textContent = msg; el.classList.add("show");
+                el.textContent = msg;
+                el.classList.add("show");
                 clearTimeout(toastTimer);
-                toastTimer = setTimeout(() => el.classList.remove("show"), 1500);
+                toastTimer = setTimeout(
+                    () => el.classList.remove("show"),
+                    1500,
+                );
             }
 
             // ---- Watchlist ----
             function renderWatchlist() {
                 const kw = searchInput.value.trim().toLowerCase();
                 let list = getWatchlist();
-                if (kw) list = list.filter(s => s.name.toLowerCase().includes(kw) || s.secucode.includes(kw));
+                if (kw)
+                    list = list.filter(
+                        (s) =>
+                            s.name.toLowerCase().includes(kw) ||
+                            s.secucode.includes(kw),
+                    );
 
-                document.getElementById("wlEmpty").style.display = list.length ? "none" : "block";
+                document.getElementById("wlEmpty").style.display = list.length
+                    ? "none"
+                    : "block";
                 wlList.innerHTML = "";
 
                 for (const s of list) {
                     const [code] = s.secucode.split(".");
                     const board = getBoardLabel(code);
                     const div = document.createElement("div");
-                    div.className = "wl-item" + (s.secucode === selectedCode ? " selected" : "");
+                    div.className =
+                        "wl-item" +
+                        (s.secucode === selectedCode ? " selected" : "");
                     div.innerHTML = `
                         <div class="wl-info">
                             <div class="wl-name">${s.name}</div>
@@ -278,8 +389,17 @@
                             </div>
                         </div>
                         <span class="star on" title="移出自选">★</span>`;
-                    div.querySelector(".star").addEventListener("click", e => { e.stopPropagation(); removeStock(s); });
-                    div.addEventListener("click", e => { if (!e.target.classList.contains("star")) selectStock(s); });
+                    div.querySelector(".star").addEventListener(
+                        "click",
+                        (e) => {
+                            e.stopPropagation();
+                            removeStock(s);
+                        },
+                    );
+                    div.addEventListener("click", (e) => {
+                        if (!e.target.classList.contains("star"))
+                            selectStock(s);
+                    });
                     wlList.appendChild(div);
                 }
             }
@@ -299,8 +419,11 @@
                 if (!symbol) return;
 
                 const [code] = s.secucode.split(".");
-                document.getElementById("chartStockName").textContent = `${s.name} (${code})`;
-                document.getElementById("f10Link").href = codeToF10Url(s.secucode);
+                document.getElementById("chartStockName").textContent =
+                    `${s.name} (${code})`;
+                document.getElementById("f10Link").href = codeToF10Url(
+                    s.secucode,
+                );
                 document.getElementById("emptyDetail").style.display = "none";
 
                 const chartArea = document.getElementById("chartArea");
@@ -310,11 +433,18 @@
                 container.innerHTML = "";
 
                 tvWidget = new TradingView.widget({
-                    autosize: true, symbol, interval: "D",
-                    timezone: "Asia/Shanghai", theme: getTheme(),
-                    style: "1", locale: "zh_CN", enable_publishing: false,
-                    allow_symbol_change: true, container_id: "tvChartContainer",
-                    hide_side_toolbar: false, studies: ["MASimple@tv-basicstudies"],
+                    autosize: true,
+                    symbol,
+                    interval: "D",
+                    timezone: "Asia/Shanghai",
+                    theme: getTheme(),
+                    style: "1",
+                    locale: "zh_CN",
+                    enable_publishing: false,
+                    allow_symbol_change: true,
+                    container_id: "tvChartContainer",
+                    hide_side_toolbar: false,
+                    studies: ["MASimple@tv-basicstudies"],
                 });
 
                 renderNotesPanel(s.secucode);
@@ -328,6 +458,62 @@
                 tvWidget = null;
                 renderNotesPanel(null);
                 renderWatchlist();
+            }
+
+            // ---- Add stock by code ----
+            function codeToMarket(code) {
+                if (code.startsWith("6") || code.startsWith("688") || code.startsWith("900")) return "SH";
+                return "SZ";
+            }
+
+            async function addStock() {
+                const input = document.getElementById("searchInput");
+                let code = input.value.trim();
+                if (!code) return;
+                input.value = "";
+
+                const statusEl = document.getElementById("addStatus");
+                statusEl.textContent = "查询中...";
+                statusEl.classList.add("show");
+
+                try {
+                    // Normalize: strip non-digits
+                    code = code.replace(/\D/g, "");
+                    if (!/^\d{6}$/.test(code)) throw new Error("请输入6位股票代码");
+
+                    const market = codeToMarket(code);
+                    const secucode = `${code}.${market}`;
+
+                    if (isInWatchlist(secucode)) throw new Error("该股票已在自选中");
+
+                    // Resolve stock name via East Money search API
+                    const resp = await fetch(
+                        `https://searchapi.eastmoney.com/api/suggest/get?input=${code}&type=14&token=D43BF722C8E33BDC906FB84D85E326E8&count=3`
+                    );
+                    const data = await resp.json();
+                    const item = (data.QuotationCodeTable?.Data || []).find(
+                        (d) => d.Code === code
+                    );
+                    if (!item) throw new Error("未找到该股票");
+
+                    const name = item.Name;
+                    toggleWatchlist(secucode, name, market);
+                    renderWatchlist();
+                    showToast(`已添加 ${name}`);
+                    statusEl.textContent = `✓ ${name} 已添加`;
+                    statusEl.style.color = "var(--down)";
+                    setTimeout(() => {
+                        statusEl.classList.remove("show");
+                        statusEl.style.color = "";
+                    }, 1500);
+                } catch (e) {
+                    statusEl.textContent = e.message || "添加失败";
+                    statusEl.style.color = "var(--up)";
+                    setTimeout(() => {
+                        statusEl.classList.remove("show");
+                        statusEl.style.color = "";
+                    }, 2000);
+                }
             }
 
             // ---- Init ----
