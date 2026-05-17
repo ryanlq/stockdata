@@ -20,6 +20,7 @@
     --cache-text:#0369a1;
     --up:#e53e3e;
     --down:#38a169;
+    --input-bg:#fff;
 }
 [data-theme="dark"]{
     --primary:#6b8af7;
@@ -36,6 +37,17 @@
     --cache-text:#6bb5f7;
     --up:#f87171;
     --down:#4ade80;
+    --input-bg:#14161e;
+}
+[data-theme="dark"] button,
+[data-theme="dark"] select,
+[data-theme="dark"] input{
+    color:var(--text);
+    background:var(--card);
+}
+[data-theme="dark"] select option{
+    background:var(--card);
+    color:var(--text);
 }
 *{box-sizing:border-box;margin:0;padding:0}
 body{
@@ -64,6 +76,7 @@ body{
 .search-wrap input{
     width:100%;padding:8px 12px 8px 32px;border:1px solid var(--border);
     border-radius:8px;font-size:13px;outline:none;transition:border .15s;
+    background:var(--input-bg);
 }
 .search-wrap input:focus{border-color:var(--primary)}
 .search-wrap::before{
@@ -88,13 +101,13 @@ body{
 .custom-row{display:flex;gap:8px;align-items:center}
 .custom-row input{
     flex:1;padding:7px 10px;border:1px solid var(--border);
-    border-radius:8px;font-size:13px;outline:none;
+    border-radius:8px;font-size:13px;outline:none;background:var(--input-bg);
 }
 .custom-row input:focus{border-color:var(--primary)}
 .actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .actions select{
     padding:7px 10px;border:1px solid var(--border);border-radius:8px;
-    font-size:13px;background:var(--card);outline:none;min-width:140px;
+    font-size:13px;background:var(--input-bg);outline:none;min-width:140px;
 }
 button{
     padding:7px 16px;border-radius:8px;border:1px solid var(--border);
@@ -148,10 +161,10 @@ th .col-filter{
 th .col-filter select,
 th .col-filter button{
     padding:3px 8px;font-size:11px;border-radius:4px;
-    border:1px solid var(--border);background:var(--card);cursor:pointer;
+    border:1px solid var(--border);background:var(--input-bg);cursor:pointer;
     color:var(--text2);
 }
-th .col-filter select{outline:none;max-width:80px}
+th .col-filter select{outline:none;max-width:80px;background:var(--input-bg)}
 th .col-filter select:focus{border-color:var(--primary)}
 th .col-filter button:hover{border-color:var(--primary);color:var(--primary)}
 th .col-filter button.active{
