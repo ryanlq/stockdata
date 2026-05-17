@@ -30,15 +30,8 @@ body{
     align-items:center;
     gap:16px;
 }
-.header h1{
-    font-size:20px;
-    font-weight:600;
-}
-.header a{
-    color:var(--text2);
-    text-decoration:none;
-    font-size:14px;
-}
+.header h1{font-size:20px;font-weight:600}
+.header a{color:var(--text2);text-decoration:none;font-size:14px}
 .main{
     max-width:1200px;
     margin:24px auto;
@@ -60,185 +53,83 @@ body{
     box-shadow:var(--shadow);
     padding:20px;
 }
-.card-title{
-    font-size:14px;
-    font-weight:600;
-    margin-bottom:12px;
-    color:var(--text);
-}
-/* type tabs */
-.type-tabs{
-    display:flex;
-    flex-wrap:wrap;
-    gap:6px;
-    margin-bottom:12px;
-}
+.card-title{font-size:14px;font-weight:600;margin-bottom:12px}
+.type-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
 .type-tab{
-    padding:5px 12px;
-    border-radius:20px;
-    border:1px solid var(--border);
-    background:var(--card);
-    font-size:13px;
-    cursor:pointer;
-    transition:all .15s;
-    color:var(--text2);
+    padding:5px 12px;border-radius:20px;border:1px solid var(--border);
+    background:var(--card);font-size:13px;cursor:pointer;
+    transition:all .15s;color:var(--text2);
 }
 .type-tab:hover{border-color:var(--primary);color:var(--primary)}
-.type-tab.active{
-    background:var(--primary);
-    color:#fff;
-    border-color:var(--primary);
-}
-/* search */
-.search-wrap{
-    position:relative;
-    margin-bottom:10px;
-}
+.type-tab.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+.search-wrap{position:relative;margin-bottom:10px}
 .search-wrap input{
-    width:100%;
-    padding:8px 12px 8px 32px;
-    border:1px solid var(--border);
-    border-radius:8px;
-    font-size:13px;
-    outline:none;
+    width:100%;padding:8px 12px 8px 32px;
+    border:1px solid var(--border);border-radius:8px;font-size:13px;outline:none;
     transition:border .15s;
 }
 .search-wrap input:focus{border-color:var(--primary)}
 .search-wrap::before{
-    content:"🔍";
-    position:absolute;
-    left:10px;top:50%;
-    transform:translateY(-50%);
-    font-size:13px;
-    pointer-events:none;
+    content:"🔍";position:absolute;left:10px;top:50%;
+    transform:translateY(-50%);font-size:13px;pointer-events:none;
 }
-/* holder list */
 .holder-list{
-    border:1px solid var(--border);
-    border-radius:8px;
-    max-height:260px;
-    overflow-y:auto;
-    font-size:13px;
+    border:1px solid var(--border);border-radius:8px;
+    max-height:260px;overflow-y:auto;font-size:13px;
 }
 .holder-list .item{
-    padding:8px 12px;
-    cursor:pointer;
-    border-bottom:1px solid var(--border);
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+    padding:8px 12px;cursor:pointer;border-bottom:1px solid var(--border);
+    display:flex;justify-content:space-between;align-items:center;
     transition:background .1s;
 }
 .holder-list .item:last-child{border-bottom:none}
 .holder-list .item:hover{background:var(--primary-light)}
 .holder-list .item.selected{background:var(--primary);color:#fff}
-.holder-list .item .id{
-    font-size:12px;
-    color:var(--text2);
-    flex-shrink:0;
-    margin-left:8px;
-}
+.holder-list .item .id{font-size:12px;color:var(--text2);flex-shrink:0;margin-left:8px}
 .holder-list .item.selected .id{color:rgba(255,255,255,.7)}
-.holder-list .name{
-    overflow:hidden;
-    text-overflow:ellipsis;
-    white-space:nowrap;
-}
+.holder-list .name{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .hint{font-size:12px;color:var(--text2);margin-top:6px}
-/* custom id input */
-.custom-row{
-    display:flex;
-    gap:8px;
-    align-items:center;
-}
+.custom-row{display:flex;gap:8px;align-items:center}
 .custom-row input{
-    flex:1;
-    padding:7px 10px;
-    border:1px solid var(--border);
-    border-radius:8px;
-    font-size:13px;
-    outline:none;
+    flex:1;padding:7px 10px;border:1px solid var(--border);
+    border-radius:8px;font-size:13px;outline:none;
 }
 .custom-row input:focus{border-color:var(--primary)}
-/* actions */
-.actions{
-    display:flex;
-    gap:8px;
-    flex-wrap:wrap;
-    align-items:center;
-}
+.actions{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
 .actions select{
-    padding:7px 10px;
-    border:1px solid var(--border);
-    border-radius:8px;
-    font-size:13px;
-    background:var(--card);
-    outline:none;
-    min-width:140px;
+    padding:7px 10px;border:1px solid var(--border);border-radius:8px;
+    font-size:13px;background:var(--card);outline:none;min-width:140px;
 }
 button{
-    padding:7px 16px;
-    border-radius:8px;
-    border:1px solid var(--border);
-    background:var(--card);
-    font-size:13px;
-    cursor:pointer;
-    transition:all .15s;
+    padding:7px 16px;border-radius:8px;border:1px solid var(--border);
+    background:var(--card);font-size:13px;cursor:pointer;transition:all .15s;
 }
 button:hover{border-color:var(--primary);color:var(--primary)}
-button.primary{
-    background:var(--primary);
-    color:#fff;
-    border-color:var(--primary);
-}
+button.primary{background:var(--primary);color:#fff;border-color:var(--primary)}
 button.primary:hover{opacity:.9}
 /* ---- right panel ---- */
-.content{
-    flex:1;
-    min-width:0;
+.content{flex:1;min-width:0;display:flex;flex-direction:column}
+.result-header{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:12px 16px;border-bottom:1px solid var(--border);
+    flex-shrink:0;
 }
-.status-bar{
-    padding:10px 16px;
-    font-size:13px;
-    color:var(--text2);
-    border-bottom:1px solid var(--border);
-    display:none;
+.result-header .info{font-size:13px;color:var(--text2)}
+.result-header .info .cache-tag{
+    font-size:11px;background:#e0f2fe;color:#0369a1;
+    padding:1px 6px;border-radius:4px;margin-left:6px;
 }
-.status-bar.show{display:block}
-.status-bar.loading{color:var(--primary)}
-/* table */
-.table-wrap{
-    overflow-x:auto;
-}
-table{
-    width:100%;
-    border-collapse:collapse;
-    font-size:13px;
-}
+.btn-sm{padding:5px 12px;font-size:12px}
+.table-wrap{overflow-x:auto;flex:1}
+table{width:100%;border-collapse:collapse;font-size:13px}
 th{
-    background:#f8f9fb;
-    padding:10px 12px;
-    text-align:left;
-    font-weight:600;
-    font-size:12px;
-    color:var(--text2);
-    border-bottom:2px solid var(--border);
-    position:sticky;
-    top:0;
+    background:#f8f9fb;padding:10px 12px;text-align:left;
+    font-weight:600;font-size:12px;color:var(--text2);
+    border-bottom:2px solid var(--border);position:sticky;top:0;
 }
-td{
-    padding:10px 12px;
-    border-bottom:1px solid var(--border);
-    white-space:nowrap;
-}
+td{padding:10px 12px;border-bottom:1px solid var(--border);white-space:nowrap}
 tr:hover td{background:var(--primary-light)}
-.empty{
-    text-align:center;
-    padding:60px 20px;
-    color:var(--text2);
-    font-size:14px;
-}
-/* responsive */
+.empty{text-align:center;padding:60px 20px;color:var(--text2);font-size:14px}
 @media(max-width:860px){
     .main{flex-direction:column}
     .panel{width:100%}
@@ -282,7 +173,6 @@ tr:hover td{background:var(--primary-light)}
         <button class="primary" onclick="loadDates()">获取季度</button>
         <select id="dateSelect"><option value="">-- 先获取季度 --</option></select>
         <button class="primary" onclick="fetchData()">下载持仓</button>
-        <button onclick="exportCSV()">导出 CSV</button>
     </div>
 </div>
 
@@ -290,7 +180,10 @@ tr:hover td{background:var(--primary-light)}
 
 <!-- right panel -->
 <div class="content card" style="padding:0;overflow:hidden">
-    <div class="status-bar" id="status"></div>
+    <div class="result-header">
+        <span class="info" id="resultInfo">选择机构后，点击「获取季度」开始查询</span>
+        <button class="btn-sm" onclick="exportCSV()" id="btnExport" style="display:none">导出 CSV</button>
+    </div>
     <div class="table-wrap">
         <table id="table">
             <thead>
@@ -317,14 +210,43 @@ tr:hover td{background:var(--primary-light)}
 const searchInput = document.getElementById("searchInput");
 const holderList = document.getElementById("holderList");
 const dateSelect = document.getElementById("dateSelect");
+const resultInfo = document.getElementById("resultInfo");
+const btnExport = document.getElementById("btnExport");
+const emptyEl = document.getElementById("empty");
 
 let currentData = [];
 let allHolders = [];
 let selectedId = "";
-let cache = {};
+let holderCache = {};
 
 const TYPES = ["基金","QFII","券商","保险","社保","信托","国家队","个人","其他"];
+const HOLDER_BASE = "https://raw.githubusercontent.com/ryanlq/stockdata/main/holders";
+const API = "https://datacenter.eastmoney.com/securities/api/data/v1/get";
 
+// ---- Cache (localStorage) ----
+const CACHE_PREFIX = "stk_";
+const CACHE_TTL = 90 * 24 * 3600 * 1000; // 90 days — quarterly data never changes for past periods
+
+function cacheGet(key) {
+    try {
+        const raw = localStorage.getItem(CACHE_PREFIX + key);
+        if (!raw) return null;
+        const { ts, data } = JSON.parse(raw);
+        if (Date.now() - ts > CACHE_TTL) {
+            localStorage.removeItem(CACHE_PREFIX + key);
+            return null;
+        }
+        return data;
+    } catch { return null; }
+}
+
+function cacheSet(key, data) {
+    try {
+        localStorage.setItem(CACHE_PREFIX + key, JSON.stringify({ ts: Date.now(), data }));
+    } catch { /* quota exceeded — silently ignore */ }
+}
+
+// ---- Type tabs ----
 const typeTabs = document.getElementById("typeTabs");
 TYPES.forEach(t => {
     const btn = document.createElement("div");
@@ -338,31 +260,34 @@ async function selectType(type, btn) {
     document.querySelectorAll(".type-tab").forEach(b => b.classList.remove("active"));
     btn.classList.add("active");
 
-    if (cache[type]) {
-        allHolders = cache[type];
+    if (holderCache[type]) { allHolders = holderCache[type]; renderList(); return; }
+
+    const cached = cacheGet("holder_" + type);
+    if (cached) {
+        holderCache[type] = cached;
+        allHolders = cached;
         renderList();
         return;
     }
 
     try {
-        const BASE = "https://raw.githubusercontent.com/ryanlq/stockdata/main/holders";
-        showStatus(`加载${type}列表...`, true);
-        const resp = await fetch(`${BASE}/${encodeURIComponent(type)}.json`);
-        cache[type] = await resp.json();
-        allHolders = cache[type];
+        resultInfo.textContent = `加载${type}列表...`;
+        const resp = await fetch(`${HOLDER_BASE}/${encodeURIComponent(type)}.json`);
+        const data = await resp.json();
+        holderCache[type] = data;
+        cacheSet("holder_" + type, data);
+        allHolders = data;
         renderList();
-        hideStatus();
+        resultInfo.textContent = "选择机构后，点击「获取季度」开始查询";
     } catch (e) {
-        showStatus("加载失败: " + e.message);
+        resultInfo.textContent = "加载失败: " + e.message;
     }
 }
 
 function renderList() {
     const kw = searchInput.value.trim().toLowerCase();
     const list = kw
-        ? allHolders.filter(h =>
-            h.HOLDER.toLowerCase().includes(kw) ||
-            h.HOLDER_NEW.includes(kw))
+        ? allHolders.filter(h => h.HOLDER.toLowerCase().includes(kw) || h.HOLDER_NEW.includes(kw))
         : allHolders;
 
     holderList.innerHTML = "";
@@ -393,42 +318,48 @@ function useCustom() {
     selectedId = id;
     document.querySelectorAll(".type-tab").forEach(b => b.classList.remove("active"));
     document.querySelectorAll(".holder-list .item").forEach(el => el.classList.remove("selected"));
-    showStatus(`已选择自定义机构 ID: ${id}`);
+    resultInfo.textContent = `已选择自定义机构 ID: ${id}`;
 }
 
-// status bar
-function showStatus(msg, loading) {
-    const el = document.getElementById("status");
-    el.textContent = msg;
-    el.className = "status-bar show" + (loading ? " loading" : "");
-}
-function hideStatus() {
-    document.getElementById("status").className = "status-bar";
-}
+// ---- API calls with cache ----
 
 async function loadDates() {
     if (!selectedId) { alert("请先选择机构"); return; }
-    showStatus("加载季度列表...", true);
 
-    const url =
-`https://datacenter.eastmoney.com/securities/api/data/v1/get?reportName=RPT_F10_EH_FREEHOLDERS&columns=END_DATE&distinct=END_DATE&filter=(HOLDER_NEW="${selectedId}")&sortTypes=-1&sortColumns=END_DATE&pageNumber=1&pageSize=100&source=Datacenter&client=PC&v=${Math.random()}`;
+    const cacheKey = `dates_${selectedId}`;
+    const cached = cacheGet(cacheKey);
+    if (cached) {
+        fillDates(cached);
+        resultInfo.innerHTML = `获取到 ${cached.length} 个季度<span class="cache-tag">缓存</span>`;
+        return;
+    }
+
+    resultInfo.textContent = "加载季度列表...";
+
+    const url = `${API}?reportName=RPT_F10_EH_FREEHOLDERS&columns=END_DATE&distinct=END_DATE`
+        + `&filter=(HOLDER_NEW="${selectedId}")`
+        + `&sortTypes=-1&sortColumns=END_DATE&pageNumber=1&pageSize=100`
+        + `&source=Datacenter&client=PC&v=${Math.random()}`;
 
     const resp = await fetch(url);
     const json = await resp.json();
-    const rows = json.result?.data || [];
+    const rows = (json.result?.data || []).map(r => r.END_DATE);
 
+    if (!rows.length) { resultInfo.textContent = "未找到该机构的持仓季度数据"; return; }
+
+    cacheSet(cacheKey, rows);
+    fillDates(rows);
+    resultInfo.textContent = `获取到 ${rows.length} 个季度`;
+}
+
+function fillDates(dates) {
     dateSelect.innerHTML = "";
-    if (!rows.length) {
-        showStatus("未找到该机构的持仓季度数据");
-        return;
-    }
-    for (const row of rows) {
+    for (const d of dates) {
         const opt = document.createElement("option");
-        opt.value = row.END_DATE;
-        opt.textContent = row.END_DATE.substring(0, 10);
+        opt.value = d;
+        opt.textContent = d.substring(0, 10);
         dateSelect.appendChild(opt);
     }
-    showStatus(`获取到 ${rows.length} 个季度`);
 }
 
 async function fetchData() {
@@ -436,13 +367,27 @@ async function fetchData() {
     const endDate = dateSelect.value;
     if (!endDate) { alert("请先获取并选择季度"); return; }
 
+    const cacheKey = `data_${selectedId}_${endDate.substring(0, 10)}`;
+    const cached = cacheGet(cacheKey);
+    if (cached) {
+        currentData = cached;
+        renderTable(cached);
+        btnExport.style.display = "";
+        emptyEl.style.display = "none";
+        resultInfo.innerHTML = `共 ${cached.length} 条<span class="cache-tag">缓存</span>`;
+        return;
+    }
+
     let page = 1, all = [];
 
     while (true) {
-        showStatus(`抓取第 ${page} 页...`, true);
+        resultInfo.textContent = `抓取第 ${page} 页...`;
 
-        const url =
-`https://datacenter.eastmoney.com/securities/api/data/v1/get?reportName=RPT_F10_EH_FREEHOLDERS&columns=HOLDER_NEW,SECUCODE,SECURITY_CODE,SECURITY_NAME_ABBR,END_DATE,HOLDER_NAME,FREE_HOLDNUM_RATIO,HOLDER_MARKET_CAP,HOLDER_RANK,HOLDER_STATE_NEW,CHANGE_RATIO&filter=(HOLDER_NEW="${selectedId}")(END_DATE='${endDate}')&pageNumber=${page}&pageSize=500&sortTypes=-1&sortColumns=FREE_HOLDNUM_RATIO&source=Datacenter&client=PC&v=${Math.random()}`;
+        const url = `${API}?reportName=RPT_F10_EH_FREEHOLDERS`
+            + `&columns=HOLDER_NEW,SECUCODE,SECURITY_CODE,SECURITY_NAME_ABBR,END_DATE,HOLDER_NAME,FREE_HOLDNUM_RATIO,HOLDER_MARKET_CAP,HOLDER_RANK,HOLDER_STATE_NEW,CHANGE_RATIO`
+            + `&filter=(HOLDER_NEW="${selectedId}")(END_DATE='${endDate}')`
+            + `&pageNumber=${page}&pageSize=500&sortTypes=-1&sortColumns=FREE_HOLDNUM_RATIO`
+            + `&source=Datacenter&client=PC&v=${Math.random()}`;
 
         const resp = await fetch(url);
         const json = await resp.json();
@@ -454,9 +399,11 @@ async function fetchData() {
     }
 
     currentData = all;
+    cacheSet(cacheKey, all);
     renderTable(all);
-    document.getElementById("empty").style.display = all.length ? "none" : "block";
-    showStatus(`完成，共 ${all.length} 条`);
+    btnExport.style.display = all.length ? "" : "none";
+    emptyEl.style.display = all.length ? "none" : "block";
+    resultInfo.textContent = `完成，共 ${all.length} 条`;
 }
 
 function renderTable(rows) {
@@ -479,7 +426,7 @@ function renderTable(rows) {
 }
 
 function exportCSV() {
-    if (!currentData.length) { alert("没有数据"); return; }
+    if (!currentData.length) return;
     const headers = Object.keys(currentData[0]);
     const csv = [
         headers.join(","),
