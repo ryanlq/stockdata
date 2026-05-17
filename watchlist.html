@@ -86,6 +86,32 @@
                 gap: 6px;
                 align-items: center;
             }
+            .wl-item .wl-price {
+                font-weight: 600;
+                font-size: 13px;
+            }
+            .wl-item .wl-chg {
+                font-size: 11px;
+            }
+            .wl-item .up {
+                color: var(--up);
+            }
+            .wl-item .down {
+                color: var(--down);
+            }
+            .wl-item.selected .wl-price,
+            .wl-item.selected .wl-chg,
+            .wl-item.selected .wl-cap {
+                color: rgba(255, 255, 255, 0.85);
+            }
+            .wl-item .wl-cap {
+                margin-left: auto;
+                font-size: 11px;
+                color: var(--text2);
+            }
+            .wl-item.selected .wl-cap {
+                color: rgba(255, 255, 255, 0.6);
+            }
             .wl-item.selected .wl-meta {
                 color: rgba(255, 255, 255, 0.7);
             }
@@ -377,8 +403,55 @@
                 );
             }
 
+            // ---- Format helpers ----
+            function fmtPrice(v) {
+                if (v == null || isNaN(v)) return "--";
+                return v.toFixed(2);
+            }
+            function fmtCap(v) {
+                if (!v) return "--";
+                if (v >= 10000) return (v / 10000).toFixed(1) + "万亿";
+                return v.toFixed(1) + "亿";
+            }
+
+            // ---- Batch fetch quotes ----
+            async function batchFetchQuotes(codes) {
+                if (!codes.length) return {};
+                // Check cache first, collect misses
+                const cached = {};
+                const miss = [];
+                for (const c of codes) {
+                    const d = cacheGet("info2_" + c);
+                    if (d) cached[c] = d;
+                    else miss.push(c);
+                }
+                if (miss.length) {
+                    const keys = miss.map(c => codeToTencentKey(c)).join(",");
+                    const resp = await fetch(`https://qt.gtimg.cn/q=${keys}`);
+                    const buf = await resp.arrayBuffer();
+                    const text = new TextDecoder("gbk").decode(buf);
+                    for (const line of text.split(";")) {
+                        const m = line.match(/"(.+)"/);
+                        if (!m) continue;
+                        const p = m[1].split("~");
+                        if (p.length < 10) continue;
+                        const info = {
+                            code: p[2], name: p[1],
+                            price: parseFloat(p[3]),
+                            change: parseFloat(p[4]),
+                            changePct: parseFloat(p[5]),
+                            marketCap: p[9] ? parseFloat(p[9]) : null,
+                        };
+                        cached[info.code] = info;
+                        cacheSet("info2_" + info.code, info);
+                    }
+                }
+                return cached;
+            }
+
             // ---- Watchlist ----
-            function renderWatchlist() {
+            let quotesMap = {};
+            async function renderWatchlist() {
                 const kw = searchInput.value.trim().toLowerCase();
                 let list = getWatchlist();
                 if (kw)
@@ -393,9 +466,22 @@
                     : "block";
                 wlList.innerHTML = "";
 
+                // Fetch quotes for all visible stocks
+                const codes = list.map(s => s.secucode.split(".")[0]);
+                quotesMap = await batchFetchQuotes(codes);
+
                 for (const s of list) {
                     const [code] = s.secucode.split(".");
                     const board = getBoardLabel(code);
+                    const q = quotesMap[code] || {};
+                    const priceHtml = q.price != null
+                        ? `<span class="wl-price ${q.change >= 0 ? "up" : "down"}">${fmtPrice(q.price)}</span>
+                           <span class="wl-chg ${q.change >= 0 ? "up" : "down"}">${q.changePct >= 0 ? "+" : ""}${q.changePct.toFixed(2)}%</span>`
+                        : "";
+                    const capHtml = q.marketCap != null
+                        ? `<span class="wl-cap">${fmtCap(q.marketCap)}</span>`
+                        : "";
+
                     const div = document.createElement("div");
                     div.className =
                         "wl-item" +
@@ -406,6 +492,7 @@
                             <div class="wl-meta">
                                 <span>${code}</span>
                                 <span class="type-badge">${board}</span>
+                                ${priceHtml}${capHtml}
                             </div>
                         </div>
                         <span class="wl-del" title="删除">✕</span>`;
@@ -425,7 +512,7 @@
                 toggleWatchlist(s.secucode, s.name, s.market);
                 showToast(`已将 ${s.name} 移出自选`);
                 if (selectedCode === s.secucode) deselectStock();
-                renderWatchlist();
+                renderWatchlist(); // async but no need to await
             }
 
             function selectStock(s) {
