@@ -1,70 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh">
-<head>
-<meta charset="UTF-8" />
-<title>股市工具箱</title>
-<style>
-body{
-    font-family: -apple-system, "Microsoft YaHei", sans-serif;
-    background: #f0f2f5;
-    margin: 0;
-    padding: 40px 20px;
-}
-.container{
-    max-width: 800px;
-    margin: 0 auto;
-}
-h1{
-    text-align: center;
-    color: #333;
-    margin-bottom: 40px;
-}
-.grid{
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 20px;
-}
-.card{
-    background: white;
-    border-radius: 12px;
-    padding: 24px;
-    text-decoration: none;
-    color: #333;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    transition: transform 0.15s, box-shadow 0.15s;
-}
-.card:hover{
-    transform: translateY(-3px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.12);
-}
-.card h3{
-    margin: 0 0 8px;
-    font-size: 18px;
-    color: #1a73e8;
-}
-.card p{
-    margin: 0;
-    font-size: 14px;
-    color: #666;
-}
-</style>
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8" />
+        <title>股市工具箱</title>
+        <style>
+            body {
+                font-family: -apple-system, "Microsoft YaHei", sans-serif;
+                background: #f0f2f5;
+                margin: 0;
+                padding: 40px 20px;
+            }
+            .container {
+                max-width: 800px;
+                margin: 0 auto;
+            }
+            h1 {
+                text-align: center;
+                color: #333;
+                margin-bottom: 40px;
+            }
+            .grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+                gap: 20px;
+            }
+            .card {
+                background: white;
+                border-radius: 12px;
+                padding: 24px;
+                text-decoration: none;
+                color: #333;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+                transition:
+                    transform 0.15s,
+                    box-shadow 0.15s;
+            }
+            .card:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+            }
+            .card h3 {
+                margin: 0 0 8px;
+                font-size: 18px;
+                color: #1a73e8;
+            }
+            .card p {
+                margin: 0;
+                font-size: 14px;
+                color: #666;
+            }
+        </style>
 
-<div class="container">
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <h1>股市工具箱</h1>
 
-<h1>股市工具箱</h1>
-
-<div class="grid">
-
-<a class="card" href="Institutional_Holdings.html">
-    <h3>机构持仓下载器</h3>
-    <p>按机构类型浏览，查询十大流通股东持仓数据，支持导出 CSV</p>
-</a>
-
-</div>
-
-</div>
-
-</body>
+            <div class="grid">
+                <a class="card" href="Institutional_Holdings.html">
+                    <h3>机构持仓下载器</h3>
+                    <p>
+                        按机构类型浏览，查询十大流通股东持仓数据，支持导出 CSV
+                    </p>
+                </a>
+            </div>
+        </div>
+    </body>
 </html>
