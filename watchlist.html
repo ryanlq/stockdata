@@ -493,13 +493,14 @@
             }
 
             async function fetchStockInfo(code) {
-                const cacheKey = "info_" + code;
+                const cacheKey = "info2_" + code;
                 const cached = cacheGet(cacheKey);
                 if (cached) return cached;
 
                 const key = codeToTencentKey(code);
                 const resp = await fetch(`https://qt.gtimg.cn/q=${key}`);
-                const text = await resp.text();
+                const buf = await resp.arrayBuffer();
+                const text = new TextDecoder("gbk").decode(buf);
                 // Parse: v_s_sh600519="1~贵州茅台~600519~1332.95~..."
                 const match = text.match(/"(.+)"/);
                 if (!match) return null;
