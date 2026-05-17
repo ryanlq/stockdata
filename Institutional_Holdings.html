@@ -2,6 +2,7 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>机构持仓下载器</title>
     <link rel="stylesheet" href="common.css" />
     <style>
@@ -83,6 +84,67 @@
             opacity: 0; transition: opacity .3s; pointer-events: none;
         }
         .toast.show { opacity: 1; }
+
+        /* ---- Mobile toggle button ---- */
+        .panel-toggle {
+            display: none;
+            padding: 8px 16px;
+            background: var(--card);
+            border-bottom: 1px solid var(--border);
+            font-size: 13px;
+            cursor: pointer;
+            color: var(--primary);
+            text-align: center;
+        }
+
+        /* ---- Mobile responsive ---- */
+        @media (max-width: 768px) {
+            .header {
+                padding: 12px 16px;
+                height: 52px;
+                gap: 10px;
+            }
+            .header h1 { font-size: 16px; }
+            .main {
+                flex-direction: column;
+                height: auto;
+                overflow: visible;
+                padding: 0 !important;
+            }
+            .panel {
+                width: 100%;
+                overflow: visible;
+                max-height: none;
+            }
+            .panel.collapsed .card {
+                display: none;
+            }
+            .panel.collapsed .card:first-child {
+                display: block;
+            }
+            .panel.collapsed .card:first-child .type-tabs,
+            .panel.collapsed .card:first-child .search-wrap,
+            .panel.collapsed .card:first-child .holder-list,
+            .panel.collapsed .card:first-child .hint {
+                display: none;
+            }
+            .panel-toggle {
+                display: block;
+            }
+            .content {
+                border-radius: 0 !important;
+                border-top: 1px solid var(--border);
+            }
+            .table-wrap {
+                overflow-x: auto;
+            }
+            .chart-container {
+                height: 350px;
+            }
+            .holder-list {
+                max-height: 200px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -96,6 +158,9 @@
 </div>
 
 <div class="main">
+    <div class="panel-toggle" id="panelToggle" onclick="togglePanel()">
+        ▼ 展开筛选面板
+    </div>
     <!-- left panel -->
     <div class="panel">
         <div class="card">
@@ -185,6 +250,21 @@
 <script src="common.js"></script>
 <script src="https://s3.tradingview.com/tv.js"></script>
 <script>
+// ---- Mobile panel toggle ----
+function togglePanel() {
+    const panel = document.querySelector(".panel");
+    const toggle = document.getElementById("panelToggle");
+    panel.classList.toggle("collapsed");
+    toggle.textContent = panel.classList.contains("collapsed")
+        ? "▼ 展开筛选面板"
+        : "▲ 收起筛选面板";
+}
+
+// Collapse panel by default on mobile
+if (window.innerWidth <= 768) {
+    document.querySelector(".panel").classList.add("collapsed");
+}
+
 const searchInput = document.getElementById("searchInput");
 const holderList = document.getElementById("holderList");
 const dateSelect = document.getElementById("dateSelect");
@@ -322,6 +402,11 @@ function selectHolder(h) {
     document.getElementById("customId").value = selectedId;
     resetFilters();
     loadDates().then(() => { if (dateSelect.value) fetchData(); });
+    // Collapse panel on mobile after selection
+    if (window.innerWidth <= 768) {
+        document.querySelector(".panel").classList.add("collapsed");
+        document.getElementById("panelToggle").textContent = "▼ 展开筛选面板";
+    }
 }
 
 searchInput.addEventListener("input", renderList);
