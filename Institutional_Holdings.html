@@ -81,6 +81,20 @@ button{
 button:hover{border-color:var(--primary);color:var(--primary)}
 button.primary{background:var(--primary);color:#fff;border-color:var(--primary)}
 button.primary:hover{opacity:.9}
+/* ---- chart panel ---- */
+.chart-section{
+    border-bottom:1px solid var(--border);
+    flex-shrink:0;
+    display:none;
+}
+.chart-section.open{display:block}
+.chart-bar{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:8px 16px;background:#f8f9fb;font-size:13px;color:var(--text2);
+}
+.chart-bar .stock-name{font-weight:600;color:var(--text);font-size:14px}
+.chart-bar button{padding:3px 10px;font-size:12px}
+.chart-container{height:400px}
 /* ---- right panel ---- */
 .content{flex:1;min-width:0;display:flex;flex-direction:column}
 .result-header{
@@ -172,6 +186,13 @@ th .col-filter .arrow{font-size:10px;margin-left:2px}
 
 <!-- right panel -->
 <div class="content card" style="padding:0;overflow:hidden">
+    <div class="chart-section" id="chartSection">
+        <div class="chart-bar">
+            <span class="stock-name" id="chartStockName"></span>
+            <button onclick="closeChart()">关闭图表</button>
+        </div>
+        <div class="chart-container" id="tvChartContainer"></div>
+    </div>
     <div class="result-header">
         <span class="info" id="resultInfo">选择机构后自动加载持仓数据</span>
         <button class="btn-sm" onclick="exportCSV()" id="btnExport" style="display:none">导出 CSV</button>
@@ -236,6 +257,7 @@ th .col-filter .arrow{font-size:10px;margin-left:2px}
 
 </div>
 
+<script type="text/javascript" src="https://s3.tradingview.com/tv.js"></script>
 <script>
 
 const searchInput = document.getElementById("searchInput");
@@ -502,13 +524,57 @@ function renderTable(rows) {
         tr.innerHTML = `
         <td>${(row.END_DATE||"").substring(0,10)}</td>
         <td>${row.SECURITY_NAME_ABBR||""}</td>
-        <td>${row.SECURITY_CODE||""}</td>
+        <td><a href="javascript:void(0)" onclick="openChart('${row.SECUCODE||""}','${row.SECURITY_NAME_ABBR||""}')" style="color:var(--primary);text-decoration:none">${row.SECURITY_CODE||""}</a></td>
         <td>${row.HOLDER_STATE_NEW||""}</td>
         <td>${pct != null ? pct.toFixed(2) + "%" : ""}</td>
         <td style="color:${chg > 0 ? "#e53e3e" : chg < 0 ? "#38a169" : ""}">${chg != null ? (chg > 0 ? "+" : "") + chg.toFixed(2) : ""}</td>
         <td>${row.HOLDER_MARKET_CAP != null ? (row.HOLDER_MARKET_CAP / 1e8).toFixed(2) + "亿" : ""}</td>`;
         tbody.appendChild(tr);
     }
+}
+
+// ---- TradingView Chart ----
+let tvWidget = null;
+
+function secucodeToSymbol(secucode) {
+    // "600000.SH" -> "SSE:600000", "000001.SZ" -> "SZSE:000001"
+    if (!secucode || !secucode.includes(".")) return "";
+    const [code, market] = secucode.split(".");
+    const exchange = market === "SH" ? "SSE" : "SZSE";
+    return `${exchange}:${code}`;
+}
+
+function openChart(secucode, name) {
+    const symbol = secucodeToSymbol(secucode);
+    if (!symbol) return;
+
+    document.getElementById("chartStockName").textContent = `${name} (${symbol.split(":")[1]})`;
+    const section = document.getElementById("chartSection");
+    section.classList.add("open");
+
+    const container = document.getElementById("tvChartContainer");
+    container.innerHTML = "";
+
+    tvWidget = new TradingView.widget({
+        autosize: true,
+        symbol: symbol,
+        interval: "D",
+        timezone: "Asia/Shanghai",
+        theme: "light",
+        style: "1",
+        locale: "zh_CN",
+        enable_publishing: false,
+        allow_symbol_change: true,
+        container_id: "tvChartContainer",
+        hide_side_toolbar: false,
+        studies: ["MASimple@tv-basicstudies"],
+    });
+}
+
+function closeChart() {
+    document.getElementById("chartSection").classList.remove("open");
+    document.getElementById("tvChartContainer").innerHTML = "";
+    tvWidget = null;
 }
 
 function exportCSV() {
